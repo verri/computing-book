@@ -38,4 +38,4 @@ jobs:
        env:
           EMAIL: ${{ secrets.EMAIL }}
           GH_TOKEN: ${{ secrets.GH_PAT }}
-          BUILD_DIR: _book/
+          build_dir: _book/
