@@ -1,0 +1,50 @@
+# (PART) Introdução {-}
+
+# Introdução
+
+Neste capítulo, motivaremos a importância da computação em diversos domínios,
+contaremos um pouco da história da computação e como ela se relaciona com os
+desafios de nossa sociedade e, por fim, definiremos os principais termos e
+conceitos a serem abordados nos próximos capítulos.
+
+## Motivação
+
+Imagine instruir uma pessoa a calcular juros compostos.  Dado que conhecemos o
+montante inicial $x$, a taxa de juros $j$ e o número de meses passados $n$,
+podemos calcular o montante final $y$ como
+\[ y = x \cdot (1 + j)^n\text{.} \]
+
+Até o momento, temos uma fórmula fechada da solução para o problema. E
+se eu dissesse que temos que resolvê-lo sem utilizar a operação de
+exponenciação? Como o problema seria resolvido?
+
+Uma opção seria
+\[ y = x \cdot \underbrace{(1 + j) \cdot \text{...} \cdot (1 + j)}_{n\text{ vezes}}\text{,} \]
+ou interpretando as instruções:
+
+- Multiplique o fator $(1 + j)$ $n$ vezes;
+- Multiplique o resultado anterior pelo valor $x$;
+- Utilize o resultado anterior como resposta para o problema.
+
+A interpretação da fórmula acima começa a se aproximar do que definiremos como
+*computação*.
+
+Podemos ir além, e imaginar reescrever essa fórmula sem utilizar a operação de
+multiplicação. Ainda, imagine escrever a mesma fórmula usando apenas operadores
+lógicos de conjunção, disjunção e negação!
+
+É exatamente isso que os computadores digitais fazem.
+
+## História
+
+## Definições
+
+### Computação
+
+### Computadores digitais
+
+### Dados
+
+### Algoritmos
+
+### Programação

@@ -1,0 +1,5 @@
+# (PART) Estruturas de dados {-}
+
+# Sequências
+
+Array contíguo, listas ligadas, listas duplamente ligadas.

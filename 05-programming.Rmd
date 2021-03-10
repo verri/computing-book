@@ -1,0 +1,5 @@
+# (PART) Programação {-}
+
+# Introdução à programação
+
+Arquitetura abstrata, linguagem de máquina, assembly, linguagens de alto nível, meu primeiro programa.

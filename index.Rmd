@@ -3,7 +3,7 @@ title: "Computando"
 subtitle: "Uma abordagem prática a programação, algoritmos e estruturas de dados"
 author:
   - Filipe A. N. Verri
-  - Lourenço A. Pereira Jr."
+  - Lourenço A. Pereira Jr.
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -11,11 +11,11 @@ documentclass: book
 bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: verri/computing-book
 description: ""
 ---
 
-# Prefácio
+# Prefácio {-}
 
 Já se perguntou o que, de fato, é Computação? Como ela está relacionada com a
 Informática? E com os computadores digitais? Estes conceitos são fortemente
@@ -53,7 +53,7 @@ prejudicar significantemente os alunos que formamos.
 
 --- Filipe Verri
 
+# Sobre os autores {-}
 
-# Introdução
-
-Imagine instruir uma pessoa a calcular juros compostos...
+- [Filipe Verri](http://www.comp.ita.br/~verri)
+- [Lourenço Pereira Jr.](http://www.comp.ita.br/~ljr)

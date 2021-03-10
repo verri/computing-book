@@ -1,0 +1,3 @@
+# Adaptadores
+
+Pilha (LIFO), fila (FIFO), lista de prioridade

@@ -1,0 +1,3 @@
+# Operações numéricas
+
+Transformação (apply, map), redução, produto interno (zip).

@@ -1,0 +1,3 @@
+# Estruturas associativas
+
+Conjuntos e mapas ordenados (árvores) e não ordenados (hashing)
