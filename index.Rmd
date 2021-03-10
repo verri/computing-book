@@ -1,7 +1,9 @@
 ---
 title: "Computando"
 subtitle: "Uma abordagem prática a programação, algoritmos e estruturas de dados"
-author: "Filipe A. N. Verri e Lourenço A. Pereira Jr."
+author:
+  - Filipe A. N. Verri
+  - Lourenço A. Pereira Jr."
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -15,16 +17,43 @@ description: ""
 
 # Prefácio
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+Já se perguntou o que, de fato, é Computação? Como ela está relacionada com a
+Informática? E com os computadores digitais? Estes conceitos são fortemente
+ligados, mas, de maneira alguma, são as mesmas coisas.
 
-The **bookdown** package can be installed from CRAN or Github:
+Neste livro, pretendo, de uma maneira prática, expor estes conceitos e
+prepará-lo para o universo da programação independente da sua área de atuação.
+Espero que futuros engenheiros, cientistas da computação, cientistas de dados,
+biólogos, químicos, matemáticos e outros graduandos se beneficiem desse
+material.
 
-```{r eval=FALSE}
-install.packages("bookdown")
-# or the development version
-# devtools::install_github("rstudio/bookdown")
-```
+Veja que este não é um curso de programação numa linguagem específica, nem
+mesmo um curso de introdução às Ciências de Computação (o que julgo muito mais
+abrangente do que o escopo deste livro).
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+No entanto, meu intuito é habilitá-los a resolver problemas computacionais de
+maneira organizada e efetiva, independentemente da linguagem de programação ou
+área de domínio.  Inclusive, este não é um livro que tem como objetivo ensinar
+todos os aspectos de determinada linguagem de programação.  Na medida do
+possível, os leitores serão direcionados a materiais específicos a esta ou
+aquela linguagem de programação.
 
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
+Apresentarei os principais algoritmos e estruturas de dados utilizados na
+atualidade -- consequentemente sou forçado a deixar de fora tópicos históricos
+ou muito avançados.  É altamente recomendado que o leitor tenha familiaridade
+com símbolos e notações matemáticas.
+
+A sequência dos tópicos e a profundidade de cada um deles é fortemente baseada
+na minha experiência nas disciplinas básicas de programação do Instituto
+Tecnológico de Aeronáutica, e devem funcionar muito bem para qualquer outro
+curso de engenharia.  No entanto, peço encarecidamente que não utilizem esse
+material desatualizado -- nada pior para os alunos do que aprender arcaísmos.
+Esta é uma área que está em constante evolução e assuntos desatualizados podem
+prejudicar significantemente os alunos que formamos.
+
+--- Filipe Verri
+
+
+# Introdução
+
+Imagine instruir uma pessoa a calcular juros compostos...
