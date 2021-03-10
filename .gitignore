@@ -1,0 +1,5 @@
+.radian_history
+_book/
+_bookdown_files/
+**/*.bib
+**/*.html
