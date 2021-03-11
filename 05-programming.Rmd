@@ -3,3 +3,28 @@
 # Introdução à programação
 
 Arquitetura abstrata, linguagem de máquina, assembly, linguagens de alto nível, meu primeiro programa.
+
+## Primeiro programa de alto nível
+
+Como vimos anteriormente, linguagens de programação de alto nível permitem ao
+programador construir um software composto por diversos módulos. Neste caso, é
+necessário identificar o "ponto de entrada" do programa. Ou seja, dentre as
+diversas potenciais funcionalidades do programa, qual é a primeira instrução
+executada.
+
+Em C11, o início do programa ocorre na função `main`. Esta é a função que o
+sistema operacional invoca quando o programa é executado — outras rotinas podem
+ser executadas antes da `main`, por exemplo, para inicializar variáveis
+globais; no entanto, estes detalhes estão fora do escopo deste livro. Veja mais
+informações [aqui](https://en.cppreference.com/w/c/language/main_function).
+
+```{c eval=FALSE}
+#include <stdio.h>
+int main(void) {
+  printf("Hello, world!\n");
+}
+```
+
+Há várias nuances deste programa que entraremos em detalhes futuramente. No
+momento, é suficiente saber que esse arquivo, quando compilado e executado,
+resultará em uma saída com o texto “Hello World!” seguido de quebra de linha.
