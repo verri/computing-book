@@ -50,6 +50,7 @@ public:
 
   auto insert(iterator pos, T value)
   {
+    // XXX is it necessary?
     if (pos == end())
       return insert_back(std::move(value));
 
@@ -59,6 +60,7 @@ public:
       pos = std::next(begin(), index);
     }
 
+    // TODO: shift_left, code below is probably wrong
     const auto b = std::make_reverse_iterator(pos);
     const auto e = std::make_reverse_iterator(end());
     std::rotate(b, std::next(b), e);
@@ -85,6 +87,7 @@ public:
     std::unique_ptr<storage_type[]> new_values{new storage_type[new_capacity]};
     std::uninitialized_move_n(begin(), size(), std::launder(reinterpret_cast<T*>(new_values.get())));
     values_ = std::move(new_values);
+    capacity_ = new_capacity;
   }
 
   auto at(std::size_t i) const -> const T& { return *std::next(begin(), i); }
