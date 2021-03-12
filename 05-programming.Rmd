@@ -27,4 +27,4 @@ int main(void) {
 
 Há várias nuances deste programa que entraremos em detalhes futuramente. No
 momento, é suficiente saber que esse arquivo, quando compilado e executado,
-resultará em uma saída com o texto “Hello World!” seguido de quebra de linha.
+resultará em uma saída com o texto `"Hello World!"` seguido de quebra de linha.

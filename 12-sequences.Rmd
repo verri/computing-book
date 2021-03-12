@@ -1,5 +1,44 @@
 # (PART) Estruturas de dados {-}
 
-# Sequências
+# Listas
 
+Listas são estruturas de dados cujos elementos podem ser acessados
+sequencialmente.
+
+...
 Array contíguo, listas ligadas, listas duplamente ligadas.
+
+## Modelo abstrato e operações em listas
+
+Table: Operações em listas
+
+Operação      Parâmetros          Descrição
+--------      ----------          ---------
+Criação       Capacidade          Cria uma lista com capacidade especificada (potencialmente ilimitada^[Ilimitada conceitualmente; toda estrutura digital possui limitações de armazenamento.]).
+Acesso        Posição             Acessa um elemento da lista dada uma posição.
+Frente                            Acessa o primeiro elemento da lista.
+Trás                              Acessa o último elemento da lista.
+Inserir       Elemento            Insere um elemento no fim da lista.
+InserirEm     Elemento, Posição   Insere um elemento numa posição específica da lista.
+Remover                           Remove o último elemento da lista.
+RemoverEm     Posição             Remove o elemento numa posição específica da lista.
+Concatenar    Lista               Concatena outra lista no fim da lista.
+Separar       Posição             Separa a lista em duas a partir duma determinada posição.
+
+TODO: deixar compatível com o .h.
+
+Outras operações são possíveis...
+
+TODO: iteradores.
+
+## Implementações de listas
+
+### Contíguo estático
+
+### Contíguo dinâmico
+
+### Simplesmente encadeada
+
+### Duplamente encadeada
+
+### Outros
