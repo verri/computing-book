@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Algoritmos | Computando</title>
-  <meta name="description" content="4 Algoritmos | Computando" />
+  <title>12 Listas | Computando</title>
+  <meta name="description" content="12 Listas | Computando" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Algoritmos | Computando" />
+  <meta property="og:title" content="12 Listas | Computando" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="verri/computing-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Algoritmos | Computando" />
+  <meta name="twitter:title" content="12 Listas | Computando" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lógica-digital.html"/>
-<link rel="next" href="introdução-à-programação.html"/>
+<link rel="prev" href="complexidade-computacional.html"/>
+<link rel="next" href="adaptadores.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -202,21 +202,176 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="algoritmos-1" class="section level1">
-<h1><span class="header-section-number">4</span> Algoritmos</h1>
-<p>Algoritmos, diagramas de fluxo, pseudo-código.</p>
+<div id="listas" class="section level1">
+<h1><span class="header-section-number">12</span> Listas</h1>
+<p>Listas são estruturas de dados cujos elementos podem ser acessados
+sequencialmente.</p>
+<div id="modelo-abstrato-e-operações-em-listas" class="section level2">
+<h2><span class="header-section-number">12.1</span> Modelo abstrato e operações em listas</h2>
+<table>
+<caption>Operações complexas em listas</caption>
+<thead>
+<tr class="header">
+<th>Operação</th>
+<th>Parâmetros</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Criar</td>
+<td>Capacidade</td>
+<td>Cria uma lista com capacidade especificada (potencialmente ilimitada<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>).</td>
+</tr>
+<tr class="even">
+<td>Copiar</td>
+<td></td>
+<td>Cria uma cópia da lista.</td>
+</tr>
+<tr class="odd">
+<td>Esvaziar</td>
+<td></td>
+<td>Esvazia a lista.</td>
+</tr>
+<tr class="even">
+<td>Acessar</td>
+<td>Posição</td>
+<td>Acessa um elemento da lista dada uma posição.</td>
+</tr>
+<tr class="odd">
+<td>Inserir</td>
+<td>Elemento, Posição</td>
+<td>Insere um elemento numa posição específica da lista.</td>
+</tr>
+<tr class="even">
+<td>Remover</td>
+<td>Posição</td>
+<td>Remove o elemento numa posição específica da lista.</td>
+</tr>
+<tr class="odd">
+<td>Concatenar</td>
+<td>Lista</td>
+<td>Concatena outra lista no fim da lista.</td>
+</tr>
+<tr class="even">
+<td>Separar</td>
+<td>Posição</td>
+<td>Separa a lista em duas a partir duma determinada posição.</td>
+</tr>
+</tbody>
+</table>
+<p>Além dessas operações, há outras mais triviais, como consultar o tamanho,
+consultar a capacidade, verificar se está cheia, e verificar se está vazia.</p>
+<p>Em C++20, podemos definir uma interface<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> básica:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="listas.html#cb2-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">class</span> list {</span>
+<span id="cb2-2"><a href="listas.html#cb2-2"></a><span class="kw">public</span>:</span>
+<span id="cb2-3"><a href="listas.html#cb2-3"></a>  <span class="kw">explicit</span> list(<span class="bu">std::</span>size_t capacity);</span>
+<span id="cb2-4"><a href="listas.html#cb2-4"></a>  ~list();</span>
+<span id="cb2-5"><a href="listas.html#cb2-5"></a></span>
+<span id="cb2-6"><a href="listas.html#cb2-6"></a>  list(<span class="at">const</span> list&amp;);</span>
+<span id="cb2-7"><a href="listas.html#cb2-7"></a>  list(list&amp;&amp;);</span>
+<span id="cb2-8"><a href="listas.html#cb2-8"></a></span>
+<span id="cb2-9"><a href="listas.html#cb2-9"></a>  <span class="kw">auto</span> <span class="kw">operator</span>=(<span class="at">const</span> list&amp;) -&gt; list&amp;;</span>
+<span id="cb2-10"><a href="listas.html#cb2-10"></a>  <span class="kw">auto</span> <span class="kw">operator</span>=(list&amp;&amp;) -&gt; list&amp;;</span>
+<span id="cb2-11"><a href="listas.html#cb2-11"></a></span>
+<span id="cb2-12"><a href="listas.html#cb2-12"></a>  <span class="kw">auto</span> empty() -&gt; <span class="dt">void</span>;</span>
+<span id="cb2-13"><a href="listas.html#cb2-13"></a></span>
+<span id="cb2-14"><a href="listas.html#cb2-14"></a>  <span class="kw">auto</span> size() <span class="at">const</span> -&gt; <span class="bu">std::</span>size_t;</span>
+<span id="cb2-15"><a href="listas.html#cb2-15"></a>  <span class="kw">auto</span> capacity() <span class="at">const</span> -&gt; <span class="bu">std::</span>size_t;</span>
+<span id="cb2-16"><a href="listas.html#cb2-16"></a></span>
+<span id="cb2-17"><a href="listas.html#cb2-17"></a>  <span class="kw">auto</span> is_empty() <span class="at">const</span> -&gt; <span class="dt">bool</span>;</span>
+<span id="cb2-18"><a href="listas.html#cb2-18"></a>  <span class="kw">auto</span> is_full() <span class="at">const</span> -&gt; <span class="dt">bool</span>;</span>
+<span id="cb2-19"><a href="listas.html#cb2-19"></a></span>
+<span id="cb2-20"><a href="listas.html#cb2-20"></a>  <span class="kw">auto</span> at(<span class="bu">std::</span>size_t) -&gt; T&amp;;</span>
+<span id="cb2-21"><a href="listas.html#cb2-21"></a>  <span class="kw">auto</span> front() -&gt; T&amp;;</span>
+<span id="cb2-22"><a href="listas.html#cb2-22"></a>  <span class="kw">auto</span> back() -&gt; T&amp;;</span>
+<span id="cb2-23"><a href="listas.html#cb2-23"></a></span>
+<span id="cb2-24"><a href="listas.html#cb2-24"></a>  <span class="kw">auto</span> insert(<span class="bu">std::</span>size_t, T) -&gt; <span class="dt">void</span>;</span>
+<span id="cb2-25"><a href="listas.html#cb2-25"></a>  <span class="kw">auto</span> remove(<span class="bu">std::</span>size_t) -&gt; <span class="dt">void</span>;</span>
+<span id="cb2-26"><a href="listas.html#cb2-26"></a></span>
+<span id="cb2-27"><a href="listas.html#cb2-27"></a>  <span class="kw">auto</span> concat(list&lt;T&gt;) -&gt; <span class="dt">void</span>;</span>
+<span id="cb2-28"><a href="listas.html#cb2-28"></a>  <span class="kw">auto</span> split(<span class="bu">std::</span>size_t) -&gt; list&lt;T&gt;;</span>
+<span id="cb2-29"><a href="listas.html#cb2-29"></a>};</span></code></pre></div>
+<p>Veremos que dependendo da versão, podemos mudar uns detalhes da nossa interface
+para melhor adequá-la ao contexto.</p>
+</div>
+<div id="implementações-de-listas" class="section level2">
+<h2><span class="header-section-number">12.2</span> Implementações de listas</h2>
+<p>Nas implementações, não vamos usar os containers da STL (<code>std::vector</code>,
+<code>std::list</code>, etc) por motivos didáticos.</p>
+<div id="contíguo-estático" class="section level3">
+<h3><span class="header-section-number">12.2.1</span> Contíguo estático</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="listas.html#cb3-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt; <span class="kw">class</span> list {</span>
+<span id="cb3-2"><a href="listas.html#cb3-2"></a><span class="kw">public</span>:</span>
+<span id="cb3-3"><a href="listas.html#cb3-3"></a>  list() = <span class="cf">default</span>;</span>
+<span id="cb3-4"><a href="listas.html#cb3-4"></a>  <span class="co">// ...</span></span>
+<span id="cb3-5"><a href="listas.html#cb3-5"></a><span class="kw">private</span>:</span>
+<span id="cb3-6"><a href="listas.html#cb3-6"></a>  <span class="kw">using</span> <span class="dt">storage_type</span> = <span class="bu">std::</span>aligned_storage_t&lt;<span class="kw">sizeof</span>(T), <span class="kw">alignof</span>(T)&gt;;</span>
+<span id="cb3-7"><a href="listas.html#cb3-7"></a>  <span class="bu">std::</span>array&lt;<span class="dt">storage_type</span>, N&gt; <span class="va">values_</span>;</span>
+<span id="cb3-8"><a href="listas.html#cb3-8"></a>  <span class="bu">std::</span>size_t <span class="va">size_</span> = <span class="dv">0</span><span class="bu">u</span>;</span>
+<span id="cb3-9"><a href="listas.html#cb3-9"></a>};</span></code></pre></div>
+<p>Não precisamos de construtor.</p>
+<p>Não precisamos de um destrutor.</p>
+<p>Limpando a lista:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="listas.html#cb4-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
+<span id="cb4-2"><a href="listas.html#cb4-2"></a><span class="kw">auto</span> list&lt;T, N&gt;::empty() {</span>
+<span id="cb4-3"><a href="listas.html#cb4-3"></a>  <span class="cf">if</span> <span class="kw">constexpr</span> (!<span class="bu">std::</span>is_trivially_destructible_v&lt;T&gt;)</span>
+<span id="cb4-4"><a href="listas.html#cb4-4"></a>    <span class="bu">std::</span>destroy(begin(values), begin(values) + <span class="va">size_</span>);</span>
+<span id="cb4-5"><a href="listas.html#cb4-5"></a>  <span class="va">size_</span> = <span class="dv">0</span>;</span>
+<span id="cb4-6"><a href="listas.html#cb4-6"></a>}</span></code></pre></div>
+<p>Checando as margens:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="listas.html#cb5-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
+<span id="cb5-2"><a href="listas.html#cb5-2"></a><span class="kw">auto</span> list&lt;T, N&gt;::is_empty() <span class="at">const</span> -&gt; <span class="dt">bool</span> {</span>
+<span id="cb5-3"><a href="listas.html#cb5-3"></a>  <span class="cf">return</span> <span class="va">size_</span> == <span class="dv">0</span>;</span>
+<span id="cb5-4"><a href="listas.html#cb5-4"></a>}</span>
+<span id="cb5-5"><a href="listas.html#cb5-5"></a></span>
+<span id="cb5-6"><a href="listas.html#cb5-6"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
+<span id="cb5-7"><a href="listas.html#cb5-7"></a><span class="kw">auto</span> list&lt;T, N&gt;::is_full() <span class="at">const</span> -&gt; <span class="dt">bool</span> {</span>
+<span id="cb5-8"><a href="listas.html#cb5-8"></a>  <span class="cf">return</span> <span class="va">size_</span> == N;</span>
+<span id="cb5-9"><a href="listas.html#cb5-9"></a>}</span></code></pre></div>
+</div>
+<div id="contíguo-dinâmico" class="section level3">
+<h3><span class="header-section-number">12.2.2</span> Contíguo dinâmico</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="listas.html#cb6-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">class</span> list {</span>
+<span id="cb6-2"><a href="listas.html#cb6-2"></a><span class="kw">public</span>:</span>
+<span id="cb6-3"><a href="listas.html#cb6-3"></a>  <span class="co">// ...</span></span>
+<span id="cb6-4"><a href="listas.html#cb6-4"></a><span class="kw">private</span>:</span>
+<span id="cb6-5"><a href="listas.html#cb6-5"></a>  <span class="kw">using</span> <span class="dt">storage_type</span> = <span class="bu">std::</span>aligned_storage_t&lt;<span class="kw">sizeof</span>(T), <span class="kw">alignof</span>(T)&gt;;</span>
+<span id="cb6-6"><a href="listas.html#cb6-6"></a>  <span class="bu">std::</span>unique_ptr&lt;<span class="dt">storage_type</span>[]&gt; <span class="va">values_</span>;</span>
+<span id="cb6-7"><a href="listas.html#cb6-7"></a>  <span class="bu">std::</span>size_t <span class="va">capacity_</span>;</span>
+<span id="cb6-8"><a href="listas.html#cb6-8"></a>  <span class="bu">std::</span>size_t <span class="va">size_</span> = <span class="dv">0</span><span class="bu">u</span>;</span>
+<span id="cb6-9"><a href="listas.html#cb6-9"></a>};</span></code></pre></div>
+</div>
+<div id="simplesmente-encadeada" class="section level3">
+<h3><span class="header-section-number">12.2.3</span> Simplesmente encadeada</h3>
+</div>
+<div id="duplamente-encadeada" class="section level3">
+<h3><span class="header-section-number">12.2.4</span> Duplamente encadeada</h3>
+</div>
+<div id="outros" class="section level3">
+<h3><span class="header-section-number">12.2.5</span> Outros</h3>
+</div>
+</div>
+<div id="iteradores" class="section level2">
+<h2><span class="header-section-number">12.3</span> Iteradores</h2>
 
 </div>
-
-
-
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Ilimitada conceitualmente; toda estrutura digital possui limitações de armazenamento.<a href="listas.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Não no sentido de orientação à objeto,
+mas em um sentido mais amplo.<a href="listas.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lógica-digital.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introdução-à-programação.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="complexidade-computacional.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="adaptadores.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
