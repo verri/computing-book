@@ -27,13 +27,89 @@ Separar       Posição             Separa a lista em duas a partir duma determi
 
 TODO: deixar compatível com o .h.
 
+```cpp
+template <typename T> class list {
+public:
+  explicit list(std::size_t capacity);
+  ~list();
+
+  list(const list&);
+  list(list&&);
+
+  auto operator=(const list&) -> list&;
+  auto operator=(list&&) -> list&;
+
+  auto empty() -> void;
+
+  auto size() const -> std::size_t;
+  auto capacity() const -> std::size_t;
+
+  auto is_empty() const -> bool;
+  auto is_full() const -> bool;
+
+  auto at(std::size_t) -> T&;
+  auto front() -> T&;
+  auto back() -> T&;
+
+  auto insert(std::size_t, T) -> void;
+  auto remove(std::size_t) -> void;
+
+  auto concat(list<T>) -> void;
+  auto split(std::size_t) -> list<T>;
+};
+```
+
 Outras operações são possíveis...
+Veremos que dependendo da versão, podemos mudar uns detalhes da nossa interface.
 
 TODO: iteradores.
 
 ## Implementações de listas
 
 ### Contíguo estático
+
+Não vamos usar os containers da STL (`std::vector`, `std::list`, etc) para fins
+didáticos.
+
+```cpp
+template <typename T, std::size_t N > class list {
+public:
+  list() = default;
+  // ...
+private:
+  using storage_type = std::aligned_storage_t<sizeof(T), alignof(T)>;
+  std::array<storage_type, N> values_;
+  std::size_t size_ = 0u;
+};
+```
+
+Não precisamos de construtor.
+
+Não precisamos de um destrutor.
+
+Limpando a lista:
+```cpp
+template <typename T, std::size_t N>
+auto list<T, N>::empty() {
+  if constexpr (!std::is_trivially_destructible_v<T>)
+    std::destroy(begin(values), begin(values) + size_);
+  size_ = 0;
+}
+```
+
+Checando as margens:
+```cpp
+template <typename T, std::size_t N>
+auto list<T, N>::is_empty() const -> bool {
+  return size_ == 0;
+}
+
+template <typename T, std::size_t N>
+auto list<T, N>::is_full() const -> bool {
+  return size_ == N;
+}
+```
+
 
 ### Contíguo dinâmico
 
