@@ -1,6 +1,6 @@
 # (PART) Introdução {-}
 
-# Introdução
+# Preliminares
 
 Neste capítulo, motivaremos a importância da computação em diversos domínios,
 contaremos um pouco da história da computação e como ela se relaciona com os

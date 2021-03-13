@@ -5,28 +5,26 @@
 Listas são estruturas de dados cujos elementos podem ser acessados
 sequencialmente.
 
-...
-Array contíguo, listas ligadas, listas duplamente ligadas.
-
 ## Modelo abstrato e operações em listas
 
-Table: Operações em listas
+Table: Operações complexas em listas
 
 Operação      Parâmetros          Descrição
 --------      ----------          ---------
-Criação       Capacidade          Cria uma lista com capacidade especificada (potencialmente ilimitada^[Ilimitada conceitualmente; toda estrutura digital possui limitações de armazenamento.]).
-Acesso        Posição             Acessa um elemento da lista dada uma posição.
-Frente                            Acessa o primeiro elemento da lista.
-Trás                              Acessa o último elemento da lista.
-Inserir       Elemento            Insere um elemento no fim da lista.
-InserirEm     Elemento, Posição   Insere um elemento numa posição específica da lista.
-Remover                           Remove o último elemento da lista.
-RemoverEm     Posição             Remove o elemento numa posição específica da lista.
+Criar         Capacidade          Cria uma lista com capacidade especificada (potencialmente ilimitada^[Ilimitada conceitualmente; toda estrutura digital possui limitações de armazenamento.]).
+Copiar                            Cria uma cópia da lista.
+Esvaziar                          Esvazia a lista.
+Acessar       Posição             Acessa um elemento da lista dada uma posição.
+Inserir       Elemento, Posição   Insere um elemento numa posição específica da lista.
+Remover       Posição             Remove o elemento numa posição específica da lista.
 Concatenar    Lista               Concatena outra lista no fim da lista.
 Separar       Posição             Separa a lista em duas a partir duma determinada posição.
 
-TODO: deixar compatível com o .h.
+Além dessas operações, há outras mais triviais, como consultar o tamanho,
+consultar a capacidade, verificar se está cheia, e verificar se está vazia.
 
+Em C++20, podemos definir uma interface^[Não no sentido de orientação à objeto,
+mas em um sentido mais amplo.] básica:
 ```cpp
 template <typename T> class list {
 public:
@@ -59,20 +57,18 @@ public:
 };
 ```
 
-Outras operações são possíveis...
-Veremos que dependendo da versão, podemos mudar uns detalhes da nossa interface.
-
-TODO: iteradores.
+Veremos que dependendo da versão, podemos mudar uns detalhes da nossa interface
+para melhor adequá-la ao contexto.
 
 ## Implementações de listas
 
+Nas implementações, não vamos usar os containers da STL (`std::vector`,
+`std::list`, etc) por motivos didáticos.
+
 ### Contíguo estático
 
-Não vamos usar os containers da STL (`std::vector`, `std::list`, etc) para fins
-didáticos.
-
 ```cpp
-template <typename T, std::size_t N > class list {
+template <typename T, std::size_t N> class list {
 public:
   list() = default;
   // ...
@@ -110,11 +106,24 @@ auto list<T, N>::is_full() const -> bool {
 }
 ```
 
-
 ### Contíguo dinâmico
+
+```cpp
+template <typename T> class list {
+public:
+  // ...
+private:
+  using storage_type = std::aligned_storage_t<sizeof(T), alignof(T)>;
+  std::unique_ptr<storage_type[]> values_;
+  std::size_t capacity_;
+  std::size_t size_ = 0u;
+};
+```
 
 ### Simplesmente encadeada
 
 ### Duplamente encadeada
 
 ### Outros
+
+## Iteradores
