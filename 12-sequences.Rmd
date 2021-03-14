@@ -1,13 +1,21 @@
 # (PART) Estruturas de dados {-}
 
-# Listas
+# Sequências
+
+Há dois principais tipos de sequências: lista e colônia^[Em inglês, *colony*.].
 
 Listas são estruturas de dados cujos elementos podem ser acessados
-sequencialmente.
+sequencialmente preservando a ordem destes.
 
-## Modelo abstrato e operações em listas
+Colônias, por sua vez, sacrificam a ordem dos elementos para garantir outras
+propriedades desejadas.
 
-Table: Operações complexas em listas
+## Listas
+
+### Modelo abstrato e operações em listas
+
+<!-- Complexa é o melhor termo? -->
+Table: Operações complexas em listas.
 
 Operação      Parâmetros          Descrição
 --------      ----------          ---------
@@ -29,13 +37,13 @@ mas em um sentido mais amplo.] básica:
 template <typename T> class list {
 public:
   explicit list(std::size_t capacity);
-  ~list();
+  ~list() noexcept;
 
   list(const list&);
-  list(list&&);
+  list(list&&) noexcept;
 
   auto operator=(const list&) -> list&;
-  auto operator=(list&&) -> list&;
+  auto operator=(list&&) noexcept -> list&;
 
   auto empty() -> void;
 
@@ -60,12 +68,12 @@ public:
 Veremos que dependendo da versão, podemos mudar uns detalhes da nossa interface
 para melhor adequá-la ao contexto.
 
-## Implementações de listas
+### Implementações de listas
 
 Nas implementações, não vamos usar os containers da STL (`std::vector`,
 `std::list`, etc) por motivos didáticos.
 
-### Contíguo estático
+#### Lista contígua estática
 
 ```cpp
 template <typename T, std::size_t N> class list {
@@ -81,15 +89,24 @@ private:
 
 Não precisamos de construtor.
 
-Não precisamos de um destrutor.
+*Exercício*: Por que o construtor padrão (gerado pelo compilador) é suficiente neste caso?
 
 Limpando a lista:
 ```cpp
 template <typename T, std::size_t N>
 auto list<T, N>::empty() {
   if constexpr (!std::is_trivially_destructible_v<T>)
-    std::destroy(begin(values), begin(values) + size_);
+    for (std::size_t i = 0; i < size_; ++i)
+      std::destroy_at(std::address_of(values_[i]));
   size_ = 0;
+}
+```
+
+Com esta operação, a implementação do destrutor torna-se bastante simples:
+```cp
+template <typename T, std::size_t N>
+list<T, N>::~list() noexcept {
+  empty();
 }
 ```
 
@@ -106,6 +123,31 @@ auto list<T, N>::is_full() const -> bool {
 }
 ```
 
+Os construtores de cópia e movimentação são triviais:
+```cpp
+template <typename T, std::size_t N>
+list<T, N>::list(const list& source) {
+  for (std::size_t i = 0; i < source.size_; ++i)
+    ::new (std::address_of(values_[i])) T(source.values_[i]);
+  size_ = source.size_;
+}
+
+template <typename T, std::size_t N>
+list<T, N>::list(list&& source) noexcept {
+  for (std::size_t i = 0; i < source.size_; ++i)
+    ::new (std::address_of(values_[i])) T(std::move(source.values_[i]));
+  size_ = std::exchange(source.size_, 0u);
+}
+```
+
+*Exercícios*:
+
+1. Implementar as operações de atribuição (cópia e movimentação)
+   eficientemente.
+2. Implementar versão destas operações (construtores e atribuições) garantias
+   de exceção fortes nestas operações (sem utilizar funções prontas da
+   biblioteca padrão).
+
 ### Contíguo dinâmico
 
 ```cpp
@@ -120,10 +162,12 @@ private:
 };
 ```
 
-### Simplesmente encadeada
+#### Simplesmente encadeada
 
-### Duplamente encadeada
+#### Duplamente encadeada
 
-### Outros
+#### Possíveis aprimoramentos
 
-## Iteradores
+## Iterador
+
+## Colônia
