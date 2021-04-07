@@ -14,8 +14,10 @@ propriedades desejadas.
 
 ### Modelo abstrato e operações em listas
 
-<!-- Complexa é o melhor termo? -->
-Table: Operações complexas em listas.
+Para definir o nosso modelo abstrato de lista, vamos começar pelas operações
+desejáveis.
+
+Table: Operações comuns em listas.
 
 Operação      Parâmetros          Descrição
 --------      ----------          ---------
@@ -31,7 +33,7 @@ Separar       Posição             Separa a lista em duas a partir duma determi
 Além dessas operações, há outras mais triviais, como consultar o tamanho,
 consultar a capacidade, verificar se está cheia, e verificar se está vazia.
 
-Em C++20, podemos definir uma interface^[Não no sentido de orientação à objeto,
+Em C++17, podemos definir uma interface^[Não no sentido de orientação à objeto,
 mas em um sentido mais amplo.] básica:
 ```cpp
 template <typename T> class list {
@@ -65,8 +67,13 @@ public:
 };
 ```
 
-Veremos que dependendo da versão, podemos mudar uns detalhes da nossa interface
-para melhor adequá-la ao contexto.
+Uma vez que levantamos as operações desejáveis da lista, veremos diferentes
+estruturas de dados que contemplam essa finalidade.  Veremos também que cada
+uma delas apresentará diferentes vantagens e desvantagens em termos de
+complexidade de tempo.
+
+Além disso, dependendo da estrutura que escolhermos, mudaremos alguns detalhes
+da nossa interface para melhor adequá-la ao contexto.
 
 ### Implementações de listas
 
@@ -87,7 +94,7 @@ private:
 };
 ```
 
-Não precisamos de construtor.
+Não precisamos implementar o construtor.
 
 *Exercício*: Por que o construtor padrão (gerado pelo compilador) é suficiente neste caso?
 
