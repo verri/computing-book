@@ -1,3 +1,5 @@
+def:unlabeled-div-1
+def:unlabeled-div-2
 preliminares
 motivação
 história
@@ -7,8 +9,9 @@ computadores-digitais
 dados
 algoritmos
 programação
-representação-de-dados-digitais
 lógica-digital
+representação-de-dados-digitais
+tipos-de-informação
 algoritmos-1
 introdução-à-programação
 primeiro-programa-de-alto-nível
@@ -23,15 +26,17 @@ subrotinas-e-recursão
 tipos-avançados
 memória-e-ponteiros
 complexidade-computacional
+sequências
 listas
 modelo-abstrato-e-operações-em-listas
 implementações-de-listas
-contíguo-estático
+lista-contígua-estática
 contíguo-dinâmico
 simplesmente-encadeada
 duplamente-encadeada
-outros
-iteradores
+possíveis-aprimoramentos
+iterador
+colônia
 adaptadores
 estruturas-associativas
 particionamento
