@@ -1,0 +1,83 @@
+# Representação de dados digitais
+
+Quando resolvemos um problema utilizando um programa de computador, é fundamental que
+planejemos a representação dos diferentes tipos de informações e o relacionamento
+entre eles.
+
+No entanto, somos limitados pelas restrições impostas pelos sistemas computacionais
+utilizados.
+
+Neste capítulo, vamos estudar os tipos de dados mais comuns e as diferentes maneiras de
+representá-los.
+
+## Tipos de informação
+
+Uma maneira proveitosa de estudar e organizar informações é encontrar os elementos
+indivisíveis que as compõem.
+
+Vamos considerar duas definições:
+
+::: {.definition name="Informação escalar"}
+Informação composta de um único elemento, indivisível.
+:::
+
+::: {.definition name="Informação estruturada"}
+Informação composta por mais de um elemento (escalar ou estruturado), podem ser dividas em partes menores.
+:::
+
+Para exemplificar estes conceitos, consideremos o problema de armazenar os dados de
+funcionários de uma empresa.
+
+Table: Funcionários de uma empresa.
+
+Nome              Endereço                                      Data de nascimento   Sexo   Setor             Salário
+----              --------                                      ------------------   ----   -----             -------
+Sherlock Holmes   221B Baker St., London                        06/01/1954           M      Jurídico          £ 7.451,43
+Dudley Dursley    4 Privet Drive, Little Whinging, Surrey       23/06/1980           M      Administrativo    £ 21.011,12
+Homer Simpson     742 Evergreen Terrace, Springfield            12/05/1956           M      Produção          $ 1.951,18
+
+Para cada um dos funcionários, as seguintes informações são registradas: nome, endereço,
+data de nascimento, sexo, setor que atua e seu salário.  Assim, a representação do tipo
+"funcionário" é uma composição de texto, números, datas, categorias.
+
+Uma possível maneira de decompor este tipo é a seguinte (informações escalares são
+indicadas em negrito):
+
+- Funcionário
+    - Nome
+        - **Primeiro nome**
+        - **Sobrenome**
+    - Endereço
+        - **Número**
+        - **Logradouro**
+        - **Cidade**
+        - **País**
+    - Data de nascimento
+        - **Dia**
+        - **Mês**
+        - **Ano**
+    - **Sexo**
+    - **Setor**
+    - Salário
+        - **Moeda**
+        - **Valor**
+
+É importante frisar que é possível que exista mais de uma decomposição válida para um
+mesmo problema.  Isto vai depender dos objetivos, dos requisitos do sistema e, até mesmo,
+de limitações técnicas ou conveniências impostas pela linguagem de programação.
+
+*Exercícios*:
+
+1. Proponha uma decomposição alternativa para o tipo "funcionário" e justificar vantagens e
+   desvantagens.
+2. Implemente, em uma linguagem de programação, a estrutura de dados para armazenar dados
+   do tipo "funcionário".
+3. Considere o desenvolvimento de um software para armazenar e manipular informações de
+   livros disponíveis em um biblioteca.  Proponha quais informações deverão ser
+   consideradas e as classifique em escalar ou estruturada.  Decomponha as informações
+   estruturadas até os elementos indivisíveis.  Agrupe as informações escalares de acordo
+   com sua natureza. <!-- gancho com as próximas seções -->
+
+<!-- Sistemas numéricos, representação de diferentes tipos. -->
+
+<!-- vim: set spell spelllang=pt tw=90: -->
