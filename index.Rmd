@@ -55,5 +55,13 @@ prejudicar significantemente os alunos que formamos.
 
 # Sobre os autores {-}
 
-- [Filipe Verri](http://www.comp.ita.br/~verri)
-- [Lourenço Pereira Jr.](http://www.comp.ita.br/~ljr)
+- [Filipe Verri](http://www.comp.ita.br/~verri/)
+- [Lourenço Pereira Jr.](http://www.comp.ita.br/~ljr/)
+
+# Agradecimentos {-}
+
+Agradeço ao [Prof. Johnny Marques](http://www.comp.ita.br/~johnny/) por disponibilizar seu
+material didático para o preparo do Capítulo sobre Complexidade Computacional e vários
+capítulos da Parte III Estruturas de Dados.
+
+<!-- vim: set spell spelllang=pt tw=90: -->

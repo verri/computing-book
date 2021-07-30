@@ -1,1 +1,30 @@
 # Complexidade computacional
+
+Neste capítulo, veremos noções básicas de complexidade de algoritmos.  Note que não
+estudaremos formalmente ou profundamente os conceitos.  O objetivo é prover intuição sobre
+os conceitos principais e habilitar o estudante a entender suas implicações na escolha dos
+algoritmos.
+
+## Importância da análise de complexidade
+
+Ao planejarmos a solução para um problema computacional, teremos que escolher uma entre
+várias possíveis alternativas.  Diversos aspectos podem ser considerados para escolha,
+como facilidade de implementação, familiaridade, ou conveniência.  No entanto, o ponto
+muito importante a ser considerado é *eficiência* do algoritmo.
+
+Podemos definir o conceito de *eficiência* em termos de dois pontos de vista:
+de *tempo* e de *memória*.  Dependendo da situação, as diferenças de eficiência podem:
+
+- **Ser irrelevantes**, isto é, ambos os algoritmos possuem eficiência similar para
+  entradas de qualquer tamanho; ou
+- **Ser relevantes**, isto é, apresentam custos significantemente diferentes especialmente
+  para entradas grandes.
+
+Muitas vezes, para pequenos problemas, a diferença entre algoritmos torna-se irrelevante.
+Por isso, o foco deste capítulo é analisar o custo computacional dos algoritmos
+assintoticamente, ou seja, para entradas muito grandes.
+
+Veremos, na próxima parte do livro, como estes conceitos se aplicam também na escolha das
+estruturas de dados.
+
+<!-- vim: set spell spelllang=pt tw=90: -->
