@@ -26,6 +26,7 @@ subrotinas-e-recursão
 tipos-avançados
 memória-e-ponteiros
 complexidade-computacional
+importância-da-análise-de-complexidade
 sequências
 listas
 modelo-abstrato-e-operações-em-listas
