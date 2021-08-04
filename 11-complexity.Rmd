@@ -27,4 +27,12 @@ assintoticamente, ou seja, para entradas muito grandes.
 Veremos, na próxima parte do livro, como estes conceitos se aplicam também na escolha das
 estruturas de dados.
 
+----
+
+*Exercícios*:
+
+1. Escreva um programa que ordene um vetor numérico com tamanho e valores arbitrários.
+   Derive a função de custo de tempo em função do tamanho do vetor de entrada.
+   Indique a ordem de complexidade (notação O-grande) de tempo e de espaço do seu algoritmo.
+
 <!-- vim: set spell spelllang=pt tw=90: -->

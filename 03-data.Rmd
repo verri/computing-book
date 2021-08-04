@@ -66,6 +66,8 @@ indicadas em negrito):
 mesmo problema.  Isto vai depender dos objetivos, dos requisitos do sistema e, até mesmo,
 de limitações técnicas ou conveniências impostas pela linguagem de programação.
 
+----
+
 *Exercícios*:
 
 1. Proponha uma decomposição alternativa para o tipo "funcionário" e justificar vantagens e
