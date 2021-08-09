@@ -30,7 +30,9 @@ estruturas de dados.
 
 ----
 
-![](https://youtu.be/i49jo_OYblQ)
+```{r echo=FALSE}
+knitr::include_url("https://www.youtube.com/embed/i49jo_OYblQ?rel=0")
+```
 
 ----
 
