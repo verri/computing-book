@@ -17,8 +17,8 @@ de *tempo* e de *memória*.  Dependendo da situação, as diferenças de eficiê
 
 - **Ser irrelevantes**, isto é, ambos os algoritmos possuem eficiência similar para
   entradas de qualquer tamanho; ou
-- **Ser relevantes**, isto é, apresentam custos significantemente diferentes especialmente
-  para entradas grandes.
+- **Ser relevantes**, isto é, apresentam custos significantemente diferentes, isto é,
+  diferença proporcional ao tamanho da entrada.
 
 Muitas vezes, para pequenos problemas, a diferença entre algoritmos torna-se irrelevante.
 Por isso, o foco deste capítulo é analisar o custo computacional dos algoritmos
@@ -26,6 +26,11 @@ assintoticamente, ou seja, para entradas muito grandes.
 
 Veremos, na próxima parte do livro, como estes conceitos se aplicam também na escolha das
 estruturas de dados.
+
+
+----
+
+![](https://youtu.be/i49jo_OYblQ)
 
 ----
 
