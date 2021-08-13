@@ -55,12 +55,18 @@ problema sem a necessidade de passar por cada elemento $x \in v$.
 
 Para construção da solução, observamos a seguinte propriedade:
 
-- Se $v_i < x$, sabemos que $x \neq v_j$ para todo $j \leq i$; e
-- Se $v_i > x$, que $x \neq v_j$ para todo $j \geq i$.
+- Se $k > v_i$, sabemos que $k \neq v_j$ para todo $j \leq i$; e
+- Se $k < v_i$, que $k \neq v_j$ para todo $j \geq i$.
 
 Assim, podemos construir uma solução recursiva para o problema.
 
-\dots
+*Passo 1*: A instância mínima acontece quando $n = 0$ e, consequentemente, $k \not\in v$.
+
+*Passo 2*: Podemos subdividir o problema a depender do elemento $m = v_{\lfloor n/2 \rfloor}$:
+
+- Se $k = m$, então $k \in v$;
+- Se $k < m$, então buscamos $k$ em $[v_j : 1 < j < \lfloor n/2 \rfloor]$; ou
+- Se $k > m$, então buscamos $k$ em $[v_j : \lfloor n/2 \rfloor < j \leq n]$.
 
 ---
 
