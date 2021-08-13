@@ -22,10 +22,12 @@ comandos-de-repetição
 interrupções
 tratamento-de-erros-e-exceções
 entrada-e-saída
-subrotinas-e-recursão
+sub-rotinas-e-recursão
+recursão
+busca-binária
 tipos-avançados
 memória-e-ponteiros
-complexidade-computacional
+complexity
 importância-da-análise-de-complexidade
 sequências
 listas
