@@ -1,0 +1,7 @@
+# (PART) Estruturas de dados {-}
+
+# Tipo Abstrato de Dados
+
+*Exemplo*: conjuntos de números inteiros.
+
+<!-- vim: set spell spelllang=pt tw=90: -->

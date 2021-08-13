@@ -1,5 +1,3 @@
-# (PART) Estruturas de dados {-}
-
 # Sequências
 
 Há dois principais tipos de sequências: lista e colônia^[Em inglês, *colony*.].
