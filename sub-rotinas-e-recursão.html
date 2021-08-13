@@ -257,11 +257,17 @@ Deste modo, para o caso específico <span class="math inline">\(c = a\)</span>, 
 problema sem a necessidade de passar por cada elemento <span class="math inline">\(x \in v\)</span>.</p>
 <p>Para construção da solução, observamos a seguinte propriedade:</p>
 <ul>
-<li>Se <span class="math inline">\(v_i &lt; x\)</span>, sabemos que <span class="math inline">\(x \neq v_j\)</span> para todo <span class="math inline">\(j \leq i\)</span>; e</li>
-<li>Se <span class="math inline">\(v_i &gt; x\)</span>, que <span class="math inline">\(x \neq v_j\)</span> para todo <span class="math inline">\(j \geq i\)</span>.</li>
+<li>Se <span class="math inline">\(k &gt; v_i\)</span>, sabemos que <span class="math inline">\(k \neq v_j\)</span> para todo <span class="math inline">\(j \leq i\)</span>; e</li>
+<li>Se <span class="math inline">\(k &lt; v_i\)</span>, que <span class="math inline">\(k \neq v_j\)</span> para todo <span class="math inline">\(j \geq i\)</span>.</li>
 </ul>
 <p>Assim, podemos construir uma solução recursiva para o problema.</p>
-<p></p>
+<p><em>Passo 1</em>: A instância mínima acontece quando <span class="math inline">\(n = 0\)</span> e, consequentemente, <span class="math inline">\(k \not\in v\)</span>.</p>
+<p><em>Passo 2</em>: Podemos subdividir o problema a depender do elemento <span class="math inline">\(m = v_{\lfloor n/2 \rfloor}\)</span>:</p>
+<ul>
+<li>Se <span class="math inline">\(k = m\)</span>, então <span class="math inline">\(k \in v\)</span>;</li>
+<li>Se <span class="math inline">\(k &lt; m\)</span>, então buscamos <span class="math inline">\(k\)</span> em <span class="math inline">\([v_j : 1 &lt; j &lt; \lfloor n/2 \rfloor]\)</span>; ou</li>
+<li>Se <span class="math inline">\(k &gt; m\)</span>, então buscamos <span class="math inline">\(k\)</span> em <span class="math inline">\([v_j : \lfloor n/2 \rfloor &lt; j \leq n]\)</span>.</li>
+</ul>
 <hr />
 <p><em>Exercícios</em>:</p>
 <ol style="list-style-type: decimal">
