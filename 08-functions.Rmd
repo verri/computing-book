@@ -49,7 +49,7 @@ int s(int a, int b) {
 
 ### Busca binária
 
-Dada uma sequência $v$ com $n$ objetos ordenados, queremos verificar se um determinado objeto
+Dada uma sequência $v$ com $n$ objetos ordenados de maneira crescente, queremos verificar se um determinado objeto
 $k$ pertence ou não à sequência.  É possível escrever um algoritmo recursivo que resolve o
 problema sem a necessidade de passar por cada elemento $x \in v$.
 
