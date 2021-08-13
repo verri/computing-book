@@ -1,4 +1,4 @@
-# Complexidade computacional
+# Complexidade computacional {#complexity}
 
 Neste capítulo, veremos noções básicas de complexidade de algoritmos.  Note que não
 estudaremos formalmente ou profundamente os conceitos.  O objetivo é prover intuição sobre
