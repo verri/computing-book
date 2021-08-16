@@ -29,6 +29,7 @@ tipos-avançados
 memória-e-ponteiros
 complexity
 importância-da-análise-de-complexidade
+tipos-abstratos-de-dados
 sequências
 listas
 modelo-abstrato-e-operações-em-listas
