@@ -2,9 +2,24 @@
 
 # Tipos abstratos de dados
 
-Um *tipo abstrato de dados* é uma classe de objectos cujo comportamento lógico é definido
+Um *tipo abstrato de dados* é uma classe de objetos cujo comportamento lógico é definido
 por um conjunto de valores e operações [@Dale1996].
 
 *Exemplo*: conjuntos de números inteiros (veja vídeo).
+
+```{r echo=FALSE}
+knitr::include_url("https://www.youtube.com/embed/B3cCCLopu-c?rel=0")
+```
+
+---
+
+*Exercícios*:
+
+1. Defina e implemente um TAD para pontos num plano.
+1. Defina e implemente um TAD para polígonos gerais.
+1. Defina e implemente um TAD para números complexos e implemente.
+1. Implemente o TAD "Conjunto de Números Inteiros" com as seguintes operações: criar
+   conjunto vazio, criar conjunto a partir de um intervalo finito, união, intersecção,
+   diferença, e verificar se contém um determinado número.
 
 <!-- vim: set spell spelllang=pt tw=90: -->
