@@ -10,6 +10,7 @@ output: bookdown::gitbook
 documentclass: book
 bibliography: [book.bib]
 biblio-style: apalike
+biblio-title: Referências
 link-citations: yes
 github-repo: verri/computing-book
 description: ""

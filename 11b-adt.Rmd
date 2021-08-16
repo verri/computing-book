@@ -1,7 +1,10 @@
 # (PART) Estruturas de dados {-}
 
-# Tipo Abstrato de Dados
+# Tipos abstratos de dados
 
-*Exemplo*: conjuntos de números inteiros.
+Um *tipo abstrato de dados* é uma classe de objectos cujo comportamento lógico é definido
+por um conjunto de valores e operações [@Dale1996].
+
+*Exemplo*: conjuntos de números inteiros (veja vídeo).
 
 <!-- vim: set spell spelllang=pt tw=90: -->
