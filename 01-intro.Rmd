@@ -1,6 +1,6 @@
 # (PART) Introdução {-}
 
-# Preliminares
+# Preliminares {#preliminares}
 
 Neste capítulo, motivaremos a importância da computação em diversos domínios,
 contaremos um pouco da história da computação e como ela se relaciona com os
@@ -22,7 +22,7 @@ Uma opção seria
 \[ y = x \cdot \underbrace{(1 + j) \cdot \text{...} \cdot (1 + j)}_{n\text{ vezes}}\text{,} \]
 ou interpretando as instruções:
 
-- Multiplique o fator $(1 + j)$ $n$ vezes;
+- Multiplique $n$ vezes o fator $(1 + j)$;
 - Multiplique o resultado anterior pelo valor $x$;
 - Utilize o resultado anterior como resposta para o problema.
 
@@ -35,16 +35,72 @@ lógicos de conjunção, disjunção e negação!
 
 É exatamente isso que os computadores digitais fazem.
 
-## História
-
 ## Definições
+
+Nesta seção, definimos os principais conceitos utilizados ao longo do livro.
 
 ### Computação
 
-### Computadores digitais
+As *Ciências de Computação* englobam o estudo de duas principais subáreas:
 
-### Dados
+1. os *Sistemas Computacionais*; e
+2. a *Computação* (ou *Métodos Computacionais*).
 
-### Algoritmos
+De maneira geral, Sistemas Computacionais correspondem ao estudo de componentes
+de hardware, lógica digital, sistemas operacionais, segurança cibernética e
+outras tecnologias computacionais.  Normalmente, em cursos de Engenharia de
+Computação e Engenharia Elétrica há maior ênfase nesses tópicos.
 
-### Programação
+Por outro lado, a *Computação* é uma Ciência Matemática com foco no estudo dos
+métodos que possibilitam e alimentam as tecnologias computacionais.  Entre os
+tópicos de estudo estão a teoria da computação, linguagens de programação,
+algoritmos e estruturas de dados.  Devido à ubiquidade de sistemas
+computacionais em nossa sociedade, a formação de todo engenheiro deve
+contemplar o entendimento e o domínio destes métodos para solução de problemas
+de engenharia.
+
+### Computador digital
+
+*Computadores digitais* são dispositivos eletrônicos capazes de processar
+informação por meio de operações lógicas e aritméticas.  Como consequência de
+sua natureza digital são restritos ao processamento de informação **discreta**
+e **finita**.
+
+Esta limitação traz consigo características marcantes que diferem as soluções
+computacionais das soluções exatas (amplamente estudadas em disciplinas de
+matemática, física e similares no ensino básico e superior).
+
+Quando lidamos com problemas computacionais, devemos levar em consideração
+restrições de hardware, escolha da tecnologia mais apropriada, custo
+computacional (custos relacionados ao tempo de execução, uso de memória e
+outros recursos computacionais), representação da informação (estruturas de
+dados), erros numéricos, bem como ponderar vantagens e desvantagens de cada
+algoritmo que potencialmente resolve o problema.
+
+Ao longo do livro, abordaremos cada um desses tópicos na profundidade
+suficiente para um engenheiro resolver os diversos problemas computacionais em
+sua carreira.
+
+### Dado digital
+
+WIP
+
+### Algoritmo
+
+WIP
+
+### Programa de computador
+
+Um *programa de computador* é uma sequência de operações e instruções que
+realizam uma tarefa.  Um programa é sempre executado num computador; e, ainda,
+são programas que fazem os computadores funcionarem tornando-os úteis. Em
+outras palavras, programa de computador é a instância "concreta" de um
+algoritmo.
+
+### Programação e linguagem de programação
+
+WIP
+
+### Compilador
+
+WIP

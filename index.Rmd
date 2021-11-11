@@ -65,4 +65,76 @@ Agradeço ao [Prof. Johnny Marques](http://www.comp.ita.br/~johnny/) por disponi
 material didático para o preparo do Capítulo sobre Complexidade Computacional e vários
 capítulos da Parte III Estruturas de Dados.
 
+# Guia ITA {-}
+
+Este livro é utilizado como bibliografia complementar nas disciplinas CES-10 e CES-11 do
+ITA.
+
+Para facilitar o acompanhamento destas disciplinas, disponibilizamos um guia conectando os
+tópicos da ementa com os capítulos deste livro.
+
+Table: CES-10 -- Introdução à Computação
+
+-----------------------------------------------------------------------------------------
+Ementa                                         Capítulos
+---------------------------------------------  ------------------------------------------
+Conceitos primários: computador, algoritmo,    Capítulo \@ref(preliminares)
+programa, linguagem de programação,
+compilador.
+
+Representação de informações: sistemas de      Capítulos \@ref(logica)
+numeração, mudança de base, aritmética         e \@ref(representacao)
+binária, operações lógicas, textos e
+instruções.
+
+Evolução das linguagens de programação.
+
+Unidades básicas de um computador.
+
+Software básico para computadores.
+
+Desenvolvimento de algoritmos: linguagens
+para algoritmos e refinamento passo a passo.
+
+Comandos de uma linguagem procedimental:
+atribuição, entrada e saída, condicionais,
+repetitivos e seletivos.
+
+Variáveis escalares e estruturadas
+homogêneas e heterogêneas.
+
+Subprogramação: funções, procedimentos,
+passagem de parâmetros, recursividade.
+
+Ponteiros.
+-----------------------------------------------------------------------------------------
+
+Table: CES-11 -- Algoritmos e Estruturas de Dados I
+
+-----------------------------------------------------------------------------------------
+Ementa                                         Capítulos
+---------------------------------------------  ------------------------------------------
+Tópicos em recursividade.
+
+Técnicas para desenvolvimento de algoritmos.
+
+Noções de complexidade de algoritmos.
+
+Vetores e encadeamento de estruturas.
+
+Pilhas, filas e deques.
+
+Árvores gerais e binárias.
+
+Grafos orientados e não orientados.
+
+Algoritmos básicos para grafos.
+
+Filas de prioridades.
+
+Métodos básicos de Ordenação.
+
+Noções de programação orientada a objetos.
+-----------------------------------------------------------------------------------------
+
 <!-- vim: set spell spelllang=pt tw=90: -->
