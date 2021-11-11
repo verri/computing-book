@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Algoritmos | Computando</title>
-  <meta name="description" content="4 Algoritmos | Computando" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <title>Guia ITA | Computando</title>
+  <meta name="description" content="Guia ITA | Computando" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Algoritmos | Computando" />
+  <meta property="og:title" content="Guia ITA | Computando" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="verri/computing-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Algoritmos | Computando" />
+  <meta name="twitter:title" content="Guia ITA | Computando" />
   
   
   
@@ -25,16 +25,17 @@
 <meta name="author" content="Lourenço A. Pereira Jr." />
 
 
-<meta name="date" content="2021-08-16" />
+<meta name="date" content="2021-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="representação-de-dados-digitais.html"/>
-<link rel="next" href="introdução-à-programação.html"/>
+<link rel="prev" href="agradecimentos.html"/>
+<link rel="next" href="preliminares.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -137,23 +137,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
 <li class="chapter" data-level="" data-path="sobre-os-autores.html"><a href="sobre-os-autores.html"><i class="fa fa-check"></i>Sobre os autores</a></li>
 <li class="chapter" data-level="" data-path="agradecimentos.html"><a href="agradecimentos.html"><i class="fa fa-check"></i>Agradecimentos</a></li>
+<li class="chapter" data-level="" data-path="guia-ita.html"><a href="guia-ita.html"><i class="fa fa-check"></i>Guia ITA</a></li>
 <li class="part"><span><b>I Introdução</b></span></li>
 <li class="chapter" data-level="1" data-path="preliminares.html"><a href="preliminares.html"><i class="fa fa-check"></i><b>1</b> Preliminares</a><ul>
 <li class="chapter" data-level="1.1" data-path="preliminares.html"><a href="preliminares.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
-<li class="chapter" data-level="1.2" data-path="preliminares.html"><a href="preliminares.html#história"><i class="fa fa-check"></i><b>1.2</b> História</a></li>
-<li class="chapter" data-level="1.3" data-path="preliminares.html"><a href="preliminares.html#definições"><i class="fa fa-check"></i><b>1.3</b> Definições</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="preliminares.html"><a href="preliminares.html#computação"><i class="fa fa-check"></i><b>1.3.1</b> Computação</a></li>
-<li class="chapter" data-level="1.3.2" data-path="preliminares.html"><a href="preliminares.html#computadores-digitais"><i class="fa fa-check"></i><b>1.3.2</b> Computadores digitais</a></li>
-<li class="chapter" data-level="1.3.3" data-path="preliminares.html"><a href="preliminares.html#dados"><i class="fa fa-check"></i><b>1.3.3</b> Dados</a></li>
-<li class="chapter" data-level="1.3.4" data-path="preliminares.html"><a href="preliminares.html#algoritmos"><i class="fa fa-check"></i><b>1.3.4</b> Algoritmos</a></li>
-<li class="chapter" data-level="1.3.5" data-path="preliminares.html"><a href="preliminares.html#programação"><i class="fa fa-check"></i><b>1.3.5</b> Programação</a></li>
+<li class="chapter" data-level="1.2" data-path="preliminares.html"><a href="preliminares.html#definições"><i class="fa fa-check"></i><b>1.2</b> Definições</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="preliminares.html"><a href="preliminares.html#computação"><i class="fa fa-check"></i><b>1.2.1</b> Computação</a></li>
+<li class="chapter" data-level="1.2.2" data-path="preliminares.html"><a href="preliminares.html#computador-digital"><i class="fa fa-check"></i><b>1.2.2</b> Computador digital</a></li>
+<li class="chapter" data-level="1.2.3" data-path="preliminares.html"><a href="preliminares.html#dado-digital"><i class="fa fa-check"></i><b>1.2.3</b> Dado digital</a></li>
+<li class="chapter" data-level="1.2.4" data-path="preliminares.html"><a href="preliminares.html#algoritmo"><i class="fa fa-check"></i><b>1.2.4</b> Algoritmo</a></li>
+<li class="chapter" data-level="1.2.5" data-path="preliminares.html"><a href="preliminares.html#programa-de-computador"><i class="fa fa-check"></i><b>1.2.5</b> Programa de computador</a></li>
+<li class="chapter" data-level="1.2.6" data-path="preliminares.html"><a href="preliminares.html#programação-e-linguagem-de-programação"><i class="fa fa-check"></i><b>1.2.6</b> Programação e linguagem de programação</a></li>
+<li class="chapter" data-level="1.2.7" data-path="preliminares.html"><a href="preliminares.html#compilador"><i class="fa fa-check"></i><b>1.2.7</b> Compilador</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="lógica-digital.html"><a href="lógica-digital.html"><i class="fa fa-check"></i><b>2</b> Lógica digital</a></li>
-<li class="chapter" data-level="3" data-path="representação-de-dados-digitais.html"><a href="representação-de-dados-digitais.html"><i class="fa fa-check"></i><b>3</b> Representação de dados digitais</a><ul>
-<li class="chapter" data-level="3.1" data-path="representação-de-dados-digitais.html"><a href="representação-de-dados-digitais.html#tipos-de-informação"><i class="fa fa-check"></i><b>3.1</b> Tipos de informação</a></li>
+<li class="chapter" data-level="2" data-path="logica.html"><a href="logica.html"><i class="fa fa-check"></i><b>2</b> Lógica digital</a></li>
+<li class="chapter" data-level="3" data-path="representacao.html"><a href="representacao.html"><i class="fa fa-check"></i><b>3</b> Representação de dados digitais</a><ul>
+<li class="chapter" data-level="3.1" data-path="representacao.html"><a href="representacao.html#tipos-de-informação"><i class="fa fa-check"></i><b>3.1</b> Tipos de informação</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="algoritmos-1.html"><a href="algoritmos-1.html"><i class="fa fa-check"></i><b>4</b> Algoritmos</a></li>
+<li class="chapter" data-level="4" data-path="algoritmos.html"><a href="algoritmos.html"><i class="fa fa-check"></i><b>4</b> Algoritmos</a></li>
 <li class="part"><span><b>II Programação</b></span></li>
 <li class="chapter" data-level="5" data-path="introdução-à-programação.html"><a href="introdução-à-programação.html"><i class="fa fa-check"></i><b>5</b> Introdução à programação</a><ul>
 <li class="chapter" data-level="5.1" data-path="introdução-à-programação.html"><a href="introdução-à-programação.html#primeiro-programa-de-alto-nível"><i class="fa fa-check"></i><b>5.1</b> Primeiro programa de alto nível</a></li>
@@ -213,9 +215,138 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="algoritmos-1" class="section level1">
-<h1><span class="header-section-number">4</span> Algoritmos</h1>
-<p>Algoritmos, diagramas de fluxo, pseudo-código.</p>
+<div id="guia-ita" class="section level1 unnumbered">
+<h1>Guia ITA</h1>
+<p>Este livro é utilizado como bibliografia complementar nas disciplinas CES-10 e CES-11 do
+ITA.</p>
+<p>Para facilitar o acompanhamento destas disciplinas, disponibilizamos um guia conectando os
+tópicos da ementa com os capítulos deste livro.</p>
+<table>
+<caption>CES-10 – Introdução à Computação</caption>
+<colgroup>
+<col width="52%" />
+<col width="47%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ementa</th>
+<th align="left">Capítulos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Conceitos primários: computador, algoritmo,
+programa, linguagem de programação,
+compilador.</td>
+<td align="left">Capítulo <a href="preliminares.html#preliminares">1</a></td>
+</tr>
+<tr class="even">
+<td align="left">Representação de informações: sistemas de
+numeração, mudança de base, aritmética
+binária, operações lógicas, textos e
+instruções.</td>
+<td align="left">Capítulos <a href="logica.html#logica">2</a>
+e <a href="representacao.html#representacao">3</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Evolução das linguagens de programação.</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Unidades básicas de um computador.</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Software básico para computadores.</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Desenvolvimento de algoritmos: linguagens
+para algoritmos e refinamento passo a passo.</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Comandos de uma linguagem procedimental:
+atribuição, entrada e saída, condicionais,
+repetitivos e seletivos.</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Variáveis escalares e estruturadas
+homogêneas e heterogêneas.</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Subprogramação: funções, procedimentos,
+passagem de parâmetros, recursividade.</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Ponteiros.</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>CES-11 – Algoritmos e Estruturas de Dados I</caption>
+<colgroup>
+<col width="52%" />
+<col width="47%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ementa</th>
+<th align="left">Capítulos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Tópicos em recursividade.</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Técnicas para desenvolvimento de algoritmos.</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Noções de complexidade de algoritmos.</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Vetores e encadeamento de estruturas.</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Pilhas, filas e deques.</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Árvores gerais e binárias.</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Grafos orientados e não orientados.</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Algoritmos básicos para grafos.</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Filas de prioridades.</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Métodos básicos de Ordenação.</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Noções de programação orientada a objetos.</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<!-- vim: set spell spelllang=pt tw=90: -->
 
 </div>
 
@@ -226,12 +357,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="representação-de-dados-digitais.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introdução-à-programação.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="agradecimentos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="preliminares.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -272,7 +402,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

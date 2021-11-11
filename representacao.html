@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Lógica digital | Computando</title>
-  <meta name="description" content="2 Lógica digital | Computando" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <title>3 Representação de dados digitais | Computando</title>
+  <meta name="description" content="3 Representação de dados digitais | Computando" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Lógica digital | Computando" />
+  <meta property="og:title" content="3 Representação de dados digitais | Computando" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="verri/computing-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Lógica digital | Computando" />
+  <meta name="twitter:title" content="3 Representação de dados digitais | Computando" />
   
   
   
@@ -25,16 +25,17 @@
 <meta name="author" content="Lourenço A. Pereira Jr." />
 
 
-<meta name="date" content="2021-08-16" />
+<meta name="date" content="2021-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="preliminares.html"/>
-<link rel="next" href="representação-de-dados-digitais.html"/>
+<link rel="prev" href="logica.html"/>
+<link rel="next" href="algoritmos.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -137,23 +137,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
 <li class="chapter" data-level="" data-path="sobre-os-autores.html"><a href="sobre-os-autores.html"><i class="fa fa-check"></i>Sobre os autores</a></li>
 <li class="chapter" data-level="" data-path="agradecimentos.html"><a href="agradecimentos.html"><i class="fa fa-check"></i>Agradecimentos</a></li>
+<li class="chapter" data-level="" data-path="guia-ita.html"><a href="guia-ita.html"><i class="fa fa-check"></i>Guia ITA</a></li>
 <li class="part"><span><b>I Introdução</b></span></li>
 <li class="chapter" data-level="1" data-path="preliminares.html"><a href="preliminares.html"><i class="fa fa-check"></i><b>1</b> Preliminares</a><ul>
 <li class="chapter" data-level="1.1" data-path="preliminares.html"><a href="preliminares.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
-<li class="chapter" data-level="1.2" data-path="preliminares.html"><a href="preliminares.html#história"><i class="fa fa-check"></i><b>1.2</b> História</a></li>
-<li class="chapter" data-level="1.3" data-path="preliminares.html"><a href="preliminares.html#definições"><i class="fa fa-check"></i><b>1.3</b> Definições</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="preliminares.html"><a href="preliminares.html#computação"><i class="fa fa-check"></i><b>1.3.1</b> Computação</a></li>
-<li class="chapter" data-level="1.3.2" data-path="preliminares.html"><a href="preliminares.html#computadores-digitais"><i class="fa fa-check"></i><b>1.3.2</b> Computadores digitais</a></li>
-<li class="chapter" data-level="1.3.3" data-path="preliminares.html"><a href="preliminares.html#dados"><i class="fa fa-check"></i><b>1.3.3</b> Dados</a></li>
-<li class="chapter" data-level="1.3.4" data-path="preliminares.html"><a href="preliminares.html#algoritmos"><i class="fa fa-check"></i><b>1.3.4</b> Algoritmos</a></li>
-<li class="chapter" data-level="1.3.5" data-path="preliminares.html"><a href="preliminares.html#programação"><i class="fa fa-check"></i><b>1.3.5</b> Programação</a></li>
+<li class="chapter" data-level="1.2" data-path="preliminares.html"><a href="preliminares.html#definições"><i class="fa fa-check"></i><b>1.2</b> Definições</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="preliminares.html"><a href="preliminares.html#computação"><i class="fa fa-check"></i><b>1.2.1</b> Computação</a></li>
+<li class="chapter" data-level="1.2.2" data-path="preliminares.html"><a href="preliminares.html#computador-digital"><i class="fa fa-check"></i><b>1.2.2</b> Computador digital</a></li>
+<li class="chapter" data-level="1.2.3" data-path="preliminares.html"><a href="preliminares.html#dado-digital"><i class="fa fa-check"></i><b>1.2.3</b> Dado digital</a></li>
+<li class="chapter" data-level="1.2.4" data-path="preliminares.html"><a href="preliminares.html#algoritmo"><i class="fa fa-check"></i><b>1.2.4</b> Algoritmo</a></li>
+<li class="chapter" data-level="1.2.5" data-path="preliminares.html"><a href="preliminares.html#programa-de-computador"><i class="fa fa-check"></i><b>1.2.5</b> Programa de computador</a></li>
+<li class="chapter" data-level="1.2.6" data-path="preliminares.html"><a href="preliminares.html#programação-e-linguagem-de-programação"><i class="fa fa-check"></i><b>1.2.6</b> Programação e linguagem de programação</a></li>
+<li class="chapter" data-level="1.2.7" data-path="preliminares.html"><a href="preliminares.html#compilador"><i class="fa fa-check"></i><b>1.2.7</b> Compilador</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="lógica-digital.html"><a href="lógica-digital.html"><i class="fa fa-check"></i><b>2</b> Lógica digital</a></li>
-<li class="chapter" data-level="3" data-path="representação-de-dados-digitais.html"><a href="representação-de-dados-digitais.html"><i class="fa fa-check"></i><b>3</b> Representação de dados digitais</a><ul>
-<li class="chapter" data-level="3.1" data-path="representação-de-dados-digitais.html"><a href="representação-de-dados-digitais.html#tipos-de-informação"><i class="fa fa-check"></i><b>3.1</b> Tipos de informação</a></li>
+<li class="chapter" data-level="2" data-path="logica.html"><a href="logica.html"><i class="fa fa-check"></i><b>2</b> Lógica digital</a></li>
+<li class="chapter" data-level="3" data-path="representacao.html"><a href="representacao.html"><i class="fa fa-check"></i><b>3</b> Representação de dados digitais</a><ul>
+<li class="chapter" data-level="3.1" data-path="representacao.html"><a href="representacao.html#tipos-de-informação"><i class="fa fa-check"></i><b>3.1</b> Tipos de informação</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="algoritmos-1.html"><a href="algoritmos-1.html"><i class="fa fa-check"></i><b>4</b> Algoritmos</a></li>
+<li class="chapter" data-level="4" data-path="algoritmos.html"><a href="algoritmos.html"><i class="fa fa-check"></i><b>4</b> Algoritmos</a></li>
 <li class="part"><span><b>II Programação</b></span></li>
 <li class="chapter" data-level="5" data-path="introdução-à-programação.html"><a href="introdução-à-programação.html"><i class="fa fa-check"></i><b>5</b> Introdução à programação</a><ul>
 <li class="chapter" data-level="5.1" data-path="introdução-à-programação.html"><a href="introdução-à-programação.html#primeiro-programa-de-alto-nível"><i class="fa fa-check"></i><b>5.1</b> Primeiro programa de alto nível</a></li>
@@ -213,22 +215,133 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lógica-digital" class="section level1">
-<h1><span class="header-section-number">2</span> Lógica digital</h1>
-<p>Operadores lógicos, circuitos lógicos.</p>
+<div id="representacao" class="section level1">
+<h1><span class="header-section-number">3</span> Representação de dados digitais</h1>
+<p>Quando resolvemos um problema utilizando um programa de computador, é fundamental que
+planejemos a representação dos diferentes tipos de informações e o relacionamento
+entre eles.</p>
+<p>No entanto, somos limitados pelas restrições impostas pelos sistemas computacionais
+utilizados.</p>
+<p>Neste capítulo, vamos estudar os tipos de dados mais comuns e as diferentes maneiras de
+representá-los.</p>
+<div id="tipos-de-informação" class="section level2">
+<h2><span class="header-section-number">3.1</span> Tipos de informação</h2>
+<p>Uma maneira proveitosa de estudar e organizar informações é encontrar os elementos
+indivisíveis que as compõem.</p>
+<p>Vamos considerar duas definições:</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definição 3.1  (Informação escalar) </strong></span>Informação composta de um único elemento, indivisível.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definição 3.2  (Informação estruturada) </strong></span>Informação composta por mais de um elemento (escalar ou estruturado), podem ser dividas em partes menores.</p>
+</div>
+<p>Para exemplificar estes conceitos, consideremos o problema de armazenar os dados de
+funcionários de uma empresa.</p>
+<table>
+<caption>Funcionários de uma empresa.</caption>
+<thead>
+<tr class="header">
+<th>Nome</th>
+<th>Endereço</th>
+<th>Data de nascimento</th>
+<th>Sexo</th>
+<th>Setor</th>
+<th>Salário</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sherlock Holmes</td>
+<td>221B Baker St., London</td>
+<td>06/01/1954</td>
+<td>M</td>
+<td>Jurídico</td>
+<td>£ 7.451,43</td>
+</tr>
+<tr class="even">
+<td>Dudley Dursley</td>
+<td>4 Privet Drive, Little Whinging, Surrey</td>
+<td>23/06/1980</td>
+<td>M</td>
+<td>Administrativo</td>
+<td>£ 21.011,12</td>
+</tr>
+<tr class="odd">
+<td>Homer Simpson</td>
+<td>742 Evergreen Terrace, Springfield</td>
+<td>12/05/1956</td>
+<td>M</td>
+<td>Produção</td>
+<td>$ 1.951,18</td>
+</tr>
+</tbody>
+</table>
+<p>Para cada um dos funcionários, as seguintes informações são registradas: nome, endereço,
+data de nascimento, sexo, setor que atua e seu salário. Assim, a representação do tipo
+“funcionário” é uma composição de texto, números, datas, categorias.</p>
+<p>Uma possível maneira de decompor este tipo é a seguinte (informações escalares são
+indicadas em negrito):</p>
+<ul>
+<li>Funcionário
+<ul>
+<li>Nome
+<ul>
+<li><strong>Primeiro nome</strong></li>
+<li><strong>Sobrenome</strong></li>
+</ul></li>
+<li>Endereço
+<ul>
+<li><strong>Número</strong></li>
+<li><strong>Logradouro</strong></li>
+<li><strong>Cidade</strong></li>
+<li><strong>País</strong></li>
+</ul></li>
+<li>Data de nascimento
+<ul>
+<li><strong>Dia</strong></li>
+<li><strong>Mês</strong></li>
+<li><strong>Ano</strong></li>
+</ul></li>
+<li><strong>Sexo</strong></li>
+<li><strong>Setor</strong></li>
+<li>Salário
+<ul>
+<li><strong>Moeda</strong></li>
+<li><strong>Valor</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>É importante frisar que é possível que exista mais de uma decomposição válida para um
+mesmo problema. Isto vai depender dos objetivos, dos requisitos do sistema e, até mesmo,
+de limitações técnicas ou conveniências impostas pela linguagem de programação.</p>
+<hr />
+<p><em>Exercícios</em>:</p>
+<ol style="list-style-type: decimal">
+<li>Proponha uma decomposição alternativa para o tipo “funcionário” e justificar vantagens e
+desvantagens.</li>
+<li>Implemente, em uma linguagem de programação, a estrutura de dados para armazenar dados
+do tipo “funcionário”.</li>
+<li>Considere o desenvolvimento de um software para armazenar e manipular informações de
+livros disponíveis em um biblioteca. Proponha quais informações deverão ser
+consideradas e as classifique em escalar ou estruturada. Decomponha as informações
+estruturadas até os elementos indivisíveis. Agrupe as informações escalares de acordo
+com sua natureza. <!-- gancho com as próximas seções --></li>
+</ol>
+<!-- Sistemas numéricos, representação de diferentes tipos. -->
+<!-- vim: set spell spelllang=pt tw=90: -->
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="preliminares.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="representação-de-dados-digitais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="logica.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="algoritmos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -269,7 +382,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {
