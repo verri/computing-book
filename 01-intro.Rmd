@@ -83,7 +83,11 @@ sua carreira.
 
 ### Dado digital
 
-WIP
+Em computadores digitais, toda informação é representada por um conjunto finito
+de *bits*.  Bit é a menor unidade de informação e pode assumir dois valores:
+zero ou um.
+
+WIP: byte, and word.
 
 ### Algoritmo
 
