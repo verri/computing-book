@@ -283,35 +283,35 @@ desejáveis.</p>
 <p>Além dessas operações, há outras mais triviais, como consultar o tamanho,
 consultar a capacidade, verificar se está cheia, e verificar se está vazia.</p>
 <p>Em C++17, podemos definir uma interface<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> básica:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="sequências.html#cb3-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">class</span> list {</span>
-<span id="cb3-2"><a href="sequências.html#cb3-2"></a><span class="kw">public</span>:</span>
-<span id="cb3-3"><a href="sequências.html#cb3-3"></a>  <span class="kw">explicit</span> list(<span class="bu">std::</span>size_t capacity);</span>
-<span id="cb3-4"><a href="sequências.html#cb3-4"></a>  ~list() <span class="kw">noexcept</span>;</span>
-<span id="cb3-5"><a href="sequências.html#cb3-5"></a></span>
-<span id="cb3-6"><a href="sequências.html#cb3-6"></a>  list(<span class="at">const</span> list&amp;);</span>
-<span id="cb3-7"><a href="sequências.html#cb3-7"></a>  list(list&amp;&amp;) <span class="kw">noexcept</span>;</span>
-<span id="cb3-8"><a href="sequências.html#cb3-8"></a></span>
-<span id="cb3-9"><a href="sequências.html#cb3-9"></a>  <span class="kw">auto</span> <span class="kw">operator</span>=(<span class="at">const</span> list&amp;) -&gt; list&amp;;</span>
-<span id="cb3-10"><a href="sequências.html#cb3-10"></a>  <span class="kw">auto</span> <span class="kw">operator</span>=(list&amp;&amp;) <span class="kw">noexcept</span> -&gt; list&amp;;</span>
-<span id="cb3-11"><a href="sequências.html#cb3-11"></a></span>
-<span id="cb3-12"><a href="sequências.html#cb3-12"></a>  <span class="kw">auto</span> empty() -&gt; <span class="dt">void</span>;</span>
-<span id="cb3-13"><a href="sequências.html#cb3-13"></a></span>
-<span id="cb3-14"><a href="sequências.html#cb3-14"></a>  <span class="kw">auto</span> size() <span class="at">const</span> -&gt; <span class="bu">std::</span>size_t;</span>
-<span id="cb3-15"><a href="sequências.html#cb3-15"></a>  <span class="kw">auto</span> capacity() <span class="at">const</span> -&gt; <span class="bu">std::</span>size_t;</span>
-<span id="cb3-16"><a href="sequências.html#cb3-16"></a></span>
-<span id="cb3-17"><a href="sequências.html#cb3-17"></a>  <span class="kw">auto</span> is_empty() <span class="at">const</span> -&gt; <span class="dt">bool</span>;</span>
-<span id="cb3-18"><a href="sequências.html#cb3-18"></a>  <span class="kw">auto</span> is_full() <span class="at">const</span> -&gt; <span class="dt">bool</span>;</span>
-<span id="cb3-19"><a href="sequências.html#cb3-19"></a></span>
-<span id="cb3-20"><a href="sequências.html#cb3-20"></a>  <span class="kw">auto</span> at(<span class="bu">std::</span>size_t) -&gt; T&amp;;</span>
-<span id="cb3-21"><a href="sequências.html#cb3-21"></a>  <span class="kw">auto</span> front() -&gt; T&amp;;</span>
-<span id="cb3-22"><a href="sequências.html#cb3-22"></a>  <span class="kw">auto</span> back() -&gt; T&amp;;</span>
-<span id="cb3-23"><a href="sequências.html#cb3-23"></a></span>
-<span id="cb3-24"><a href="sequências.html#cb3-24"></a>  <span class="kw">auto</span> insert(<span class="bu">std::</span>size_t, T) -&gt; <span class="dt">void</span>;</span>
-<span id="cb3-25"><a href="sequências.html#cb3-25"></a>  <span class="kw">auto</span> remove(<span class="bu">std::</span>size_t) -&gt; <span class="dt">void</span>;</span>
-<span id="cb3-26"><a href="sequências.html#cb3-26"></a></span>
-<span id="cb3-27"><a href="sequências.html#cb3-27"></a>  <span class="kw">auto</span> concat(list&lt;T&gt;) -&gt; <span class="dt">void</span>;</span>
-<span id="cb3-28"><a href="sequências.html#cb3-28"></a>  <span class="kw">auto</span> split(<span class="bu">std::</span>size_t) -&gt; list&lt;T&gt;;</span>
-<span id="cb3-29"><a href="sequências.html#cb3-29"></a>};</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="sequências.html#cb4-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">class</span> list {</span>
+<span id="cb4-2"><a href="sequências.html#cb4-2"></a><span class="kw">public</span>:</span>
+<span id="cb4-3"><a href="sequências.html#cb4-3"></a>  <span class="kw">explicit</span> list(<span class="bu">std::</span>size_t capacity);</span>
+<span id="cb4-4"><a href="sequências.html#cb4-4"></a>  ~list() <span class="kw">noexcept</span>;</span>
+<span id="cb4-5"><a href="sequências.html#cb4-5"></a></span>
+<span id="cb4-6"><a href="sequências.html#cb4-6"></a>  list(<span class="at">const</span> list&amp;);</span>
+<span id="cb4-7"><a href="sequências.html#cb4-7"></a>  list(list&amp;&amp;) <span class="kw">noexcept</span>;</span>
+<span id="cb4-8"><a href="sequências.html#cb4-8"></a></span>
+<span id="cb4-9"><a href="sequências.html#cb4-9"></a>  <span class="kw">auto</span> <span class="kw">operator</span>=(<span class="at">const</span> list&amp;) -&gt; list&amp;;</span>
+<span id="cb4-10"><a href="sequências.html#cb4-10"></a>  <span class="kw">auto</span> <span class="kw">operator</span>=(list&amp;&amp;) <span class="kw">noexcept</span> -&gt; list&amp;;</span>
+<span id="cb4-11"><a href="sequências.html#cb4-11"></a></span>
+<span id="cb4-12"><a href="sequências.html#cb4-12"></a>  <span class="kw">auto</span> empty() -&gt; <span class="dt">void</span>;</span>
+<span id="cb4-13"><a href="sequências.html#cb4-13"></a></span>
+<span id="cb4-14"><a href="sequências.html#cb4-14"></a>  <span class="kw">auto</span> size() <span class="at">const</span> -&gt; <span class="bu">std::</span>size_t;</span>
+<span id="cb4-15"><a href="sequências.html#cb4-15"></a>  <span class="kw">auto</span> capacity() <span class="at">const</span> -&gt; <span class="bu">std::</span>size_t;</span>
+<span id="cb4-16"><a href="sequências.html#cb4-16"></a></span>
+<span id="cb4-17"><a href="sequências.html#cb4-17"></a>  <span class="kw">auto</span> is_empty() <span class="at">const</span> -&gt; <span class="dt">bool</span>;</span>
+<span id="cb4-18"><a href="sequências.html#cb4-18"></a>  <span class="kw">auto</span> is_full() <span class="at">const</span> -&gt; <span class="dt">bool</span>;</span>
+<span id="cb4-19"><a href="sequências.html#cb4-19"></a></span>
+<span id="cb4-20"><a href="sequências.html#cb4-20"></a>  <span class="kw">auto</span> at(<span class="bu">std::</span>size_t) -&gt; T&amp;;</span>
+<span id="cb4-21"><a href="sequências.html#cb4-21"></a>  <span class="kw">auto</span> front() -&gt; T&amp;;</span>
+<span id="cb4-22"><a href="sequências.html#cb4-22"></a>  <span class="kw">auto</span> back() -&gt; T&amp;;</span>
+<span id="cb4-23"><a href="sequências.html#cb4-23"></a></span>
+<span id="cb4-24"><a href="sequências.html#cb4-24"></a>  <span class="kw">auto</span> insert(<span class="bu">std::</span>size_t, T) -&gt; <span class="dt">void</span>;</span>
+<span id="cb4-25"><a href="sequências.html#cb4-25"></a>  <span class="kw">auto</span> remove(<span class="bu">std::</span>size_t) -&gt; <span class="dt">void</span>;</span>
+<span id="cb4-26"><a href="sequências.html#cb4-26"></a></span>
+<span id="cb4-27"><a href="sequências.html#cb4-27"></a>  <span class="kw">auto</span> concat(list&lt;T&gt;) -&gt; <span class="dt">void</span>;</span>
+<span id="cb4-28"><a href="sequências.html#cb4-28"></a>  <span class="kw">auto</span> split(<span class="bu">std::</span>size_t) -&gt; list&lt;T&gt;;</span>
+<span id="cb4-29"><a href="sequências.html#cb4-29"></a>};</span></code></pre></div>
 <p>Uma vez que levantamos as operações desejáveis da lista, veremos diferentes
 estruturas de dados que contemplam essa finalidade. Veremos também que cada
 uma delas apresentará diferentes vantagens e desvantagens em termos de
@@ -325,54 +325,54 @@ da nossa interface para melhor adequá-la ao contexto.</p>
 <code>std::list</code>, etc) por motivos didáticos.</p>
 <div id="lista-contígua-estática" class="section level4">
 <h4><span class="header-section-number">13.1.2.1</span> Lista contígua estática</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="sequências.html#cb4-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt; <span class="kw">class</span> list {</span>
-<span id="cb4-2"><a href="sequências.html#cb4-2"></a><span class="kw">public</span>:</span>
-<span id="cb4-3"><a href="sequências.html#cb4-3"></a>  list() = <span class="cf">default</span>;</span>
-<span id="cb4-4"><a href="sequências.html#cb4-4"></a>  <span class="co">// ...</span></span>
-<span id="cb4-5"><a href="sequências.html#cb4-5"></a><span class="kw">private</span>:</span>
-<span id="cb4-6"><a href="sequências.html#cb4-6"></a>  <span class="kw">using</span> <span class="dt">storage_type</span> = <span class="bu">std::</span>aligned_storage_t&lt;<span class="kw">sizeof</span>(T), <span class="kw">alignof</span>(T)&gt;;</span>
-<span id="cb4-7"><a href="sequências.html#cb4-7"></a>  <span class="bu">std::</span>array&lt;<span class="dt">storage_type</span>, N&gt; <span class="va">values_</span>;</span>
-<span id="cb4-8"><a href="sequências.html#cb4-8"></a>  <span class="bu">std::</span>size_t <span class="va">size_</span> = <span class="dv">0</span><span class="bu">u</span>;</span>
-<span id="cb4-9"><a href="sequências.html#cb4-9"></a>};</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="sequências.html#cb5-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt; <span class="kw">class</span> list {</span>
+<span id="cb5-2"><a href="sequências.html#cb5-2"></a><span class="kw">public</span>:</span>
+<span id="cb5-3"><a href="sequências.html#cb5-3"></a>  list() = <span class="cf">default</span>;</span>
+<span id="cb5-4"><a href="sequências.html#cb5-4"></a>  <span class="co">// ...</span></span>
+<span id="cb5-5"><a href="sequências.html#cb5-5"></a><span class="kw">private</span>:</span>
+<span id="cb5-6"><a href="sequências.html#cb5-6"></a>  <span class="kw">using</span> <span class="dt">storage_type</span> = <span class="bu">std::</span>aligned_storage_t&lt;<span class="kw">sizeof</span>(T), <span class="kw">alignof</span>(T)&gt;;</span>
+<span id="cb5-7"><a href="sequências.html#cb5-7"></a>  <span class="bu">std::</span>array&lt;<span class="dt">storage_type</span>, N&gt; <span class="va">values_</span>;</span>
+<span id="cb5-8"><a href="sequências.html#cb5-8"></a>  <span class="bu">std::</span>size_t <span class="va">size_</span> = <span class="dv">0</span><span class="bu">u</span>;</span>
+<span id="cb5-9"><a href="sequências.html#cb5-9"></a>};</span></code></pre></div>
 <p>Não precisamos implementar o construtor.</p>
 <p><em>Exercício</em>: Por que o construtor padrão (gerado pelo compilador) é suficiente neste caso?</p>
 <p>Limpando a lista:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="sequências.html#cb5-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
-<span id="cb5-2"><a href="sequências.html#cb5-2"></a><span class="kw">auto</span> list&lt;T, N&gt;::empty() {</span>
-<span id="cb5-3"><a href="sequências.html#cb5-3"></a>  <span class="cf">if</span> <span class="kw">constexpr</span> (!<span class="bu">std::</span>is_trivially_destructible_v&lt;T&gt;)</span>
-<span id="cb5-4"><a href="sequências.html#cb5-4"></a>    <span class="cf">for</span> (<span class="bu">std::</span>size_t i = <span class="dv">0</span>; i &lt; <span class="va">size_</span>; ++i)</span>
-<span id="cb5-5"><a href="sequências.html#cb5-5"></a>      <span class="bu">std::</span>destroy_at(<span class="bu">std::</span>address_of(<span class="va">values_</span>[i]));</span>
-<span id="cb5-6"><a href="sequências.html#cb5-6"></a>  <span class="va">size_</span> = <span class="dv">0</span>;</span>
-<span id="cb5-7"><a href="sequências.html#cb5-7"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="sequências.html#cb6-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
+<span id="cb6-2"><a href="sequências.html#cb6-2"></a><span class="kw">auto</span> list&lt;T, N&gt;::empty() {</span>
+<span id="cb6-3"><a href="sequências.html#cb6-3"></a>  <span class="cf">if</span> <span class="kw">constexpr</span> (!<span class="bu">std::</span>is_trivially_destructible_v&lt;T&gt;)</span>
+<span id="cb6-4"><a href="sequências.html#cb6-4"></a>    <span class="cf">for</span> (<span class="bu">std::</span>size_t i = <span class="dv">0</span>; i &lt; <span class="va">size_</span>; ++i)</span>
+<span id="cb6-5"><a href="sequências.html#cb6-5"></a>      <span class="bu">std::</span>destroy_at(<span class="bu">std::</span>address_of(<span class="va">values_</span>[i]));</span>
+<span id="cb6-6"><a href="sequências.html#cb6-6"></a>  <span class="va">size_</span> = <span class="dv">0</span>;</span>
+<span id="cb6-7"><a href="sequências.html#cb6-7"></a>}</span></code></pre></div>
 <p>Com esta operação, a implementação do destrutor torna-se bastante simples:</p>
 <pre class="cp"><code>template &lt;typename T, std::size_t N&gt;
 list&lt;T, N&gt;::~list() noexcept {
   empty();
 }</code></pre>
 <p>Checando as margens:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="sequências.html#cb7-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
-<span id="cb7-2"><a href="sequências.html#cb7-2"></a><span class="kw">auto</span> list&lt;T, N&gt;::is_empty() <span class="at">const</span> -&gt; <span class="dt">bool</span> {</span>
-<span id="cb7-3"><a href="sequências.html#cb7-3"></a>  <span class="cf">return</span> <span class="va">size_</span> == <span class="dv">0</span>;</span>
-<span id="cb7-4"><a href="sequências.html#cb7-4"></a>}</span>
-<span id="cb7-5"><a href="sequências.html#cb7-5"></a></span>
-<span id="cb7-6"><a href="sequências.html#cb7-6"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
-<span id="cb7-7"><a href="sequências.html#cb7-7"></a><span class="kw">auto</span> list&lt;T, N&gt;::is_full() <span class="at">const</span> -&gt; <span class="dt">bool</span> {</span>
-<span id="cb7-8"><a href="sequências.html#cb7-8"></a>  <span class="cf">return</span> <span class="va">size_</span> == N;</span>
-<span id="cb7-9"><a href="sequências.html#cb7-9"></a>}</span></code></pre></div>
-<p>Os construtores de cópia e movimentação são triviais:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="sequências.html#cb8-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
-<span id="cb8-2"><a href="sequências.html#cb8-2"></a>list&lt;T, N&gt;::list(<span class="at">const</span> list&amp; source) {</span>
-<span id="cb8-3"><a href="sequências.html#cb8-3"></a>  <span class="cf">for</span> (<span class="bu">std::</span>size_t i = <span class="dv">0</span>; i &lt; source.<span class="va">size_</span>; ++i)</span>
-<span id="cb8-4"><a href="sequências.html#cb8-4"></a>    ::<span class="kw">new</span> (<span class="bu">std::</span>address_of(<span class="va">values_</span>[i])) T(source.<span class="va">values_</span>[i]);</span>
-<span id="cb8-5"><a href="sequências.html#cb8-5"></a>  <span class="va">size_</span> = source.<span class="va">size_</span>;</span>
-<span id="cb8-6"><a href="sequências.html#cb8-6"></a>}</span>
-<span id="cb8-7"><a href="sequências.html#cb8-7"></a></span>
-<span id="cb8-8"><a href="sequências.html#cb8-8"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
-<span id="cb8-9"><a href="sequências.html#cb8-9"></a>list&lt;T, N&gt;::list(list&amp;&amp; source) <span class="kw">noexcept</span> {</span>
-<span id="cb8-10"><a href="sequências.html#cb8-10"></a>  <span class="cf">for</span> (<span class="bu">std::</span>size_t i = <span class="dv">0</span>; i &lt; source.<span class="va">size_</span>; ++i)</span>
-<span id="cb8-11"><a href="sequências.html#cb8-11"></a>    ::<span class="kw">new</span> (<span class="bu">std::</span>address_of(<span class="va">values_</span>[i])) T(<span class="bu">std::</span>move(source.<span class="va">values_</span>[i]));</span>
-<span id="cb8-12"><a href="sequências.html#cb8-12"></a>  <span class="va">size_</span> = <span class="bu">std::</span>exchange(source.<span class="va">size_</span>, <span class="dv">0</span><span class="bu">u</span>);</span>
-<span id="cb8-13"><a href="sequências.html#cb8-13"></a>}</span></code></pre></div>
+<span id="cb8-2"><a href="sequências.html#cb8-2"></a><span class="kw">auto</span> list&lt;T, N&gt;::is_empty() <span class="at">const</span> -&gt; <span class="dt">bool</span> {</span>
+<span id="cb8-3"><a href="sequências.html#cb8-3"></a>  <span class="cf">return</span> <span class="va">size_</span> == <span class="dv">0</span>;</span>
+<span id="cb8-4"><a href="sequências.html#cb8-4"></a>}</span>
+<span id="cb8-5"><a href="sequências.html#cb8-5"></a></span>
+<span id="cb8-6"><a href="sequências.html#cb8-6"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
+<span id="cb8-7"><a href="sequências.html#cb8-7"></a><span class="kw">auto</span> list&lt;T, N&gt;::is_full() <span class="at">const</span> -&gt; <span class="dt">bool</span> {</span>
+<span id="cb8-8"><a href="sequências.html#cb8-8"></a>  <span class="cf">return</span> <span class="va">size_</span> == N;</span>
+<span id="cb8-9"><a href="sequências.html#cb8-9"></a>}</span></code></pre></div>
+<p>Os construtores de cópia e movimentação são triviais:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="sequências.html#cb9-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
+<span id="cb9-2"><a href="sequências.html#cb9-2"></a>list&lt;T, N&gt;::list(<span class="at">const</span> list&amp; source) {</span>
+<span id="cb9-3"><a href="sequências.html#cb9-3"></a>  <span class="cf">for</span> (<span class="bu">std::</span>size_t i = <span class="dv">0</span>; i &lt; source.<span class="va">size_</span>; ++i)</span>
+<span id="cb9-4"><a href="sequências.html#cb9-4"></a>    ::<span class="kw">new</span> (<span class="bu">std::</span>address_of(<span class="va">values_</span>[i])) T(source.<span class="va">values_</span>[i]);</span>
+<span id="cb9-5"><a href="sequências.html#cb9-5"></a>  <span class="va">size_</span> = source.<span class="va">size_</span>;</span>
+<span id="cb9-6"><a href="sequências.html#cb9-6"></a>}</span>
+<span id="cb9-7"><a href="sequências.html#cb9-7"></a></span>
+<span id="cb9-8"><a href="sequências.html#cb9-8"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T, <span class="bu">std::</span>size_t N&gt;</span>
+<span id="cb9-9"><a href="sequências.html#cb9-9"></a>list&lt;T, N&gt;::list(list&amp;&amp; source) <span class="kw">noexcept</span> {</span>
+<span id="cb9-10"><a href="sequências.html#cb9-10"></a>  <span class="cf">for</span> (<span class="bu">std::</span>size_t i = <span class="dv">0</span>; i &lt; source.<span class="va">size_</span>; ++i)</span>
+<span id="cb9-11"><a href="sequências.html#cb9-11"></a>    ::<span class="kw">new</span> (<span class="bu">std::</span>address_of(<span class="va">values_</span>[i])) T(<span class="bu">std::</span>move(source.<span class="va">values_</span>[i]));</span>
+<span id="cb9-12"><a href="sequências.html#cb9-12"></a>  <span class="va">size_</span> = <span class="bu">std::</span>exchange(source.<span class="va">size_</span>, <span class="dv">0</span><span class="bu">u</span>);</span>
+<span id="cb9-13"><a href="sequências.html#cb9-13"></a>}</span></code></pre></div>
 <p><em>Exercícios</em>:</p>
 <ol style="list-style-type: decimal">
 <li>Implementar as operações de atribuição (cópia e movimentação)
@@ -385,15 +385,15 @@ biblioteca padrão).</li>
 </div>
 <div id="contíguo-dinâmico" class="section level3">
 <h3><span class="header-section-number">13.1.3</span> Contíguo dinâmico</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="sequências.html#cb9-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">class</span> list {</span>
-<span id="cb9-2"><a href="sequências.html#cb9-2"></a><span class="kw">public</span>:</span>
-<span id="cb9-3"><a href="sequências.html#cb9-3"></a>  <span class="co">// ...</span></span>
-<span id="cb9-4"><a href="sequências.html#cb9-4"></a><span class="kw">private</span>:</span>
-<span id="cb9-5"><a href="sequências.html#cb9-5"></a>  <span class="kw">using</span> <span class="dt">storage_type</span> = <span class="bu">std::</span>aligned_storage_t&lt;<span class="kw">sizeof</span>(T), <span class="kw">alignof</span>(T)&gt;;</span>
-<span id="cb9-6"><a href="sequências.html#cb9-6"></a>  <span class="bu">std::</span>unique_ptr&lt;<span class="dt">storage_type</span>[]&gt; <span class="va">values_</span>;</span>
-<span id="cb9-7"><a href="sequências.html#cb9-7"></a>  <span class="bu">std::</span>size_t <span class="va">capacity_</span>;</span>
-<span id="cb9-8"><a href="sequências.html#cb9-8"></a>  <span class="bu">std::</span>size_t <span class="va">size_</span> = <span class="dv">0</span><span class="bu">u</span>;</span>
-<span id="cb9-9"><a href="sequências.html#cb9-9"></a>};</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb10-1"><a href="sequências.html#cb10-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">class</span> list {</span>
+<span id="cb10-2"><a href="sequências.html#cb10-2"></a><span class="kw">public</span>:</span>
+<span id="cb10-3"><a href="sequências.html#cb10-3"></a>  <span class="co">// ...</span></span>
+<span id="cb10-4"><a href="sequências.html#cb10-4"></a><span class="kw">private</span>:</span>
+<span id="cb10-5"><a href="sequências.html#cb10-5"></a>  <span class="kw">using</span> <span class="dt">storage_type</span> = <span class="bu">std::</span>aligned_storage_t&lt;<span class="kw">sizeof</span>(T), <span class="kw">alignof</span>(T)&gt;;</span>
+<span id="cb10-6"><a href="sequências.html#cb10-6"></a>  <span class="bu">std::</span>unique_ptr&lt;<span class="dt">storage_type</span>[]&gt; <span class="va">values_</span>;</span>
+<span id="cb10-7"><a href="sequências.html#cb10-7"></a>  <span class="bu">std::</span>size_t <span class="va">capacity_</span>;</span>
+<span id="cb10-8"><a href="sequências.html#cb10-8"></a>  <span class="bu">std::</span>size_t <span class="va">size_</span> = <span class="dv">0</span><span class="bu">u</span>;</span>
+<span id="cb10-9"><a href="sequências.html#cb10-9"></a>};</span></code></pre></div>
 <div id="simplesmente-encadeada" class="section level4">
 <h4><span class="header-section-number">13.1.3.1</span> Simplesmente encadeada</h4>
 </div>

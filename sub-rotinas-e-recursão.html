@@ -248,11 +248,11 @@ próprio valor de <span class="math inline">\(a\)</span> (ou <span class="math i
 propriedade: <span class="math inline">\(s(a, b) = s(a, c) + s(c + 1, b)\)</span> para todo <span class="math inline">\(c\)</span> tal que <span class="math inline">\(a \leq c &lt; b\)</span>.
 Deste modo, para o caso específico <span class="math inline">\(c = a\)</span>, temos que <span class="math inline">\(s(a, b) = s(a, a) + s(a + 1, b)\)</span>.</p>
 <p>Logo, a implementação deste algoritmo seria:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="sub-rotinas-e-recursão.html#cb2-1"></a><span class="dt">int</span> s(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
-<span id="cb2-2"><a href="sub-rotinas-e-recursão.html#cb2-2"></a>  <span class="cf">if</span> (a == b)</span>
-<span id="cb2-3"><a href="sub-rotinas-e-recursão.html#cb2-3"></a>    <span class="cf">return</span> a;</span>
-<span id="cb2-4"><a href="sub-rotinas-e-recursão.html#cb2-4"></a>  <span class="cf">return</span> s(a, a) + s(a + <span class="dv">1</span>, b);</span>
-<span id="cb2-5"><a href="sub-rotinas-e-recursão.html#cb2-5"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="sub-rotinas-e-recursão.html#cb3-1"></a><span class="dt">int</span> s(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
+<span id="cb3-2"><a href="sub-rotinas-e-recursão.html#cb3-2"></a>  <span class="cf">if</span> (a == b)</span>
+<span id="cb3-3"><a href="sub-rotinas-e-recursão.html#cb3-3"></a>    <span class="cf">return</span> a;</span>
+<span id="cb3-4"><a href="sub-rotinas-e-recursão.html#cb3-4"></a>  <span class="cf">return</span> s(a, a) + s(a + <span class="dv">1</span>, b);</span>
+<span id="cb3-5"><a href="sub-rotinas-e-recursão.html#cb3-5"></a>}</span></code></pre></div>
 <div id="busca-binária" class="section level3">
 <h3><span class="header-section-number">8.1.1</span> Busca binária</h3>
 <p>Dada uma sequência <span class="math inline">\(v\)</span> com <span class="math inline">\(n\)</span> objetos ordenados de maneira crescente, queremos verificar se um determinado objeto

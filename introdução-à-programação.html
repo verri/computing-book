@@ -225,18 +225,22 @@ programador construir um software composto por diversos módulos. Neste caso, é
 necessário identificar o “ponto de entrada” do programa. Ou seja, dentre as
 diversas potenciais funcionalidades do programa, qual é a primeira instrução
 executada.</p>
-<p>Em C++20, o início do programa ocorre na função <code>main</code>. Esta é a função que o
+<p>Em C++17, o início do programa ocorre na função <code>main</code>. Esta é a função que o
 sistema operacional invoca quando o programa é executado — outras rotinas podem
 ser executadas antes da <code>main</code>, por exemplo, para inicializar variáveis
 globais; no entanto, estes detalhes estão fora do escopo deste livro. Veja mais
 informações <a href="https://en.cppreference.com/w/cpp/language/main_function">aqui</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="introdução-à-programação.html#cb1-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb1-2"><a href="introdução-à-programação.html#cb1-2"></a><span class="kw">auto</span> main() -&gt; <span class="dt">int</span> {</span>
-<span id="cb1-3"><a href="introdução-à-programação.html#cb1-3"></a>  <span class="bu">std::</span>cout &lt;&lt; <span class="st">&quot;Hello, world!</span><span class="sc">\n</span><span class="st">&quot;</span>;</span>
-<span id="cb1-4"><a href="introdução-à-programação.html#cb1-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="introdução-à-programação.html#cb1-1"></a><span class="co">// hello.cpp</span></span>
+<span id="cb1-2"><a href="introdução-à-programação.html#cb1-2"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb1-3"><a href="introdução-à-programação.html#cb1-3"></a><span class="kw">auto</span> main() -&gt; <span class="dt">int</span> {</span>
+<span id="cb1-4"><a href="introdução-à-programação.html#cb1-4"></a>  <span class="bu">std::</span>cout &lt;&lt; <span class="st">&quot;Hello, world!</span><span class="sc">\n</span><span class="st">&quot;</span>;</span>
+<span id="cb1-5"><a href="introdução-à-programação.html#cb1-5"></a>}</span></code></pre></div>
 <p>Há várias nuances deste programa que entraremos em detalhes futuramente. No
 momento, é suficiente saber que esse arquivo, quando compilado e executado,
 resultará em uma saída com o texto <code>"Hello, world!"</code> seguido de quebra de linha.</p>
+<pre><code>$ g++ -std=c++17 hello.cpp -o hello
+$ ./hello
+Hello, world!</code></pre>
 
 </div>
 </div>
