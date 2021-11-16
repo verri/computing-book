@@ -4,6 +4,23 @@
 
 Arquitetura abstrata, linguagem de máquina, assembly, linguagens de alto nível, meu primeiro programa.
 
+## Linguagem de alto nível
+
+Toda linguagem de programação possui uma sintaxe que define a estrutura em que
+deve ser escrita.  Nas linguagens de programação de alto nível, além da
+sintaxe, a semântica dos elementos também deve ser respeitada.  Por exemplo, ao
+contrário das linguagens de montagem, devemos seguir regras semânticas quanto
+ao tipo de cada variável do código.
+
+De maneira geral, podemos dividir um programa em níveis de complexidade, ou seja,
+aplicarmos o conceito de *abstração*:
+
+- Um programa é composto por *subprogramas*;
+- Subprogramas são compostos por conjuntos de *definições* e sequências de
+  *comandos*;
+- Cada definição ou comando é uma sequência de *tokens*; e
+- Cada token é a unidade léxica mínima do programa.
+
 ## Primeiro programa de alto nível
 
 Como vimos anteriormente, linguagens de programação de alto nível permitem ao
