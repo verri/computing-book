@@ -15,6 +15,7 @@ representacao
 tipos-de-informação
 algoritmos
 introdução-à-programação
+linguagem-de-alto-nível
 primeiro-programa-de-alto-nível
 controle-de-fluxo
 comandos-condicionais
