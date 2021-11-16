@@ -25,7 +25,7 @@
 <meta name="author" content="Lourenço A. Pereira Jr." />
 
 
-<meta name="date" content="2021-11-11" />
+<meta name="date" content="2021-11-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -289,9 +289,19 @@ sua carreira.</p>
 <div id="dado-digital" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Dado digital</h3>
 <p>Em computadores digitais, toda informação é representada por um conjunto finito
-de <em>bits</em>. Bit é a menor unidade de informação e pode assumir dois valores:
-zero ou um.</p>
-<p>WIP: byte, and word.</p>
+de <em>bits</em>. Bit é a <strong>menor unidade de informação</strong> e pode assumir dois
+valores: zero ou um.</p>
+<p>Os bits são agrupados em unidades de informação chamadas de <em>bytes</em>, sendo este
+último a <strong>menor unidade endereçável</strong> de memória. Veremos, posteriormente,
+que cada byte armazenado em memória possui um endereço único. Esta propriedade
+afeta diversos aspectos das linguagens de programação, por exemplo, limitando o
+menor tamanho possível de objetos. Na grande maioria das arquiteturas
+modernas, um byte é composto por 8 bits.</p>
+<p>Na prática, apesar de cada byte ser endereçável, computadores digitais operam a
+nível de <em>palavra</em>. Ou seja, as operações lógicas e aritméticas são aplicadas em grupos de bytes.
+Uma palavra é a <strong>unidade natural de informação</strong> em um computador. Como os
+bytes, o tamanho das palavras depende da arquitetura. Computadores de
+propósito geral modernos possuem palavras de tamanho 32 ou 64 bits.</p>
 </div>
 <div id="algoritmo" class="section level3">
 <h3><span class="header-section-number">1.2.4</span> Algoritmo</h3>
