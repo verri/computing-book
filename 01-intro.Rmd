@@ -84,10 +84,21 @@ sua carreira.
 ### Dado digital
 
 Em computadores digitais, toda informação é representada por um conjunto finito
-de *bits*.  Bit é a menor unidade de informação e pode assumir dois valores:
-zero ou um.
+de *bits*.  Bit é a **menor unidade de informação** e pode assumir dois
+valores: zero ou um.
 
-WIP: byte, and word.
+Os bits são agrupados em unidades de informação chamadas de *bytes*, sendo este
+último a **menor unidade endereçável** de memória.  Veremos, posteriormente,
+que cada byte armazenado em memória possui um endereço único.  Esta propriedade
+afeta diversos aspectos das linguagens de programação, por exemplo, limitando o
+menor tamanho possível de objetos.  Na grande maioria das arquiteturas
+modernas, um byte é composto por 8 bits.
+
+Na prática, apesar de cada byte ser endereçável, computadores digitais operam a
+nível de *palavra*.  Ou seja, as operações lógicas e aritméticas são aplicadas em grupos de bytes.
+Uma palavra é a **unidade natural de informação** em um computador.  Como os
+bytes, o tamanho das palavras depende da arquitetura.  Computadores de
+propósito geral modernos possuem palavras de tamanho 32 ou 64 bits.
 
 ### Algoritmo
 
