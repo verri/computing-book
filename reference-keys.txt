@@ -52,6 +52,7 @@ shaker-sort
 selection-sort
 insertion-sort
 shell-sort
+quick-sort
 busca
 operações-de-conjuntos-em-listas-ordenadas
 operações-de-heap
