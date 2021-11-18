@@ -15,6 +15,15 @@ void bubble_sort(ForwardIterator begin, ForwardIterator end)
 }
 ```
 
+----
+
+*Exercícios*:
+
+1. Altere o código da função `bubble_sort` para interromper as passagens quando
+   não houver mais trocas.
+1. Compare o tempo de execução das duas versões da função `bubble_sort` para
+   vetores muito grandes.
+
 ## Shaker sort
 
 ```cpp
@@ -41,6 +50,15 @@ void shaker_sort(BidirIterator begin, BidirIterator end)
   }
 }
 ```
+
+----
+
+*Exercícios*:
+
+1. Altere o código da função `shaker_sort` para interromper as passagens quando
+   não houver mais trocas.
+1. Compare o tempo de execução das duas versões da função `shaker_sort` para
+   vetores muito grandes.
 
 ## Selection sort
 
@@ -78,7 +96,9 @@ auto knuth_seq_last(T length)
     h = 3 * h + 1;
   return h / 3;
 }
+```
 
+```cpp
 template <typename RandomAccessIterator>
 void shell_sort(RandomAccessIterator begin, RandomAccessIterator end)
 {
@@ -123,5 +143,43 @@ void quicksort(BidirIterator begin, BidirIterator end)
 
   quicksort(begin, left);
   quicksort(left + 1, end);
+}
+```
+
+## Merge sort
+
+```cpp
+template <typename ForwardIterator>
+void merge(ForwardIterator begin, ForwardIterator mid, ForwardIterator end)
+{
+  using T = typename std::iterator_traits<ForwardIterator>::value_type;
+  std::vector<T> tmp;
+
+  auto it1 = begin;
+  auto it2 = mid;
+
+  while (it1 != mid && it2 != end)
+    tmp.push_back(std::move(*it1 < *it2 ? *it1++ : *it2++));
+
+  std::move(it1, mid, std::back_inserter(tmp));
+  std::move(it2, end, std::back_inserter(tmp));
+  std::move(tmp.begin(), tmp.end(), begin);
+}
+```
+
+```cpp
+template <typename ForwardIterator>
+void merge_sort(ForwardIterator begin, ForwardIterator end)
+{
+  const auto length = std::distance(begin, end);
+  if (length < 2)
+    return;
+
+  const auto mid = std::next(begin, length / 2);
+
+  merge_sort(begin, mid);
+  merge_sort(mid, end);
+
+  merge(begin, mid, end);
 }
 ```
