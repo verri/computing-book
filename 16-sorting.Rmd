@@ -161,8 +161,8 @@ void merge(ForwardIterator begin, ForwardIterator mid, ForwardIterator end)
   while (it1 != mid && it2 != end)
     tmp.push_back(std::move(*it1 < *it2 ? *it1++ : *it2++));
 
-  std::move(it1, mid, std::back_inserter(tmp));
-  std::move(it2, end, std::back_inserter(tmp));
+  std::move(it1, mid, back_inserter(tmp));
+  std::move(it2, end, back_inserter(tmp));
   std::move(tmp.begin(), tmp.end(), begin);
 }
 ```
