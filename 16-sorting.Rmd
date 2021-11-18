@@ -21,14 +21,13 @@ void bubble_sort(ForwardIterator begin, ForwardIterator end)
 template <typename BidirIterator>
 void shaker_sort(BidirIterator begin, BidirIterator end)
 {
-  while (begin != end)
+  while (true)
   {
     for (auto left = begin, right = std::next(left);
          right != end;
          left = right++)
       if (*left > *right)
         std::iter_swap(left, right);
-
     if (begin == --end)
       return;
 
@@ -37,8 +36,8 @@ void shaker_sort(BidirIterator begin, BidirIterator end)
          right = left--)
       if (*left > *right)
         std::iter_swap(left, right);
-
-    ++begin;
+    if (++begin == end)
+      return;
   }
 }
 ```
@@ -90,5 +89,39 @@ void shell_sort(RandomAccessIterator begin, RandomAccessIterator end)
            right != begin && *left > *right;
            right = std::exchange(left, std::prev(left, h)))
         std::iter_swap(left, right);
+}
+```
+
+## Quick sort
+
+```cpp
+template <typename BidirIterator>
+void quicksort(BidirIterator begin, BidirIterator end)
+{
+  if (begin == end)
+    return;
+
+  auto left = begin;
+  auto right = std::prev(end)
+
+  const auto pivot_value = *left;
+
+  while (true)
+  {
+    while (left != right && *right >= pivot_value)
+      --right;
+    if (left == right)
+      break;
+    std::iter_swap(left++, right);
+
+    while (left != right && *left <= pivot_value)
+      ++left;
+    if (left == right)
+      break;
+    std::iter_swap(left, right--);
+  }
+
+  quicksort(begin, left);
+  quicksort(left + 1, end);
 }
 ```
