@@ -53,6 +53,7 @@ selection-sort
 insertion-sort
 shell-sort
 quick-sort
+merge-sort
 busca
 operações-de-conjuntos-em-listas-ordenadas
 operações-de-heap
