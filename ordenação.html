@@ -25,7 +25,7 @@
 <meta name="author" content="Lourenço A. Pereira Jr." />
 
 
-<meta name="date" content="2021-11-16" />
+<meta name="date" content="2021-11-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15" data-path="estruturas-associativas.html"><a href="estruturas-associativas.html"><i class="fa fa-check"></i><b>15</b> Estruturas associativas</a></li>
 <li class="part"><span><b>IV Algoritmos</b></span></li>
 <li class="chapter" data-level="16" data-path="particionamento.html"><a href="particionamento.html"><i class="fa fa-check"></i><b>16</b> Particionamento</a></li>
-<li class="chapter" data-level="17" data-path="ordenação.html"><a href="ordenação.html"><i class="fa fa-check"></i><b>17</b> Ordenação</a></li>
+<li class="chapter" data-level="17" data-path="ordenação.html"><a href="ordenação.html"><i class="fa fa-check"></i><b>17</b> Ordenação</a><ul>
+<li class="chapter" data-level="17.1" data-path="ordenação.html"><a href="ordenação.html#bubble-sort"><i class="fa fa-check"></i><b>17.1</b> Bubble sort</a></li>
+<li class="chapter" data-level="17.2" data-path="ordenação.html"><a href="ordenação.html#shaker-sort"><i class="fa fa-check"></i><b>17.2</b> Shaker sort</a></li>
+<li class="chapter" data-level="17.3" data-path="ordenação.html"><a href="ordenação.html#selection-sort"><i class="fa fa-check"></i><b>17.3</b> Selection sort</a></li>
+<li class="chapter" data-level="17.4" data-path="ordenação.html"><a href="ordenação.html#insertion-sort"><i class="fa fa-check"></i><b>17.4</b> Insertion sort</a></li>
+<li class="chapter" data-level="17.5" data-path="ordenação.html"><a href="ordenação.html#shell-sort"><i class="fa fa-check"></i><b>17.5</b> Shell sort</a></li>
+</ul></li>
 <li class="chapter" data-level="18" data-path="busca.html"><a href="busca.html"><i class="fa fa-check"></i><b>18</b> Busca</a></li>
 <li class="chapter" data-level="19" data-path="operações-de-conjuntos-em-listas-ordenadas.html"><a href="operações-de-conjuntos-em-listas-ordenadas.html"><i class="fa fa-check"></i><b>19</b> Operações de conjuntos em listas ordenadas</a></li>
 <li class="chapter" data-level="20" data-path="operações-de-heap.html"><a href="operações-de-heap.html"><i class="fa fa-check"></i><b>20</b> Operações de heap</a></li>
@@ -218,7 +224,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ordenação" class="section level1">
 <h1><span class="header-section-number">17</span> Ordenação</h1>
+<div id="bubble-sort" class="section level2">
+<h2><span class="header-section-number">17.1</span> Bubble sort</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb11-1"><a href="ordenação.html#cb11-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> ForwardIterator&gt;</span>
+<span id="cb11-2"><a href="ordenação.html#cb11-2"></a><span class="dt">void</span> bubble_sort(ForwardIterator begin, ForwardIterator end)</span>
+<span id="cb11-3"><a href="ordenação.html#cb11-3"></a>{</span>
+<span id="cb11-4"><a href="ordenação.html#cb11-4"></a>  <span class="cf">for</span> (; begin != end; --end)</span>
+<span id="cb11-5"><a href="ordenação.html#cb11-5"></a>    <span class="cf">for</span> (<span class="kw">auto</span> left = begin, right = <span class="bu">std::</span>next(left);</span>
+<span id="cb11-6"><a href="ordenação.html#cb11-6"></a>         right != end;</span>
+<span id="cb11-7"><a href="ordenação.html#cb11-7"></a>         left = right++)</span>
+<span id="cb11-8"><a href="ordenação.html#cb11-8"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
+<span id="cb11-9"><a href="ordenação.html#cb11-9"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb11-10"><a href="ordenação.html#cb11-10"></a>}</span></code></pre></div>
+</div>
+<div id="shaker-sort" class="section level2">
+<h2><span class="header-section-number">17.2</span> Shaker sort</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="ordenação.html#cb12-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> BidirIterator&gt;</span>
+<span id="cb12-2"><a href="ordenação.html#cb12-2"></a><span class="dt">void</span> shaker_sort(BidirIterator begin, BidirIterator end)</span>
+<span id="cb12-3"><a href="ordenação.html#cb12-3"></a>{</span>
+<span id="cb12-4"><a href="ordenação.html#cb12-4"></a>  <span class="cf">while</span> (begin != end)</span>
+<span id="cb12-5"><a href="ordenação.html#cb12-5"></a>  {</span>
+<span id="cb12-6"><a href="ordenação.html#cb12-6"></a>    <span class="cf">for</span> (<span class="kw">auto</span> left = begin, right = <span class="bu">std::</span>next(left);</span>
+<span id="cb12-7"><a href="ordenação.html#cb12-7"></a>         right != end;</span>
+<span id="cb12-8"><a href="ordenação.html#cb12-8"></a>         left = right++)</span>
+<span id="cb12-9"><a href="ordenação.html#cb12-9"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
+<span id="cb12-10"><a href="ordenação.html#cb12-10"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb12-11"><a href="ordenação.html#cb12-11"></a></span>
+<span id="cb12-12"><a href="ordenação.html#cb12-12"></a>    <span class="cf">if</span> (begin == --end)</span>
+<span id="cb12-13"><a href="ordenação.html#cb12-13"></a>      <span class="cf">return</span>;</span>
+<span id="cb12-14"><a href="ordenação.html#cb12-14"></a></span>
+<span id="cb12-15"><a href="ordenação.html#cb12-15"></a>    <span class="cf">for</span> (<span class="kw">auto</span> right = <span class="bu">std::</span>prev(end), left = <span class="bu">std::</span>prev(left);</span>
+<span id="cb12-16"><a href="ordenação.html#cb12-16"></a>         right != begin;</span>
+<span id="cb12-17"><a href="ordenação.html#cb12-17"></a>         right = left--)</span>
+<span id="cb12-18"><a href="ordenação.html#cb12-18"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
+<span id="cb12-19"><a href="ordenação.html#cb12-19"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb12-20"><a href="ordenação.html#cb12-20"></a></span>
+<span id="cb12-21"><a href="ordenação.html#cb12-21"></a>    ++begin;</span>
+<span id="cb12-22"><a href="ordenação.html#cb12-22"></a>  }</span>
+<span id="cb12-23"><a href="ordenação.html#cb12-23"></a>}</span></code></pre></div>
+</div>
+<div id="selection-sort" class="section level2">
+<h2><span class="header-section-number">17.3</span> Selection sort</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb13-1"><a href="ordenação.html#cb13-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> ForwardIterator&gt;</span>
+<span id="cb13-2"><a href="ordenação.html#cb13-2"></a><span class="dt">void</span> selection_sort(ForwardIterator begin, ForwardIterator end)</span>
+<span id="cb13-3"><a href="ordenação.html#cb13-3"></a>{</span>
+<span id="cb13-4"><a href="ordenação.html#cb13-4"></a>  <span class="cf">for</span> (<span class="kw">auto</span> it = begin; it != end; ++it)</span>
+<span id="cb13-5"><a href="ordenação.html#cb13-5"></a>    <span class="bu">std::</span>iter_swap(it, <span class="bu">std::</span>min_element(it, end));</span>
+<span id="cb13-6"><a href="ordenação.html#cb13-6"></a>}</span></code></pre></div>
+</div>
+<div id="insertion-sort" class="section level2">
+<h2><span class="header-section-number">17.4</span> Insertion sort</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb14-1"><a href="ordenação.html#cb14-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> BidirIterator&gt;</span>
+<span id="cb14-2"><a href="ordenação.html#cb14-2"></a><span class="dt">void</span> insertion_sort(BidirIterator begin, BidirIterator end)</span>
+<span id="cb14-3"><a href="ordenação.html#cb14-3"></a>{</span>
+<span id="cb14-4"><a href="ordenação.html#cb14-4"></a>  <span class="cf">for</span> (<span class="kw">auto</span> it = <span class="bu">std::</span>next(begin); it != end; ++it)</span>
+<span id="cb14-5"><a href="ordenação.html#cb14-5"></a>    <span class="cf">for</span> (<span class="kw">auto</span> right = it, left = <span class="bu">std::</span>prev(right);</span>
+<span id="cb14-6"><a href="ordenação.html#cb14-6"></a>         right != begin &amp;&amp; *left &gt; *right;</span>
+<span id="cb14-7"><a href="ordenação.html#cb14-7"></a>         right = left--)</span>
+<span id="cb14-8"><a href="ordenação.html#cb14-8"></a>      <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb14-9"><a href="ordenação.html#cb14-9"></a>}</span></code></pre></div>
+</div>
+<div id="shell-sort" class="section level2">
+<h2><span class="header-section-number">17.5</span> Shell sort</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="ordenação.html#cb15-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt;</span>
+<span id="cb15-2"><a href="ordenação.html#cb15-2"></a><span class="kw">auto</span> knuth_seq_last(T length)</span>
+<span id="cb15-3"><a href="ordenação.html#cb15-3"></a>{</span>
+<span id="cb15-4"><a href="ordenação.html#cb15-4"></a>  T h = <span class="dv">1</span>;</span>
+<span id="cb15-5"><a href="ordenação.html#cb15-5"></a>  <span class="cf">while</span> (h &lt; length)</span>
+<span id="cb15-6"><a href="ordenação.html#cb15-6"></a>    h = <span class="dv">3</span> * h + <span class="dv">1</span>;</span>
+<span id="cb15-7"><a href="ordenação.html#cb15-7"></a>  <span class="cf">return</span> h / <span class="dv">3</span>;</span>
+<span id="cb15-8"><a href="ordenação.html#cb15-8"></a>}</span>
+<span id="cb15-9"><a href="ordenação.html#cb15-9"></a></span>
+<span id="cb15-10"><a href="ordenação.html#cb15-10"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> RandomAccessIterator&gt;</span>
+<span id="cb15-11"><a href="ordenação.html#cb15-11"></a><span class="dt">void</span> shell_sort(RandomAccessIterator begin, RandomAccessIterator end)</span>
+<span id="cb15-12"><a href="ordenação.html#cb15-12"></a>{</span>
+<span id="cb15-13"><a href="ordenação.html#cb15-13"></a>  <span class="at">const</span> <span class="kw">auto</span> length = <span class="bu">std::</span>distance(begin, end);</span>
+<span id="cb15-14"><a href="ordenação.html#cb15-14"></a>  <span class="cf">for</span> (<span class="kw">auto</span> h = knuth_seq_last(length); h &gt; <span class="dv">0</span>; h = h / <span class="dv">3</span>)</span>
+<span id="cb15-15"><a href="ordenação.html#cb15-15"></a>    <span class="cf">for</span> (<span class="kw">auto</span> it = <span class="bu">std::</span>next(begin, h); it != end; ++it)</span>
+<span id="cb15-16"><a href="ordenação.html#cb15-16"></a>      <span class="cf">for</span> (<span class="kw">auto</span> right = it, left = <span class="bu">std::</span>prev(right, h);</span>
+<span id="cb15-17"><a href="ordenação.html#cb15-17"></a>           right != begin &amp;&amp; *left &gt; *right;</span>
+<span id="cb15-18"><a href="ordenação.html#cb15-18"></a>           right = <span class="bu">std::</span>exchange(left, <span class="bu">std::</span>prev(left, h)))</span>
+<span id="cb15-19"><a href="ordenação.html#cb15-19"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb15-20"><a href="ordenação.html#cb15-20"></a>}</span></code></pre></div>
 
+</div>
 </div>
             </section>
 

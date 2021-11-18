@@ -47,6 +47,11 @@ adaptadores
 estruturas-associativas
 particionamento
 ordenação
+bubble-sort
+shaker-sort
+selection-sort
+insertion-sort
+shell-sort
 busca
 operações-de-conjuntos-em-listas-ordenadas
 operações-de-heap
