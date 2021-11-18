@@ -29,7 +29,7 @@ necessário identificar o "ponto de entrada" do programa. Ou seja, dentre as
 diversas potenciais funcionalidades do programa, qual é a primeira instrução
 executada.
 
-Em C++17, o início do programa ocorre na função `main`. Esta é a função que o
+Em C++20, o início do programa ocorre na função `main`. Esta é a função que o
 sistema operacional invoca quando o programa é executado — outras rotinas podem
 ser executadas antes da `main`, por exemplo, para inicializar variáveis
 globais; no entanto, estes detalhes estão fora do escopo deste livro. Veja mais
@@ -48,7 +48,7 @@ momento, é suficiente saber que esse arquivo, quando compilado e executado,
 resultará em uma saída com o texto `"Hello, world!"` seguido de quebra de linha.
 
 ```
-$ g++ -std=c++17 hello.cpp -o hello
+$ g++ -std=c++20 hello.cpp -o hello
 $ ./hello
 Hello, world!
 ```

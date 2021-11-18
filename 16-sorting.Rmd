@@ -1,10 +1,12 @@
 # Ordenação
 
+OBS: questões de estabilidade na ordenação são omitidas neste livro.
+
 ## Bubble sort
 
 ```cpp
-template <typename ForwardIterator>
-void bubble_sort(ForwardIterator begin, ForwardIterator end)
+template <std::forward_iterator It>
+void bubblesort(It begin, It end)
 {
   for (; begin != end; --end)
     for (auto left = begin, right = std::next(left);
@@ -19,16 +21,16 @@ void bubble_sort(ForwardIterator begin, ForwardIterator end)
 
 *Exercícios*:
 
-1. Altere o código da função `bubble_sort` para interromper as passagens quando
+1. Altere o código da função `bubblesort` para interromper as passagens quando
    não houver mais trocas.
-1. Compare o tempo de execução das duas versões da função `bubble_sort` para
+1. Compare o tempo de execução das duas versões da função `bubblesort` para
    vetores muito grandes.
 
 ## Shaker sort
 
 ```cpp
-template <typename BidirIterator>
-void shaker_sort(BidirIterator begin, BidirIterator end)
+template <std::bidirectional_iterator It>
+void shakersort(It begin, It end)
 {
   while (true)
   {
@@ -40,7 +42,7 @@ void shaker_sort(BidirIterator begin, BidirIterator end)
     if (begin == --end)
       return;
 
-    for (auto right = std::prev(end), left = std::prev(left);
+    for (auto right = std::prev(end), left = std::prev(right);
          right != begin;
          right = left--)
       if (*left > *right)
@@ -55,16 +57,17 @@ void shaker_sort(BidirIterator begin, BidirIterator end)
 
 *Exercícios*:
 
-1. Altere o código da função `shaker_sort` para interromper as passagens quando
+1. Altere o código da função `shakersort` para interromper as passagens quando
    não houver mais trocas.
-1. Compare o tempo de execução das duas versões da função `shaker_sort` para
-   vetores muito grandes.
+1. Compare o tempo de execução das duas versões da função `shakersort` para
+   vetores muito grandes.  Qual algoritmo se beneficia mais desta interrupção:
+   *bubble sort* ou *shaker sort*?
 
 ## Selection sort
 
 ```cpp
-template <typename ForwardIterator>
-void selection_sort(ForwardIterator begin, ForwardIterator end)
+template <std::forward_iterator It>
+void selectionsort(It begin, It end)
 {
   for (auto it = begin; it != end; ++it)
     std::iter_swap(it, std::min_element(it, end));
@@ -74,8 +77,8 @@ void selection_sort(ForwardIterator begin, ForwardIterator end)
 ## Insertion sort
 
 ```cpp
-template <typename BidirIterator>
-void insertion_sort(BidirIterator begin, BidirIterator end)
+template <std::bidirectional_iterator It>
+void insertionsort(It begin, It end)
 {
   for (auto it = std::next(begin); it != end; ++it)
     for (auto right = it, left = std::prev(right);
@@ -88,9 +91,7 @@ void insertion_sort(BidirIterator begin, BidirIterator end)
 ## Shell sort
 
 ```cpp
-template <typename T>
-auto knuth_seq_last(T length)
-{
+template <std::integral T> auto knuth_seq_last(T length) {
   T h = 1;
   while (h < length)
     h = 3 * h + 1;
@@ -99,30 +100,37 @@ auto knuth_seq_last(T length)
 ```
 
 ```cpp
-template <typename RandomAccessIterator>
-void shell_sort(RandomAccessIterator begin, RandomAccessIterator end)
+template <std::random_access_iterator It>
+void shellsort(It begin, It end)
 {
   const auto length = std::distance(begin, end);
   for (auto h = knuth_seq_last(length); h > 0; h = h / 3)
     for (auto it = std::next(begin, h); it != end; ++it)
       for (auto right = it, left = std::prev(right, h);
-           right != begin && *left > *right;
+           std::distance(begin, right) >= h && *left > *right;
            right = std::exchange(left, std::prev(left, h)))
         std::iter_swap(left, right);
 }
 ```
 
+*Exercícios*:
+
+1. Ignorando questões de desempenho, a função `shellsort` poderia ser
+   implementada para iteradores bidirecionais (e sem acesso aleatório).
+   Justifique a necessidade de acesso aleatório para manter as vantagens do
+   *shell sort* em comparação com o *insertion sort*.
+
 ## Quick sort
 
 ```cpp
-template <typename BidirIterator>
-void quicksort(BidirIterator begin, BidirIterator end)
+template <std::bidirectional_iterator It>
+void quicksort(It begin, It end)
 {
   if (begin == end)
     return;
 
   auto left = begin;
-  auto right = std::prev(end)
+  auto right = std::prev(end);
 
   const auto pivot_value = *left;
 
@@ -142,22 +150,20 @@ void quicksort(BidirIterator begin, BidirIterator end)
   }
 
   quicksort(begin, left);
-  quicksort(left + 1, end);
+  quicksort(std::next(left), end);
 }
 ```
 
 ## Merge sort
 
 ```cpp
-template <typename ForwardIterator>
-void merge(ForwardIterator begin, ForwardIterator mid, ForwardIterator end)
+template <std::forward_iterator It>
+void merge(It begin, It mid, It end)
 {
-  using T = typename std::iterator_traits<ForwardIterator>::value_type;
-  std::vector<T> tmp;
+  std::vector<std::iter_value_t<It>> tmp;
 
   auto it1 = begin;
   auto it2 = mid;
-
   while (it1 != mid && it2 != end)
     tmp.push_back(std::move(*it1 < *it2 ? *it1++ : *it2++));
 
@@ -168,8 +174,8 @@ void merge(ForwardIterator begin, ForwardIterator mid, ForwardIterator end)
 ```
 
 ```cpp
-template <typename ForwardIterator>
-void merge_sort(ForwardIterator begin, ForwardIterator end)
+template <std::random_access_iterator It>
+void mergesort(It begin, It end)
 {
   const auto length = std::distance(begin, end);
   if (length < 2)
@@ -183,3 +189,10 @@ void merge_sort(ForwardIterator begin, ForwardIterator end)
   merge(begin, mid, end);
 }
 ```
+
+*Exercícios*:
+
+1. Discuta as desvantagens de permitir que a função `mergesort` aceite
+   iteradores unidirecionais ao invés de requerer acesso aleatório.
+1. Implemente o algoritmo *merge sort* evitando as inúmeras alocações de
+   memória temporária.
