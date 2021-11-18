@@ -251,7 +251,7 @@ programador construir um software composto por diversos módulos. Neste caso, é
 necessário identificar o “ponto de entrada” do programa. Ou seja, dentre as
 diversas potenciais funcionalidades do programa, qual é a primeira instrução
 executada.</p>
-<p>Em C++17, o início do programa ocorre na função <code>main</code>. Esta é a função que o
+<p>Em C++20, o início do programa ocorre na função <code>main</code>. Esta é a função que o
 sistema operacional invoca quando o programa é executado — outras rotinas podem
 ser executadas antes da <code>main</code>, por exemplo, para inicializar variáveis
 globais; no entanto, estes detalhes estão fora do escopo deste livro. Veja mais
@@ -264,7 +264,7 @@ informações <a href="https://en.cppreference.com/w/cpp/language/main_function"
 <p>Há várias nuances deste programa que entraremos em detalhes futuramente. No
 momento, é suficiente saber que esse arquivo, quando compilado e executado,
 resultará em uma saída com o texto <code>"Hello, world!"</code> seguido de quebra de linha.</p>
-<pre><code>$ g++ -std=c++17 hello.cpp -o hello
+<pre><code>$ g++ -std=c++20 hello.cpp -o hello
 $ ./hello
 Hello, world!</code></pre>
 
