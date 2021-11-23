@@ -1,3 +1,101 @@
 # Estruturas associativas
 
 Conjuntos e mapas ordenados (árvores) e não ordenados (hashing)
+
+
+## Árvores Binárias de Busca
+
+```cpp
+struct node_data;
+using node = std::shared_ptr<node_data>;
+
+struct node_data {
+  K key;
+  V value;
+  node left_child = nullptr;
+  node right_child = nullptr;
+};
+
+template <typename K, typename V> class bstree
+{
+public:
+  void insert(const K& key, const V& value) {
+    root = insert_recursive(root, key, value);
+  }
+
+  void remove(const K& key) {
+    root = remove_recursive(root, key);
+  }
+
+  auto search(const K& key) const -> std::optional<V> {
+    const auto pos = search_recursive(root, key);
+    return pos == nullptr ? std::nullopt : pos->value;
+  }
+
+private:
+  node root = nullptr;
+
+  static auto insert_recursive(
+      node root, const K& key, const V& value) -> node
+  {
+    if (root == nullptr)
+      return node(new node_data(key, value));
+
+    if (key < root->key)
+      root->left_child = insert_recursive(root->left_child, key, value);
+    else if (key > root->key)
+      root->right_child = insert_recursive(root->right_child, key, value);
+
+    return root;
+  }
+
+  static auto remove_recursive(node root, const K& key) -> node {
+    if (root == nullptr)
+      return nullptr;
+
+    if (key < root->key) {
+      root->left_child = remove_recursive(root->left_child, key);
+      return root;
+    }
+
+    if (key > root->key) {
+      root->right_child = remove_recursive(root->right_child, key);
+      return root;
+    }
+
+    // root contains key...
+
+    // root is leaf
+    if (root->left_child == nullptr && root->right_child == nullptr)
+      return nullptr;
+
+    // root has both children
+    if (root->left_child != nullptr && root->right_child != nullptr) {
+      const auto child = left_most(root->right_child);
+      std::swap(root->key, child->key);
+      root->right_child = remove_recursive(root->right_child, child->key);
+      return root;
+    }
+
+    // root has only one child
+    return root->left_child != nullptr ? root->left_child : root->right_child;
+  }
+
+  static auto left_most(node root) -> node {
+    return root->left_child == nullptr ? root : left_most(root->left_child);
+  }
+
+  static auto search_recursive(node root, K key) -> node {
+    if (root == nullptr)
+      return nullptr;
+
+    if (key < root->key)
+      return search_recursive(root->left_child, key);
+
+    if (key > root->key)
+      return search_recursive(root->right_child, key);
+
+    return root;
+  }
+};
+```

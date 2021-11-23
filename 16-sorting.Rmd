@@ -162,8 +162,7 @@ void merge(It begin, It mid, It end)
 {
   std::vector<std::iter_value_t<It>> tmp;
 
-  auto it1 = begin;
-  auto it2 = mid;
+  auto it1 = begin, it2 = mid;
   while (it1 != mid && it2 != end)
     tmp.push_back(std::move(*it1 < *it2 ? *it1++ : *it2++));
 
