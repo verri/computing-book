@@ -44,6 +44,8 @@ possíveis-aprimoramentos
 iterador
 colônia
 adaptadores
+árvores
+árvores-binárias
 estruturas-associativas
 árvores-binárias-de-busca
 particionamento

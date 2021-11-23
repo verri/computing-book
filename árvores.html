@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Sub-rotinas e recursão | Computando</title>
-  <meta name="description" content="8 Sub-rotinas e recursão | Computando" />
+  <title>15 Árvores | Computando</title>
+  <meta name="description" content="15 Árvores | Computando" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Sub-rotinas e recursão | Computando" />
+  <meta property="og:title" content="15 Árvores | Computando" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="verri/computing-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Sub-rotinas e recursão | Computando" />
+  <meta name="twitter:title" content="15 Árvores | Computando" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="entrada-e-saída.html"/>
-<link rel="next" href="tipos-avançados.html"/>
+<link rel="prev" href="adaptadores.html"/>
+<link rel="next" href="estruturas-associativas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -229,85 +229,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sub-rotinas-e-recursão" class="section level1">
-<h1><span class="header-section-number">8</span> Sub-rotinas e recursão</h1>
-<div id="recursão" class="section level2">
-<h2><span class="header-section-number">8.1</span> Recursão</h2>
-<p>Muitos problemas computacionais possuem uma propriedade muito interessante: cada instância
-do problema pose ser subdividida em instâncias menores do <em>mesmo</em> problema. Assim, o
-algoritmo da solução para o problema é <em>recursivo</em>.</p>
-<p>Em termos de programação, uma função é dita <em>recursiva</em> se fizer uma chamada a si mesmo.
-Essa característica é natural em diversas fórmulas matemáticas conhecidas.
-Consequentemente, diversos problemas podem ser resolvidos de maneira simples quando
-tratados recursivamente.</p>
-<p>Por exemplo, definimos o fatorial de um número natural não nulo como <span class="math inline">\(n! = n \cdot (n - 1) \cdot (n - 2) \cdot \dots \cdot 1\)</span> e fatorial de zero, <span class="math inline">\(0!\)</span>, igual a <span class="math inline">\(1\)</span>.</p>
-<p>Sua formulação recursiva é:</p>
-<ul>
-<li><span class="math inline">\(n! = 1\)</span> para <span class="math inline">\(n \leq 1\)</span>; e</li>
-<li><span class="math inline">\(n! = n \cdot (n - 1)!\)</span> para <span class="math inline">\(n &gt; 1\)</span>.</li>
-</ul>
-<p>Traduzindo em termos computacionais, para resolver problemas recursivos, seguimos os
-seguintes passos:</p>
-<ol style="list-style-type: decimal">
-<li>Identificar as <em>instâncias mínimas</em> do problema, ou seja, aquelas que não podem ser
-subdivididas. Essa instância também é chamada de condição de parada do algoritmo;</li>
-<li>Para as demais instâncias, reduzir a instância atual em instâncias menores do <em>mesmo problema</em>.</li>
-</ol>
-<p>Vamos reproduzir esses passos para implementação de um algoritmo recursivo para calcular a
-soma dos números inteiros entre <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> assumindo que <span class="math inline">\(a \leq b\)</span>. Denotaremos tal soma
-como <span class="math inline">\(s(a, b)\)</span>.</p>
-<p><em>Passo 1</em>: A instância mínima desse problema é o caso <span class="math inline">\(a = b\)</span> de modo que o resultado é o
-próprio valor de <span class="math inline">\(a\)</span> (ou <span class="math inline">\(b\)</span>). Ou seja, <span class="math inline">\(s(a, a) = a\)</span>.</p>
-<p><em>Passo 2</em>: Para os casos <span class="math inline">\(a &lt; b\)</span>, podemos reduzir o problema a partir da seguinte
-propriedade: <span class="math inline">\(s(a, b) = s(a, c) + s(c + 1, b)\)</span> para todo <span class="math inline">\(c\)</span> tal que <span class="math inline">\(a \leq c &lt; b\)</span>.
-Deste modo, para o caso específico <span class="math inline">\(c = a\)</span>, temos que <span class="math inline">\(s(a, b) = s(a, a) + s(a + 1, b)\)</span>.</p>
-<p>Logo, a implementação deste algoritmo seria:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="sub-rotinas-e-recursão.html#cb3-1"></a><span class="dt">int</span> s(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
-<span id="cb3-2"><a href="sub-rotinas-e-recursão.html#cb3-2"></a>  <span class="cf">if</span> (a == b)</span>
-<span id="cb3-3"><a href="sub-rotinas-e-recursão.html#cb3-3"></a>    <span class="cf">return</span> a;</span>
-<span id="cb3-4"><a href="sub-rotinas-e-recursão.html#cb3-4"></a>  <span class="cf">return</span> s(a, a) + s(a + <span class="dv">1</span>, b);</span>
-<span id="cb3-5"><a href="sub-rotinas-e-recursão.html#cb3-5"></a>}</span></code></pre></div>
-<div id="busca-binária" class="section level3">
-<h3><span class="header-section-number">8.1.1</span> Busca binária</h3>
-<p>Dada uma sequência <span class="math inline">\(v\)</span> com <span class="math inline">\(n\)</span> objetos ordenados de maneira crescente, queremos verificar se um determinado objeto
-<span class="math inline">\(k\)</span> pertence ou não à sequência. É possível escrever um algoritmo recursivo que resolve o
-problema sem a necessidade de passar por cada elemento <span class="math inline">\(x \in v\)</span>.</p>
-<p>Para construção da solução, observamos a seguinte propriedade:</p>
-<ul>
-<li>Se <span class="math inline">\(k &gt; v_i\)</span>, sabemos que <span class="math inline">\(k \neq v_j\)</span> para todo <span class="math inline">\(j \leq i\)</span>; e</li>
-<li>Se <span class="math inline">\(k &lt; v_i\)</span>, que <span class="math inline">\(k \neq v_j\)</span> para todo <span class="math inline">\(j \geq i\)</span>.</li>
-</ul>
-<p>Assim, podemos construir uma solução recursiva para o problema.</p>
-<p><em>Passo 1</em>: A instância mínima acontece quando <span class="math inline">\(n = 0\)</span> e, consequentemente, <span class="math inline">\(k \not\in v\)</span>.</p>
-<p><em>Passo 2</em>: Podemos subdividir o problema a depender do elemento <span class="math inline">\(m = v_{\lfloor n/2 \rfloor}\)</span>:</p>
-<ul>
-<li>Se <span class="math inline">\(k = m\)</span>, então <span class="math inline">\(k \in v\)</span>;</li>
-<li>Se <span class="math inline">\(k &lt; m\)</span>, então buscamos <span class="math inline">\(k\)</span> em <span class="math inline">\([v_j : 1 &lt; j &lt; \lfloor n/2 \rfloor]\)</span>; ou</li>
-<li>Se <span class="math inline">\(k &gt; m\)</span>, então buscamos <span class="math inline">\(k\)</span> em <span class="math inline">\([v_j : \lfloor n/2 \rfloor &lt; j \leq n]\)</span>.</li>
-</ul>
-<hr />
-<p><em>Exercícios</em>:</p>
-<ol style="list-style-type: decimal">
-<li>Com base na formulação recursiva do fatorial e nos passos para construção do algoritmo
-recursivo, implemente</li>
-<li>Escreva um algoritmo recursivo para cálculo do <span class="math inline">\(i\)</span>-ésimo elemento da sequência
-Fibonacci.</li>
-<li>Escreva um algoritmo recursivo para cálculo do máximo divisor comum (Algoritmo de
-Euclides).</li>
-<li>Implemente o algoritmo recursivo de busca binária.</li>
-<li>Implemente uma função recursiva que calcule a soma dos dígitos decimais de um inteiro
-positivo.</li>
-<li>Implemente uma função recursiva para converter número inteiro decimal em sua forma
-binária.</li>
-<li>Implemente um algoritmo recursivo que calcule a representação em Gray Code usando <span class="math inline">\(N\)</span>
-bits de um número <span class="math inline">\(0 \leq k \leq 2^{N-1}\)</span>.</li>
-<li>Para todos os algoritmos anteriores, implemente uma versão iterativa.</li>
-<li>Após ler o capitulo <a href="complexity.html#complexity">11</a>, derive qual a complexidade de tempo no pior caso
-da busca binária em termos do tamanho do vetor.</li>
-</ol>
-<!-- vim: set spell spelllang=pt tw=90: -->
+<div id="árvores" class="section level1">
+<h1><span class="header-section-number">15</span> Árvores</h1>
+<div id="árvores-binárias" class="section level2">
+<h2><span class="header-section-number">15.1</span> Árvores binárias</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb11-1"><a href="árvores.html#cb11-1"></a><span class="kw">enum</span> <span class="kw">class</span> ordering {</span>
+<span id="cb11-2"><a href="árvores.html#cb11-2"></a>  in_order,</span>
+<span id="cb11-3"><a href="árvores.html#cb11-3"></a>  pre_order,</span>
+<span id="cb11-4"><a href="árvores.html#cb11-4"></a>  post_order,</span>
+<span id="cb11-5"><a href="árvores.html#cb11-5"></a>};</span>
+<span id="cb11-6"><a href="árvores.html#cb11-6"></a></span>
+<span id="cb11-7"><a href="árvores.html#cb11-7"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">class</span> btree</span>
+<span id="cb11-8"><a href="árvores.html#cb11-8"></a>{</span>
+<span id="cb11-9"><a href="árvores.html#cb11-9"></a>  <span class="kw">using</span> btree_ptr = <span class="bu">std::</span>shared_ptr&lt;btree&gt;;</span>
+<span id="cb11-10"><a href="árvores.html#cb11-10"></a>  <span class="kw">using</span> visitor = <span class="bu">std::</span>function&lt;<span class="dt">bool</span>(<span class="at">const</span> T&amp;)&gt;;</span>
+<span id="cb11-11"><a href="árvores.html#cb11-11"></a></span>
+<span id="cb11-12"><a href="árvores.html#cb11-12"></a><span class="kw">public</span>:</span>
+<span id="cb11-13"><a href="árvores.html#cb11-13"></a>  <span class="at">static</span> <span class="kw">auto</span> create(T, btree_ptr = <span class="kw">nullptr</span>, btree_ptr = <span class="kw">nullptr</span>) -&gt; btree_ptr;</span>
+<span id="cb11-14"><a href="árvores.html#cb11-14"></a>  <span class="at">static</span> <span class="kw">auto</span> read(<span class="bu">std::</span>istream&amp;) -&gt; btree_ptr;</span>
+<span id="cb11-15"><a href="árvores.html#cb11-15"></a></span>
+<span id="cb11-16"><a href="árvores.html#cb11-16"></a>  <span class="kw">friend</span> <span class="kw">auto</span> <span class="kw">operator</span>&lt;&lt;(<span class="at">const</span> <span class="bu">std::</span>ostream&amp;, btree_ptr) -&gt; <span class="bu">std::</span>ostream&amp;;</span>
+<span id="cb11-17"><a href="árvores.html#cb11-17"></a>  <span class="kw">friend</span> <span class="kw">auto</span> <span class="kw">operator</span>&gt;&gt;(<span class="at">const</span> <span class="bu">std::</span>istream&amp;, btree_ptr&amp;) -&gt; <span class="bu">std::</span>istream&amp;;</span>
+<span id="cb11-18"><a href="árvores.html#cb11-18"></a></span>
+<span id="cb11-19"><a href="árvores.html#cb11-19"></a>  <span class="kw">auto</span> height() <span class="at">const</span> -&gt; <span class="bu">std::</span>size_t;</span>
+<span id="cb11-20"><a href="árvores.html#cb11-20"></a></span>
+<span id="cb11-21"><a href="árvores.html#cb11-21"></a>  <span class="dt">void</span> dfs(ordering, visitor) <span class="at">const</span>;</span>
+<span id="cb11-22"><a href="árvores.html#cb11-22"></a>  <span class="dt">void</span> bfs(visitor) <span class="at">const</span>;</span>
+<span id="cb11-23"><a href="árvores.html#cb11-23"></a></span>
+<span id="cb11-24"><a href="árvores.html#cb11-24"></a><span class="kw">private</span>:</span>
+<span id="cb11-25"><a href="árvores.html#cb11-25"></a>  T value;</span>
+<span id="cb11-26"><a href="árvores.html#cb11-26"></a>  btree_ptr left_child;</span>
+<span id="cb11-27"><a href="árvores.html#cb11-27"></a>  btree_ptr right_child;</span>
+<span id="cb11-28"><a href="árvores.html#cb11-28"></a></span>
+<span id="cb11-29"><a href="árvores.html#cb11-29"></a>  btree() = <span class="cf">default</span>;</span>
+<span id="cb11-30"><a href="árvores.html#cb11-30"></a>};</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="árvores.html#cb12-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt;</span>
+<span id="cb12-2"><a href="árvores.html#cb12-2"></a><span class="kw">auto</span> btree&lt;T&gt;::create(T value, btree_ptr left_child, btree_ptr right_child) -&gt; btree_ptr</span>
+<span id="cb12-3"><a href="árvores.html#cb12-3"></a>{</span>
+<span id="cb12-4"><a href="árvores.html#cb12-4"></a>  <span class="cf">return</span> btree_ptr(<span class="kw">new</span> btree(value, <span class="bu">std::</span>move(left_child), <span class="bu">std::</span>move(right_child)));</span>
+<span id="cb12-5"><a href="árvores.html#cb12-5"></a>}</span></code></pre></div>
 
-</div>
 </div>
 </div>
             </section>
@@ -315,8 +276,8 @@ da busca binária em termos do tamanho do vetor.</li>
           </div>
         </div>
       </div>
-<a href="entrada-e-saída.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tipos-avançados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="adaptadores.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="estruturas-associativas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
