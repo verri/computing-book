@@ -45,6 +45,7 @@ iterador
 colônia
 adaptadores
 estruturas-associativas
+árvores-binárias-de-busca
 particionamento
 ordenação
 bubble-sort
