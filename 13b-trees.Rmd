@@ -1,0 +1,44 @@
+# Árvores
+
+## Árvores binárias
+
+```cpp
+enum class ordering {
+  in_order,
+  pre_order,
+  post_order,
+};
+
+template <typename T> class btree
+{
+  using btree_ptr = std::shared_ptr<btree>;
+  using visitor = std::function<bool(const T&)>;
+
+public:
+  static auto create(T, btree_ptr = nullptr, btree_ptr = nullptr) -> btree_ptr;
+  static auto read(std::istream&) -> btree_ptr;
+
+  friend auto operator<<(const std::ostream&, btree_ptr) -> std::ostream&;
+  friend auto operator>>(const std::istream&, btree_ptr&) -> std::istream&;
+
+  auto height() const -> std::size_t;
+
+  void dfs(ordering, visitor) const;
+  void bfs(visitor) const;
+
+private:
+  T value;
+  btree_ptr left_child;
+  btree_ptr right_child;
+
+  btree() = default;
+};
+```
+
+```cpp
+template <typename T>
+auto btree<T>::create(T value, btree_ptr left_child, btree_ptr right_child) -> btree_ptr
+{
+  return btree_ptr(new btree(value, std::move(left_child), std::move(right_child)));
+}
+```
