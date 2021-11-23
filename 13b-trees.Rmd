@@ -3,42 +3,78 @@
 ## Árvores binárias
 
 ```cpp
+template <typename T> struct btree;
+
+template <typename T>
+using btree_ptr = std::shared_ptr<btree<T>>;
+
+template <typename T> struct btree {
+  T value;
+  btree_ptr left_child = nullptr;
+  btree_ptr right_child = nullptr;
+};
+```
+
+```cpp
 enum class ordering {
   in_order,
   pre_order,
   post_order,
 };
 
-template <typename T> class btree
-{
-  using btree_ptr = std::shared_ptr<btree>;
-  using visitor = std::function<bool(const T&)>;
-
-public:
-  static auto create(T, btree_ptr = nullptr, btree_ptr = nullptr) -> btree_ptr;
-  static auto read(std::istream&) -> btree_ptr;
-
-  friend auto operator<<(const std::ostream&, btree_ptr) -> std::ostream&;
-  friend auto operator>>(const std::istream&, btree_ptr&) -> std::istream&;
-
-  auto height() const -> std::size_t;
-
-  void dfs(ordering, visitor) const;
-  void bfs(visitor) const;
-
-private:
-  T value;
-  btree_ptr left_child;
-  btree_ptr right_child;
-
-  btree() = default;
-};
+template <typename T>
+using visitor = std::function<bool(const T&)>;
 ```
 
 ```cpp
 template <typename T>
-auto btree<T>::create(T value, btree_ptr left_child, btree_ptr right_child) -> btree_ptr
-{
-  return btree_ptr(new btree(value, std::move(left_child), std::move(right_child)));
+void dfs(btree_ptr<T> root, ordering order, const visitor& visit) {
+  if (root == nullptr)
+    return;
+
+  switch (order)
+  {
+  case in_order:
+    dfs(root->left_child, order, visit);
+    if (!visit(root->value))
+      return;
+    dfs(root->right_child, order, visit);
+    break;
+  case pre_order:
+    dfs(root->left_child, order, visit);
+    dfs(root->right_child, order, visit);
+    if (!visit(root->value))
+      return;
+    break;
+  case post_order:
+    if (!visit(root->value))
+      return;
+    dfs(root->left_child, order, visit);
+    dfs(root->right_child, order, visit);
+    break;
+  }
+}
+```
+
+```cpp
+template <typename T>
+void bfs(btree_ptr<T> root, const visitor& visit) {
+  std::queue<btree_ptr> queue;
+  queue.push(root);
+
+  while (!queue.empty())
+  {
+    if (queue.front() == nullptr) {
+      queue.pop();
+      continue;
+    }
+
+    if (!visit(queue.front()->value))
+      return;
+
+    queue.push(queue.front()->left_child);
+    queue.push(queue.front()->right_child);
+    queue.pop();
+  }
 }
 ```
