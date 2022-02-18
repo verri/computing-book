@@ -1,5 +1,8 @@
 def:unlabeled-div-1
 def:unlabeled-div-2
+def:unlabeled-div-3
+def:unlabeled-div-4
+def:unlabeled-div-5
 preliminares
 motivação
 definições
@@ -11,6 +14,7 @@ programa-de-computador
 programação-e-linguagem-de-programação
 compilador
 logica
+numeros
 representacao
 tipos-de-informação
 algoritmos

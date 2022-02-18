@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>19 Ordenação | Computando</title>
-  <meta name="description" content="19 Ordenação | Computando" />
+  <title>3 Sistemas de numeração | Computando</title>
+  <meta name="description" content="3 Sistemas de numeração | Computando" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="19 Ordenação | Computando" />
+  <meta property="og:title" content="3 Sistemas de numeração | Computando" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="verri/computing-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="19 Ordenação | Computando" />
+  <meta name="twitter:title" content="3 Sistemas de numeração | Computando" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="particionamento.html"/>
-<link rel="next" href="busca.html"/>
+<link rel="prev" href="logica.html"/>
+<link rel="next" href="representacao.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -230,190 +230,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ordenação" class="section level1">
-<h1><span class="header-section-number">19</span> Ordenação</h1>
-<p>OBS: questões de estabilidade na ordenação são omitidas neste livro.</p>
-<div id="bubble-sort" class="section level2">
-<h2><span class="header-section-number">19.1</span> Bubble sort</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="ordenação.html#cb16-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>forward_iterator It&gt;</span>
-<span id="cb16-2"><a href="ordenação.html#cb16-2"></a><span class="dt">void</span> bubblesort(It begin, It end)</span>
-<span id="cb16-3"><a href="ordenação.html#cb16-3"></a>{</span>
-<span id="cb16-4"><a href="ordenação.html#cb16-4"></a>  <span class="cf">for</span> (; begin != end; --end)</span>
-<span id="cb16-5"><a href="ordenação.html#cb16-5"></a>    <span class="cf">for</span> (<span class="kw">auto</span> left = begin, right = <span class="bu">std::</span>next(left);</span>
-<span id="cb16-6"><a href="ordenação.html#cb16-6"></a>         right != end;</span>
-<span id="cb16-7"><a href="ordenação.html#cb16-7"></a>         left = right++)</span>
-<span id="cb16-8"><a href="ordenação.html#cb16-8"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
-<span id="cb16-9"><a href="ordenação.html#cb16-9"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb16-10"><a href="ordenação.html#cb16-10"></a>}</span></code></pre></div>
-<hr />
-<p><em>Exercícios</em>:</p>
-<ol style="list-style-type: decimal">
-<li>Altere o código da função <code>bubblesort</code> para interromper as passagens quando
-não houver mais trocas.</li>
-<li>Compare o tempo de execução das duas versões da função <code>bubblesort</code> para
-vetores muito grandes.</li>
-</ol>
+<div id="numeros" class="section level1">
+<h1><span class="header-section-number">3</span> Sistemas de numeração</h1>
+<p>No nosso cotidiano, nós expressamos valores numéricos utilizando o sistema decimal de
+numeração. Em outras palavras, utilizamos dez algarismos diferentes
+que quando combinados representam diferentes grandezas. Ao combiná-los, levamos em
+consideração a posição relativa de cada algarismo para interpretar a grandeza que queremos
+representar. Deste modo, a grandeza representada por 17 é diferente da grandeza
+representada por 71, mesmo que utilizem os mesmos símbolos: 1 e 7.</p>
+<p>Podemos generalizar esse esquema para qualquer número de algarismos, criando diferentes
+sistemas de representação de números. Considere as seguintes definições.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definição 3.1  (Sistema de numeração) </strong></span>Sistema de escrita para representar números por meio de um <em>alfabeto</em> e uma regra de
+composição.</p>
 </div>
-<div id="shaker-sort" class="section level2">
-<h2><span class="header-section-number">19.2</span> Shaker sort</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="ordenação.html#cb17-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>bidirectional_iterator It&gt;</span>
-<span id="cb17-2"><a href="ordenação.html#cb17-2"></a><span class="dt">void</span> shakersort(It begin, It end)</span>
-<span id="cb17-3"><a href="ordenação.html#cb17-3"></a>{</span>
-<span id="cb17-4"><a href="ordenação.html#cb17-4"></a>  <span class="cf">while</span> (<span class="kw">true</span>)</span>
-<span id="cb17-5"><a href="ordenação.html#cb17-5"></a>  {</span>
-<span id="cb17-6"><a href="ordenação.html#cb17-6"></a>    <span class="cf">for</span> (<span class="kw">auto</span> left = begin, right = <span class="bu">std::</span>next(left);</span>
-<span id="cb17-7"><a href="ordenação.html#cb17-7"></a>         right != end;</span>
-<span id="cb17-8"><a href="ordenação.html#cb17-8"></a>         left = right++)</span>
-<span id="cb17-9"><a href="ordenação.html#cb17-9"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
-<span id="cb17-10"><a href="ordenação.html#cb17-10"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb17-11"><a href="ordenação.html#cb17-11"></a>    <span class="cf">if</span> (begin == --end)</span>
-<span id="cb17-12"><a href="ordenação.html#cb17-12"></a>      <span class="cf">return</span>;</span>
-<span id="cb17-13"><a href="ordenação.html#cb17-13"></a></span>
-<span id="cb17-14"><a href="ordenação.html#cb17-14"></a>    <span class="cf">for</span> (<span class="kw">auto</span> right = <span class="bu">std::</span>prev(end), left = <span class="bu">std::</span>prev(right);</span>
-<span id="cb17-15"><a href="ordenação.html#cb17-15"></a>         right != begin;</span>
-<span id="cb17-16"><a href="ordenação.html#cb17-16"></a>         right = left--)</span>
-<span id="cb17-17"><a href="ordenação.html#cb17-17"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
-<span id="cb17-18"><a href="ordenação.html#cb17-18"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb17-19"><a href="ordenação.html#cb17-19"></a>    <span class="cf">if</span> (++begin == end)</span>
-<span id="cb17-20"><a href="ordenação.html#cb17-20"></a>      <span class="cf">return</span>;</span>
-<span id="cb17-21"><a href="ordenação.html#cb17-21"></a>  }</span>
-<span id="cb17-22"><a href="ordenação.html#cb17-22"></a>}</span></code></pre></div>
-<hr />
-<p><em>Exercícios</em>:</p>
-<ol style="list-style-type: decimal">
-<li>Altere o código da função <code>shakersort</code> para interromper as passagens quando
-não houver mais trocas.</li>
-<li>Compare o tempo de execução das duas versões da função <code>shakersort</code> para
-vetores muito grandes. Qual algoritmo se beneficia mais desta interrupção:
-<em>bubble sort</em> ou <em>shaker sort</em>?</li>
-</ol>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definição 3.2  (Sistema posicional) </strong></span>Sistema de numeração em que a contribuição de cada símbolo do alfabeto no valor do número
+é o valor do símbolo multiplicado por um fator dependente da posição do símbolo.
+Os valores associados a cada símbolo são crescentes, ou seja, o alfabeto é ordenado.
+O fator de multiplicação consiste em um múltiplo da base do sistema.</p>
 </div>
-<div id="selection-sort" class="section level2">
-<h2><span class="header-section-number">19.3</span> Selection sort</h2>
-<div class="sourceCode" id="cb18"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb18-1"><a href="ordenação.html#cb18-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>forward_iterator It&gt;</span>
-<span id="cb18-2"><a href="ordenação.html#cb18-2"></a><span class="dt">void</span> selectionsort(It begin, It end)</span>
-<span id="cb18-3"><a href="ordenação.html#cb18-3"></a>{</span>
-<span id="cb18-4"><a href="ordenação.html#cb18-4"></a>  <span class="cf">for</span> (<span class="kw">auto</span> it = begin; it != end; ++it)</span>
-<span id="cb18-5"><a href="ordenação.html#cb18-5"></a>    <span class="bu">std::</span>iter_swap(it, <span class="bu">std::</span>min_element(it, end));</span>
-<span id="cb18-6"><a href="ordenação.html#cb18-6"></a>}</span></code></pre></div>
+<div class="definition">
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definição 3.3  (Base) </strong></span>Número de símbolos de um sistema posicional.</p>
 </div>
-<div id="insertion-sort" class="section level2">
-<h2><span class="header-section-number">19.4</span> Insertion sort</h2>
-<div class="sourceCode" id="cb19"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb19-1"><a href="ordenação.html#cb19-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>bidirectional_iterator It&gt;</span>
-<span id="cb19-2"><a href="ordenação.html#cb19-2"></a><span class="dt">void</span> insertionsort(It begin, It end)</span>
-<span id="cb19-3"><a href="ordenação.html#cb19-3"></a>{</span>
-<span id="cb19-4"><a href="ordenação.html#cb19-4"></a>  <span class="cf">for</span> (<span class="kw">auto</span> it = <span class="bu">std::</span>next(begin); it != end; ++it)</span>
-<span id="cb19-5"><a href="ordenação.html#cb19-5"></a>    <span class="cf">for</span> (<span class="kw">auto</span> right = it, left = <span class="bu">std::</span>prev(right);</span>
-<span id="cb19-6"><a href="ordenação.html#cb19-6"></a>         right != begin &amp;&amp; *left &gt; *right;</span>
-<span id="cb19-7"><a href="ordenação.html#cb19-7"></a>         right = left--)</span>
-<span id="cb19-8"><a href="ordenação.html#cb19-8"></a>      <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb19-9"><a href="ordenação.html#cb19-9"></a>}</span></code></pre></div>
-</div>
-<div id="shell-sort" class="section level2">
-<h2><span class="header-section-number">19.5</span> Shell sort</h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="ordenação.html#cb20-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>integral T&gt; <span class="kw">auto</span> knuth_seq_last(T length) {</span>
-<span id="cb20-2"><a href="ordenação.html#cb20-2"></a>  T h = <span class="dv">1</span>;</span>
-<span id="cb20-3"><a href="ordenação.html#cb20-3"></a>  <span class="cf">while</span> (h &lt; length)</span>
-<span id="cb20-4"><a href="ordenação.html#cb20-4"></a>    h = <span class="dv">3</span> * h + <span class="dv">1</span>;</span>
-<span id="cb20-5"><a href="ordenação.html#cb20-5"></a>  <span class="cf">return</span> h / <span class="dv">3</span>;</span>
-<span id="cb20-6"><a href="ordenação.html#cb20-6"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb21-1"><a href="ordenação.html#cb21-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>random_access_iterator It&gt;</span>
-<span id="cb21-2"><a href="ordenação.html#cb21-2"></a><span class="dt">void</span> shellsort(It begin, It end)</span>
-<span id="cb21-3"><a href="ordenação.html#cb21-3"></a>{</span>
-<span id="cb21-4"><a href="ordenação.html#cb21-4"></a>  <span class="at">const</span> <span class="kw">auto</span> length = <span class="bu">std::</span>distance(begin, end);</span>
-<span id="cb21-5"><a href="ordenação.html#cb21-5"></a>  <span class="cf">for</span> (<span class="kw">auto</span> h = knuth_seq_last(length); h &gt; <span class="dv">0</span>; h = h / <span class="dv">3</span>)</span>
-<span id="cb21-6"><a href="ordenação.html#cb21-6"></a>    <span class="cf">for</span> (<span class="kw">auto</span> it = <span class="bu">std::</span>next(begin, h); it != end; ++it)</span>
-<span id="cb21-7"><a href="ordenação.html#cb21-7"></a>      <span class="cf">for</span> (<span class="kw">auto</span> right = it, left = <span class="bu">std::</span>prev(right, h);</span>
-<span id="cb21-8"><a href="ordenação.html#cb21-8"></a>           <span class="bu">std::</span>distance(begin, right) &gt;= h &amp;&amp; *left &gt; *right;</span>
-<span id="cb21-9"><a href="ordenação.html#cb21-9"></a>           right = <span class="bu">std::</span>exchange(left, <span class="bu">std::</span>prev(left, h)))</span>
-<span id="cb21-10"><a href="ordenação.html#cb21-10"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb21-11"><a href="ordenação.html#cb21-11"></a>}</span></code></pre></div>
-<p><em>Exercícios</em>:</p>
-<ol style="list-style-type: decimal">
-<li>Ignorando questões de desempenho, a função <code>shellsort</code> poderia ser
-implementada para iteradores bidirecionais (e sem acesso aleatório).
-Justifique a necessidade de acesso aleatório para manter as vantagens do
-<em>shell sort</em> em comparação com o <em>insertion sort</em>.</li>
-</ol>
-</div>
-<div id="quick-sort" class="section level2">
-<h2><span class="header-section-number">19.6</span> Quick sort</h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb22-1"><a href="ordenação.html#cb22-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>bidirectional_iterator It&gt;</span>
-<span id="cb22-2"><a href="ordenação.html#cb22-2"></a><span class="dt">void</span> quicksort(It begin, It end)</span>
-<span id="cb22-3"><a href="ordenação.html#cb22-3"></a>{</span>
-<span id="cb22-4"><a href="ordenação.html#cb22-4"></a>  <span class="cf">if</span> (begin == end)</span>
-<span id="cb22-5"><a href="ordenação.html#cb22-5"></a>    <span class="cf">return</span>;</span>
-<span id="cb22-6"><a href="ordenação.html#cb22-6"></a></span>
-<span id="cb22-7"><a href="ordenação.html#cb22-7"></a>  <span class="kw">auto</span> left = begin;</span>
-<span id="cb22-8"><a href="ordenação.html#cb22-8"></a>  <span class="kw">auto</span> right = <span class="bu">std::</span>prev(end);</span>
-<span id="cb22-9"><a href="ordenação.html#cb22-9"></a></span>
-<span id="cb22-10"><a href="ordenação.html#cb22-10"></a>  <span class="at">const</span> <span class="kw">auto</span> pivot_value = *left;</span>
-<span id="cb22-11"><a href="ordenação.html#cb22-11"></a></span>
-<span id="cb22-12"><a href="ordenação.html#cb22-12"></a>  <span class="cf">while</span> (<span class="kw">true</span>)</span>
-<span id="cb22-13"><a href="ordenação.html#cb22-13"></a>  {</span>
-<span id="cb22-14"><a href="ordenação.html#cb22-14"></a>    <span class="cf">while</span> (left != right &amp;&amp; *right &gt;= pivot_value)</span>
-<span id="cb22-15"><a href="ordenação.html#cb22-15"></a>      --right;</span>
-<span id="cb22-16"><a href="ordenação.html#cb22-16"></a>    <span class="cf">if</span> (left == right)</span>
-<span id="cb22-17"><a href="ordenação.html#cb22-17"></a>      <span class="cf">break</span>;</span>
-<span id="cb22-18"><a href="ordenação.html#cb22-18"></a>    <span class="bu">std::</span>iter_swap(left++, right);</span>
-<span id="cb22-19"><a href="ordenação.html#cb22-19"></a></span>
-<span id="cb22-20"><a href="ordenação.html#cb22-20"></a>    <span class="cf">while</span> (left != right &amp;&amp; *left &lt;= pivot_value)</span>
-<span id="cb22-21"><a href="ordenação.html#cb22-21"></a>      ++left;</span>
-<span id="cb22-22"><a href="ordenação.html#cb22-22"></a>    <span class="cf">if</span> (left == right)</span>
-<span id="cb22-23"><a href="ordenação.html#cb22-23"></a>      <span class="cf">break</span>;</span>
-<span id="cb22-24"><a href="ordenação.html#cb22-24"></a>    <span class="bu">std::</span>iter_swap(left, right--);</span>
-<span id="cb22-25"><a href="ordenação.html#cb22-25"></a>  }</span>
-<span id="cb22-26"><a href="ordenação.html#cb22-26"></a></span>
-<span id="cb22-27"><a href="ordenação.html#cb22-27"></a>  quicksort(begin, left);</span>
-<span id="cb22-28"><a href="ordenação.html#cb22-28"></a>  quicksort(<span class="bu">std::</span>next(left), end);</span>
-<span id="cb22-29"><a href="ordenação.html#cb22-29"></a>}</span></code></pre></div>
-</div>
-<div id="merge-sort" class="section level2">
-<h2><span class="header-section-number">19.7</span> Merge sort</h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb23-1"><a href="ordenação.html#cb23-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>forward_iterator It&gt;</span>
-<span id="cb23-2"><a href="ordenação.html#cb23-2"></a><span class="dt">void</span> merge(It begin, It mid, It end)</span>
-<span id="cb23-3"><a href="ordenação.html#cb23-3"></a>{</span>
-<span id="cb23-4"><a href="ordenação.html#cb23-4"></a>  <span class="bu">std::</span>vector&lt;<span class="bu">std::</span>iter_value_t&lt;It&gt;&gt; tmp;</span>
-<span id="cb23-5"><a href="ordenação.html#cb23-5"></a></span>
-<span id="cb23-6"><a href="ordenação.html#cb23-6"></a>  <span class="kw">auto</span> it1 = begin, it2 = mid;</span>
-<span id="cb23-7"><a href="ordenação.html#cb23-7"></a>  <span class="cf">while</span> (it1 != mid &amp;&amp; it2 != end)</span>
-<span id="cb23-8"><a href="ordenação.html#cb23-8"></a>    tmp.push_back(<span class="bu">std::</span>move(*it1 &lt; *it2 ? *it1++ : *it2++));</span>
-<span id="cb23-9"><a href="ordenação.html#cb23-9"></a></span>
-<span id="cb23-10"><a href="ordenação.html#cb23-10"></a>  <span class="bu">std::</span>move(it1, mid, back_inserter(tmp));</span>
-<span id="cb23-11"><a href="ordenação.html#cb23-11"></a>  <span class="bu">std::</span>move(it2, end, back_inserter(tmp));</span>
-<span id="cb23-12"><a href="ordenação.html#cb23-12"></a>  <span class="bu">std::</span>move(tmp.begin(), tmp.end(), begin);</span>
-<span id="cb23-13"><a href="ordenação.html#cb23-13"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb24-1"><a href="ordenação.html#cb24-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>random_access_iterator It&gt;</span>
-<span id="cb24-2"><a href="ordenação.html#cb24-2"></a><span class="dt">void</span> mergesort(It begin, It end)</span>
-<span id="cb24-3"><a href="ordenação.html#cb24-3"></a>{</span>
-<span id="cb24-4"><a href="ordenação.html#cb24-4"></a>  <span class="at">const</span> <span class="kw">auto</span> length = <span class="bu">std::</span>distance(begin, end);</span>
-<span id="cb24-5"><a href="ordenação.html#cb24-5"></a>  <span class="cf">if</span> (length &lt; <span class="dv">2</span>)</span>
-<span id="cb24-6"><a href="ordenação.html#cb24-6"></a>    <span class="cf">return</span>;</span>
-<span id="cb24-7"><a href="ordenação.html#cb24-7"></a></span>
-<span id="cb24-8"><a href="ordenação.html#cb24-8"></a>  <span class="at">const</span> <span class="kw">auto</span> mid = <span class="bu">std::</span>next(begin, length / <span class="dv">2</span>);</span>
-<span id="cb24-9"><a href="ordenação.html#cb24-9"></a></span>
-<span id="cb24-10"><a href="ordenação.html#cb24-10"></a>  merge_sort(begin, mid);</span>
-<span id="cb24-11"><a href="ordenação.html#cb24-11"></a>  merge_sort(mid, end);</span>
-<span id="cb24-12"><a href="ordenação.html#cb24-12"></a></span>
-<span id="cb24-13"><a href="ordenação.html#cb24-13"></a>  merge(begin, mid, end);</span>
-<span id="cb24-14"><a href="ordenação.html#cb24-14"></a>}</span></code></pre></div>
-<p><em>Exercícios</em>:</p>
-<ol style="list-style-type: decimal">
-<li>Discuta as desvantagens de permitir que a função <code>mergesort</code> aceite
-iteradores unidirecionais ao invés de requerer acesso aleatório.</li>
-<li>Implemente o algoritmo <em>merge sort</em> evitando as inúmeras alocações de
-memória temporária.</li>
-</ol>
+<p>Em um sistema posicional com base <span class="math inline">\(b\)</span>, um número inteiro representado por <span class="math inline">\((a_n a_{n-1} \cdots a_2 a_1 a_0)_b\)</span> possui grandeza
+<span class="math display">\[ \sum_{i=0}^n v_i b^i\text{,} \]</span>
+onde <span class="math inline">\(v_i\)</span> é o valor do símbolo <span class="math inline">\(a_i\)</span>.</p>
+<p>Com base nas definições, podemos dizer que o sistema de numeração que utilizamos no nosso
+dia a dia é um <em>sistema posicional de base 10</em> com <em>alfabeto</em> <span class="math inline">\(\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}\)</span>. Deste modo, o número <span class="math inline">\((71)_{10}\)</span> representa o valor <span class="math inline">\(1 \cdot 10^0 + 7 \cdot 10^1 = 71\)</span> enquanto o número <span class="math inline">\((17)_{10}\)</span> representa o valor <span class="math inline">\(7 \cdot 10^0 + 1 \cdot 10^1 = 17\)</span>.</p>
+<p>Na computação, além da base <span class="math inline">\(10\)</span>, outros três sistemas são amplamente utilizados:</p>
+<table>
+<caption>Sistemas posicionais comuns na computação.</caption>
+<thead>
+<tr class="header">
+<th>Nome</th>
+<th>Base</th>
+<th>Alfabeto (ordenado)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Binário</td>
+<td>2</td>
+<td><span class="math inline">\(\{0, 1\}\)</span></td>
+</tr>
+<tr class="even">
+<td>Octal</td>
+<td>8</td>
+<td><span class="math inline">\(\{0, 1, 2, 3, 4, 5, 6, 7\}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Decimal</td>
+<td>10</td>
+<td><span class="math inline">\(\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}\)</span></td>
+</tr>
+<tr class="even">
+<td>Hexadecimal</td>
+<td>16</td>
+<td><span class="math inline">\(\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Note que uma mesma grandeza pode ser representada em diferentes bases.
+Por exemplo, verifique que <span class="math inline">\((10)_{10} = (A)_{16} = (1010)_2 = (12)_8\)</span>.</p>
+<p>Os sistemas posicionais também podem ser utilizados para representar número fracionais.
+Para isso, utilizaremos um separador (no caso, o símbolo “.”) que determina quais posições
+possuem fator com expoentes positivos ou negativos.</p>
+<p>Assim, o número fracional representado por <span class="math inline">\((a_n a_{n-1} \cdots a_2 a_1 a_0 . c_1 c_2 \cdots)_b\)</span> possui grandeza
+<span class="math display">\[ \sum_{i=0}^n v_i b^i + \sum_{i=1}^\infty w_i b^{-i}\text{,} \]</span>
+onde <span class="math inline">\(v_i\)</span> é o valor associado ao símbolo <span class="math inline">\(a_i\)</span> e <span class="math inline">\(w_i\)</span>, ao símbolo <span class="math inline">\(c_i\)</span>.</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="particionamento.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="busca.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="logica.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="representacao.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
