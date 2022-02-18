@@ -87,26 +87,26 @@ numeração, mudança de base, aritmética         e \@ref(representacao)
 binária, operações lógicas, textos e
 instruções.
 
-Evolução das linguagens de programação.
+Evolução das linguagens de programação.        Capítulo \@ref(programas)
 
-Unidades básicas de um computador.
+Unidades básicas de um computador.             Capítulo \@ref(programas)
 
-Software básico para computadores.
+Software básico para computadores.             Capítulo \@ref(programas)
 
-Desenvolvimento de algoritmos: linguagens
+Desenvolvimento de algoritmos: linguagens      Capítulo \@ref(algoritmos)
 para algoritmos e refinamento passo a passo.
 
-Comandos de uma linguagem procedimental:
+Comandos de uma linguagem procedimental:       Capítulos \@ref(fluxo) e \@ref(io)
 atribuição, entrada e saída, condicionais,
 repetitivos e seletivos.
 
-Variáveis escalares e estruturadas
+Variáveis escalares e estruturadas             Capítulos \@ref(programas) e \@ref(tipos)
 homogêneas e heterogêneas.
 
-Subprogramação: funções, procedimentos,
+Subprogramação: funções, procedimentos,        Capítulo \@ref(subprogramas)
 passagem de parâmetros, recursividade.
 
-Ponteiros.
+Ponteiros.                                     Capítulo \@ref(memoria)
 -----------------------------------------------------------------------------------------
 
 Table: CES-11 -- Algoritmos e Estruturas de Dados I

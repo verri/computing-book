@@ -1,3 +1,28 @@
+rmd_files:
+  - "index.Rmd"
+  - intro.Rmd
+  - numbers.Rmd
+  - logic.Rmd
+  - data.Rmd
+  - algorithm.Rmd
+  - programming.Rmd
+  - control-flow.Rmd
+  - io.Rmd
+  - functions.Rmd
+  - types.Rmd
+  - memory.Rmd
+  - complexity.Rmd
+  - adt.Rmd
+  - sequences.Rmd
+  - adaptors.Rmd
+  - trees.Rmd
+  - associative.Rmd
+  - partitioning.Rmd
+  - sorting.Rmd
+  - searching.Rmd
+  - set.Rmd
+  - heap.Rmd
+  - numeric.Rmd
 language:
   label:
     def: 'Definição '
