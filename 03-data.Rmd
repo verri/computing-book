@@ -80,6 +80,12 @@ de limitações técnicas ou conveniências impostas pela linguagem de programa�
    estruturadas até os elementos indivisíveis.  Agrupe as informações escalares de acordo
    com sua natureza. <!-- gancho com as próximas seções -->
 
+<!--
+
+Dentre os tipos de dados citados anteriormente, um dos mais comuns são os números.  Deste
+modo, é fundamental entendermos como números de são representados em computadores digitais.
+-->
+
 <!-- Sistemas numéricos, representação de diferentes tipos. -->
 
 <!-- vim: set spell spelllang=pt tw=90: -->

@@ -82,7 +82,7 @@ Conceitos primários: computador, algoritmo,    Capítulo \@ref(preliminares)
 programa, linguagem de programação,
 compilador.
 
-Representação de informações: sistemas de      Capítulos \@ref(logica)
+Representação de informações: sistemas de      Capítulos \@ref(numeros), \@ref(logica)
 numeração, mudança de base, aritmética         e \@ref(representacao)
 binária, operações lógicas, textos e
 instruções.

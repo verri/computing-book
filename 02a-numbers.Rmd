@@ -1,0 +1,59 @@
+# Sistemas de numeração {#numeros}
+
+No nosso cotidiano, nós expressamos valores numéricos utilizando o sistema decimal de
+numeração.  Em outras palavras, utilizamos dez algarismos diferentes
+que quando combinados representam diferentes grandezas.  Ao combiná-los, levamos em
+consideração a posição relativa de cada algarismo para interpretar a grandeza que queremos
+representar.  Deste modo, a grandeza representada por 17 é diferente da grandeza
+representada por 71, mesmo que utilizem os mesmos símbolos: 1 e 7.
+
+Podemos generalizar esse esquema para qualquer número de algarismos, criando diferentes
+sistemas de representação de números. Considere as seguintes definições.
+
+::: {.definition name="Sistema de numeração"}
+Sistema de escrita para representar números por meio de um *alfabeto* e uma regra de
+composição.
+:::
+
+::: {.definition name="Sistema posicional"}
+Sistema de numeração em que a contribuição de cada símbolo do alfabeto no valor do número
+é o valor do símbolo multiplicado por um fator dependente da posição do símbolo.
+Os valores associados a cada símbolo são crescentes, ou seja, o alfabeto é ordenado.
+O fator de multiplicação consiste em um múltiplo da base do sistema.
+:::
+
+::: {.definition name="Base"}
+Número de símbolos de um sistema posicional.
+:::
+
+Em um sistema posicional com base $b$, um número inteiro representado por $(a_n a_{n-1}
+\cdots a_2 a_1 a_0)_b$ possui grandeza
+\[ \sum_{i=0}^n v_i b^i\text{,} \]
+onde $v_i$ é o valor do símbolo $a_i$.
+
+Com base nas definições, podemos dizer que o sistema de numeração que utilizamos no nosso
+dia a dia é um *sistema posicional de base 10* com *alfabeto* $\{0, 1, 2, 3, 4, 5, 6, 7,
+8, 9\}$.  Deste modo, o número $(71)_{10}$ representa o valor $1 \cdot 10^0 + 7 \cdot 10^1
+= 71$ enquanto o número $(17)_{10}$ representa o valor $7 \cdot 10^0 + 1 \cdot 10^1 = 17$.
+
+Na computação, além da base $10$, outros três sistemas são amplamente utilizados:
+
+Table: Sistemas posicionais comuns na computação.
+
+Nome          Base    Alfabeto (ordenado)
+----          ----    -------------------
+Binário       2       $\{0, 1\}$
+Octal         8       $\{0, 1, 2, 3, 4, 5, 6, 7\}$
+Decimal       10      $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$
+Hexadecimal   16      $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F\}$
+
+Note que uma mesma grandeza pode ser representada em diferentes bases.
+Por exemplo, verifique que $(10)_{10} = (A)_{16} = (1010)_2 = (12)_8$.
+
+Os sistemas posicionais também podem ser utilizados para representar número fracionais.
+Para isso, utilizaremos um separador (no caso, o símbolo ".") que determina quais posições
+possuem fator com expoentes positivos ou negativos.
+
+Assim, o número fracional representado por $(a_n a_{n-1} \cdots a_2 a_1 a_0 . c_1 c_2 \cdots)_b$ possui grandeza
+\[ \sum_{i=0}^n v_i b^i + \sum_{i=1}^\infty w_i b^{-i}\text{,} \]
+onde $v_i$ é o valor associado ao símbolo $a_i$ e $w_i$, ao símbolo $c_i$.
