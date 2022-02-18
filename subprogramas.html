@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Controle de fluxo | Computando</title>
-  <meta name="description" content="7 Controle de fluxo | Computando" />
+  <title>9 Sub-rotinas e recursão | Computando</title>
+  <meta name="description" content="9 Sub-rotinas e recursão | Computando" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Controle de fluxo | Computando" />
+  <meta property="og:title" content="9 Sub-rotinas e recursão | Computando" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="verri/computing-book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Controle de fluxo | Computando" />
+  <meta name="twitter:title" content="9 Sub-rotinas e recursão | Computando" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introdução-à-programação.html"/>
-<link rel="next" href="entrada-e-saída.html"/>
+<link rel="prev" href="io.html"/>
+<link rel="next" href="tipos.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -151,32 +151,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.7" data-path="preliminares.html"><a href="preliminares.html#compilador"><i class="fa fa-check"></i><b>1.2.7</b> Compilador</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="logica.html"><a href="logica.html"><i class="fa fa-check"></i><b>2</b> Lógica digital</a></li>
-<li class="chapter" data-level="3" data-path="numeros.html"><a href="numeros.html"><i class="fa fa-check"></i><b>3</b> Sistemas de numeração</a></li>
+<li class="chapter" data-level="2" data-path="numeros.html"><a href="numeros.html"><i class="fa fa-check"></i><b>2</b> Sistemas de numeração</a><ul>
+<li class="chapter" data-level="2.1" data-path="numeros.html"><a href="numeros.html#conversão-de-base"><i class="fa fa-check"></i><b>2.1</b> Conversão de base</a></li>
+<li class="chapter" data-level="2.2" data-path="numeros.html"><a href="numeros.html#aritmética-binária"><i class="fa fa-check"></i><b>2.2</b> Aritmética binária</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="logica.html"><a href="logica.html"><i class="fa fa-check"></i><b>3</b> Lógica digital</a></li>
 <li class="chapter" data-level="4" data-path="representacao.html"><a href="representacao.html"><i class="fa fa-check"></i><b>4</b> Representação de dados digitais</a><ul>
 <li class="chapter" data-level="4.1" data-path="representacao.html"><a href="representacao.html#tipos-de-informação"><i class="fa fa-check"></i><b>4.1</b> Tipos de informação</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="algoritmos.html"><a href="algoritmos.html"><i class="fa fa-check"></i><b>5</b> Algoritmos</a></li>
 <li class="part"><span><b>II Programação</b></span></li>
-<li class="chapter" data-level="6" data-path="introdução-à-programação.html"><a href="introdução-à-programação.html"><i class="fa fa-check"></i><b>6</b> Introdução à programação</a><ul>
-<li class="chapter" data-level="6.1" data-path="introdução-à-programação.html"><a href="introdução-à-programação.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>6.1</b> Linguagem de alto nível</a></li>
-<li class="chapter" data-level="6.2" data-path="introdução-à-programação.html"><a href="introdução-à-programação.html#primeiro-programa-de-alto-nível"><i class="fa fa-check"></i><b>6.2</b> Primeiro programa de alto nível</a></li>
+<li class="chapter" data-level="6" data-path="programas.html"><a href="programas.html"><i class="fa fa-check"></i><b>6</b> Introdução à programação</a><ul>
+<li class="chapter" data-level="6.1" data-path="programas.html"><a href="programas.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>6.1</b> Linguagem de alto nível</a></li>
+<li class="chapter" data-level="6.2" data-path="programas.html"><a href="programas.html#primeiro-programa-de-alto-nível"><i class="fa fa-check"></i><b>6.2</b> Primeiro programa de alto nível</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="controle-de-fluxo.html"><a href="controle-de-fluxo.html"><i class="fa fa-check"></i><b>7</b> Controle de fluxo</a><ul>
-<li class="chapter" data-level="7.1" data-path="controle-de-fluxo.html"><a href="controle-de-fluxo.html#comandos-condicionais"><i class="fa fa-check"></i><b>7.1</b> Comandos condicionais</a></li>
-<li class="chapter" data-level="7.2" data-path="controle-de-fluxo.html"><a href="controle-de-fluxo.html#comandos-de-seleção"><i class="fa fa-check"></i><b>7.2</b> Comandos de seleção</a></li>
-<li class="chapter" data-level="7.3" data-path="controle-de-fluxo.html"><a href="controle-de-fluxo.html#comandos-de-repetição"><i class="fa fa-check"></i><b>7.3</b> Comandos de repetição</a></li>
-<li class="chapter" data-level="7.4" data-path="controle-de-fluxo.html"><a href="controle-de-fluxo.html#interrupções"><i class="fa fa-check"></i><b>7.4</b> Interrupções</a></li>
-<li class="chapter" data-level="7.5" data-path="controle-de-fluxo.html"><a href="controle-de-fluxo.html#tratamento-de-erros-e-exceções"><i class="fa fa-check"></i><b>7.5</b> Tratamento de erros e exceções</a></li>
+<li class="chapter" data-level="7" data-path="fluxo.html"><a href="fluxo.html"><i class="fa fa-check"></i><b>7</b> Controle de fluxo</a><ul>
+<li class="chapter" data-level="7.1" data-path="fluxo.html"><a href="fluxo.html#comandos-condicionais"><i class="fa fa-check"></i><b>7.1</b> Comandos condicionais</a></li>
+<li class="chapter" data-level="7.2" data-path="fluxo.html"><a href="fluxo.html#comandos-de-seleção"><i class="fa fa-check"></i><b>7.2</b> Comandos de seleção</a></li>
+<li class="chapter" data-level="7.3" data-path="fluxo.html"><a href="fluxo.html#comandos-de-repetição"><i class="fa fa-check"></i><b>7.3</b> Comandos de repetição</a></li>
+<li class="chapter" data-level="7.4" data-path="fluxo.html"><a href="fluxo.html#interrupções"><i class="fa fa-check"></i><b>7.4</b> Interrupções</a></li>
+<li class="chapter" data-level="7.5" data-path="fluxo.html"><a href="fluxo.html#tratamento-de-erros-e-exceções"><i class="fa fa-check"></i><b>7.5</b> Tratamento de erros e exceções</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="entrada-e-saída.html"><a href="entrada-e-saída.html"><i class="fa fa-check"></i><b>8</b> Entrada e saída</a></li>
-<li class="chapter" data-level="9" data-path="sub-rotinas-e-recursão.html"><a href="sub-rotinas-e-recursão.html"><i class="fa fa-check"></i><b>9</b> Sub-rotinas e recursão</a><ul>
-<li class="chapter" data-level="9.1" data-path="sub-rotinas-e-recursão.html"><a href="sub-rotinas-e-recursão.html#recursão"><i class="fa fa-check"></i><b>9.1</b> Recursão</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="sub-rotinas-e-recursão.html"><a href="sub-rotinas-e-recursão.html#busca-binária"><i class="fa fa-check"></i><b>9.1.1</b> Busca binária</a></li>
+<li class="chapter" data-level="8" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>8</b> Entrada e saída</a></li>
+<li class="chapter" data-level="9" data-path="subprogramas.html"><a href="subprogramas.html"><i class="fa fa-check"></i><b>9</b> Sub-rotinas e recursão</a><ul>
+<li class="chapter" data-level="9.1" data-path="subprogramas.html"><a href="subprogramas.html#recursão"><i class="fa fa-check"></i><b>9.1</b> Recursão</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="subprogramas.html"><a href="subprogramas.html#busca-binária"><i class="fa fa-check"></i><b>9.1.1</b> Busca binária</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="tipos-avançados.html"><a href="tipos-avançados.html"><i class="fa fa-check"></i><b>10</b> Tipos avançados</a></li>
-<li class="chapter" data-level="11" data-path="memória-e-ponteiros.html"><a href="memória-e-ponteiros.html"><i class="fa fa-check"></i><b>11</b> Memória e ponteiros</a></li>
+<li class="chapter" data-level="10" data-path="tipos.html"><a href="tipos.html"><i class="fa fa-check"></i><b>10</b> Tipos avançados</a></li>
+<li class="chapter" data-level="11" data-path="memoria.html"><a href="memoria.html"><i class="fa fa-check"></i><b>11</b> Memória e ponteiros</a></li>
 <li class="chapter" data-level="12" data-path="complexity.html"><a href="complexity.html"><i class="fa fa-check"></i><b>12</b> Complexidade computacional</a><ul>
 <li class="chapter" data-level="12.1" data-path="complexity.html"><a href="complexity.html#importância-da-análise-de-complexidade"><i class="fa fa-check"></i><b>12.1</b> Importância da análise de complexidade</a></li>
 </ul></li>
@@ -230,26 +233,85 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="controle-de-fluxo" class="section level1">
-<h1><span class="header-section-number">7</span> Controle de fluxo</h1>
-<p>Vimos anteriormente que em Assembly, instruções de comparação e de salto podem
-ser utilizadas em conjunto para controlar o fluxo do programa. Em linguagens
-de alto nível, utilizamos comandos com semânticas melhor definidas.</p>
-<div id="comandos-condicionais" class="section level2">
-<h2><span class="header-section-number">7.1</span> Comandos condicionais</h2>
-</div>
-<div id="comandos-de-seleção" class="section level2">
-<h2><span class="header-section-number">7.2</span> Comandos de seleção</h2>
-</div>
-<div id="comandos-de-repetição" class="section level2">
-<h2><span class="header-section-number">7.3</span> Comandos de repetição</h2>
-</div>
-<div id="interrupções" class="section level2">
-<h2><span class="header-section-number">7.4</span> Interrupções</h2>
-</div>
-<div id="tratamento-de-erros-e-exceções" class="section level2">
-<h2><span class="header-section-number">7.5</span> Tratamento de erros e exceções</h2>
+<div id="subprogramas" class="section level1">
+<h1><span class="header-section-number">9</span> Sub-rotinas e recursão</h1>
+<div id="recursão" class="section level2">
+<h2><span class="header-section-number">9.1</span> Recursão</h2>
+<p>Muitos problemas computacionais possuem uma propriedade muito interessante: cada instância
+do problema pose ser subdividida em instâncias menores do <em>mesmo</em> problema. Assim, o
+algoritmo da solução para o problema é <em>recursivo</em>.</p>
+<p>Em termos de programação, uma função é dita <em>recursiva</em> se fizer uma chamada a si mesmo.
+Essa característica é natural em diversas fórmulas matemáticas conhecidas.
+Consequentemente, diversos problemas podem ser resolvidos de maneira simples quando
+tratados recursivamente.</p>
+<p>Por exemplo, definimos o fatorial de um número natural não nulo como <span class="math inline">\(n! = n \cdot (n - 1) \cdot (n - 2) \cdot \dots \cdot 1\)</span> e fatorial de zero, <span class="math inline">\(0!\)</span>, igual a <span class="math inline">\(1\)</span>.</p>
+<p>Sua formulação recursiva é:</p>
+<ul>
+<li><span class="math inline">\(n! = 1\)</span> para <span class="math inline">\(n \leq 1\)</span>; e</li>
+<li><span class="math inline">\(n! = n \cdot (n - 1)!\)</span> para <span class="math inline">\(n &gt; 1\)</span>.</li>
+</ul>
+<p>Traduzindo em termos computacionais, para resolver problemas recursivos, seguimos os
+seguintes passos:</p>
+<ol style="list-style-type: decimal">
+<li>Identificar as <em>instâncias mínimas</em> do problema, ou seja, aquelas que não podem ser
+subdivididas. Essa instância também é chamada de condição de parada do algoritmo;</li>
+<li>Para as demais instâncias, reduzir a instância atual em instâncias menores do <em>mesmo problema</em>.</li>
+</ol>
+<p>Vamos reproduzir esses passos para implementação de um algoritmo recursivo para calcular a
+soma dos números inteiros entre <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> assumindo que <span class="math inline">\(a \leq b\)</span>. Denotaremos tal soma
+como <span class="math inline">\(s(a, b)\)</span>.</p>
+<p><em>Passo 1</em>: A instância mínima desse problema é o caso <span class="math inline">\(a = b\)</span> de modo que o resultado é o
+próprio valor de <span class="math inline">\(a\)</span> (ou <span class="math inline">\(b\)</span>). Ou seja, <span class="math inline">\(s(a, a) = a\)</span>.</p>
+<p><em>Passo 2</em>: Para os casos <span class="math inline">\(a &lt; b\)</span>, podemos reduzir o problema a partir da seguinte
+propriedade: <span class="math inline">\(s(a, b) = s(a, c) + s(c + 1, b)\)</span> para todo <span class="math inline">\(c\)</span> tal que <span class="math inline">\(a \leq c &lt; b\)</span>.
+Deste modo, para o caso específico <span class="math inline">\(c = a\)</span>, temos que <span class="math inline">\(s(a, b) = s(a, a) + s(a + 1, b)\)</span>.</p>
+<p>Logo, a implementação deste algoritmo seria:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="subprogramas.html#cb3-1"></a><span class="dt">int</span> s(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
+<span id="cb3-2"><a href="subprogramas.html#cb3-2"></a>  <span class="cf">if</span> (a == b)</span>
+<span id="cb3-3"><a href="subprogramas.html#cb3-3"></a>    <span class="cf">return</span> a;</span>
+<span id="cb3-4"><a href="subprogramas.html#cb3-4"></a>  <span class="cf">return</span> s(a, a) + s(a + <span class="dv">1</span>, b);</span>
+<span id="cb3-5"><a href="subprogramas.html#cb3-5"></a>}</span></code></pre></div>
+<div id="busca-binária" class="section level3">
+<h3><span class="header-section-number">9.1.1</span> Busca binária</h3>
+<p>Dada uma sequência <span class="math inline">\(v\)</span> com <span class="math inline">\(n\)</span> objetos ordenados de maneira crescente, queremos verificar se um determinado objeto
+<span class="math inline">\(k\)</span> pertence ou não à sequência. É possível escrever um algoritmo recursivo que resolve o
+problema sem a necessidade de passar por cada elemento <span class="math inline">\(x \in v\)</span>.</p>
+<p>Para construção da solução, observamos a seguinte propriedade:</p>
+<ul>
+<li>Se <span class="math inline">\(k &gt; v_i\)</span>, sabemos que <span class="math inline">\(k \neq v_j\)</span> para todo <span class="math inline">\(j \leq i\)</span>; e</li>
+<li>Se <span class="math inline">\(k &lt; v_i\)</span>, que <span class="math inline">\(k \neq v_j\)</span> para todo <span class="math inline">\(j \geq i\)</span>.</li>
+</ul>
+<p>Assim, podemos construir uma solução recursiva para o problema.</p>
+<p><em>Passo 1</em>: A instância mínima acontece quando <span class="math inline">\(n = 0\)</span> e, consequentemente, <span class="math inline">\(k \not\in v\)</span>.</p>
+<p><em>Passo 2</em>: Podemos subdividir o problema a depender do elemento <span class="math inline">\(m = v_{\lfloor n/2 \rfloor}\)</span>:</p>
+<ul>
+<li>Se <span class="math inline">\(k = m\)</span>, então <span class="math inline">\(k \in v\)</span>;</li>
+<li>Se <span class="math inline">\(k &lt; m\)</span>, então buscamos <span class="math inline">\(k\)</span> em <span class="math inline">\([v_j : 1 &lt; j &lt; \lfloor n/2 \rfloor]\)</span>; ou</li>
+<li>Se <span class="math inline">\(k &gt; m\)</span>, então buscamos <span class="math inline">\(k\)</span> em <span class="math inline">\([v_j : \lfloor n/2 \rfloor &lt; j \leq n]\)</span>.</li>
+</ul>
+<hr />
+<p><em>Exercícios</em>:</p>
+<ol style="list-style-type: decimal">
+<li>Com base na formulação recursiva do fatorial e nos passos para construção do algoritmo
+recursivo, implemente</li>
+<li>Escreva um algoritmo recursivo para cálculo do <span class="math inline">\(i\)</span>-ésimo elemento da sequência
+Fibonacci.</li>
+<li>Escreva um algoritmo recursivo para cálculo do máximo divisor comum (Algoritmo de
+Euclides).</li>
+<li>Implemente o algoritmo recursivo de busca binária.</li>
+<li>Implemente uma função recursiva que calcule a soma dos dígitos decimais de um inteiro
+positivo.</li>
+<li>Implemente uma função recursiva para converter número inteiro decimal em sua forma
+binária.</li>
+<li>Implemente um algoritmo recursivo que calcule a representação em Gray Code usando <span class="math inline">\(N\)</span>
+bits de um número <span class="math inline">\(0 \leq k \leq 2^{N-1}\)</span>.</li>
+<li>Para todos os algoritmos anteriores, implemente uma versão iterativa.</li>
+<li>Após ler o capitulo <a href="complexity.html#complexity">12</a>, derive qual a complexidade de tempo no pior caso
+da busca binária em termos do tamanho do vetor.</li>
+</ol>
+<!-- vim: set spell spelllang=pt tw=90: -->
 
+</div>
 </div>
 </div>
             </section>
@@ -257,8 +319,8 @@ de alto nível, utilizamos comandos com semânticas melhor definidas.</p>
           </div>
         </div>
       </div>
-<a href="introdução-à-programação.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="entrada-e-saída.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="io.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tipos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
