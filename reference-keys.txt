@@ -23,6 +23,8 @@ algoritmos
 programas
 linguagem-de-alto-nível
 primeiro-programa-de-alto-nível
+sobre-c
+sintaxe-e-semântica
 fluxo
 comandos-condicionais
 comandos-de-seleção
