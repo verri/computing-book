@@ -52,3 +52,41 @@ $ g++ -std=c++20 hello.cpp -o hello
 $ ./hello
 Hello, world!
 ```
+
+## Sobre C++
+
+A linguagem C++ é uma linguagem de programação de *alto nível* de propósito
+geral.  Qualquer problema computável pode ser resolvido usando a linguagem C++;
+ou seja, o modelo abstrato^[Ignorando questões de implementação, como limitação
+de memória.] da linguagem C++ é Turing-completo.
+
+Ela é uma linguagem imperativa, na qual comandos (*statements*) são utilizados
+para alterar o estado do programa e, consequentemente, sua operação.  Além
+disso, ao contrário das linguagens de montagem (*assembly languages*),
+a linguagem permite programação estruturada, organizando os comando em
+condicionais, laços, blocos e sub-rotinas.
+
+A principal especificação da linguagem C++ é o *ISO/IEC 14882*.  Neste
+livro, utilizaremos o padrão ISO/IEC 14882:2020^[https://www.iso.org/standard/79358.html].
+Um excelente material de apoio quanto a especificação do C++20 é o site
+\url{https://en.cppreference.com/w/}.
+
+### Sintaxe e semântica
+
+Toda linguagem de programação possui uma sintaxe que define a estrutura em que
+deve ser escrita.  Nas linguagens de programação de alto nível, além da
+sintaxe, a semântica dos elementos também deve ser respeitada.  Por exemplo, ao
+contrário das linguagens de montagem, devemos seguir regras semânticas quanto
+ao tipo de cada variável do código.  (Veremos isso com mais detalhes no
+decorrer do curso.)
+
+De maneira geral, podemos dividir um programa em níveis de complexidade
+(lembrem-se do conceito de *abstração*):
+
+- Um programa é composto por *subprogramas*;
+- Subprogramas são compostos por conjuntos de *definições* e sequências de
+  *comandos*;
+- Cada definição ou comando é uma sequência de *tokens*; e
+- Cada token é a unidade léxica mínima do programa.
+
+Veremos em detalhes cada um destes conceitos a seguir.
