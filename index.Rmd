@@ -78,36 +78,27 @@ Table: CES-10 -- Introdução à Computação
 -----------------------------------------------------------------------------------------
 Ementa                                         Capítulos
 ---------------------------------------------  ------------------------------------------
-Conceitos primários: computador, algoritmo,    Capítulo \@ref(preliminares)
-programa, linguagem de programação,
+Conceitos primários: computador, algoritmo,    Capítulo \@ref(preliminares), \@ref(numeros),
+programa, linguagem de programação,            \@ref(logica) e \@ref(representacao)
 compilador.
 
-Representação de informações: sistemas de      Capítulos \@ref(numeros), \@ref(logica)
-numeração, mudança de base, aritmética         e \@ref(representacao)
-binária, operações lógicas, textos e
-instruções.
-
-Evolução das linguagens de programação.        Capítulo \@ref(programas)
-
-Unidades básicas de um computador.             Capítulo \@ref(programas)
-
-Software básico para computadores.             Capítulo \@ref(programas)
-
-Desenvolvimento de algoritmos: linguagens      Capítulo \@ref(algoritmos)
-para algoritmos e refinamento passo a passo.
+Software básico para computadores.             Capítulo \@ref(programas) e \@ref(algoritmos)
 
 Comandos de uma linguagem procedimental:       Capítulos \@ref(fluxo) e \@ref(io)
 atribuição, entrada e saída, condicionais,
-repetitivos e seletivos.
+repetitivos e seletivos. Tratamento de
+excecções.
 
-Variáveis escalares e estruturadas             Capítulos \@ref(programas) e \@ref(tipos)
-homogêneas e heterogêneas.
+Tipos escalares e estruturados.                Capítulos \@ref(programas) e \@ref(tipos)
 
-Subprogramação: funções, procedimentos,        Capítulo \@ref(subprogramas)
-passagem de parâmetros, recursividade.
+Subprogramação: funções,                       Capítulo \@ref(subprogramas)
+passagem de parâmetros por valor e
+por referência, escopo de variáveis,
+e recursividade.
 
 Ponteiros.                                     Capítulo \@ref(memoria)
 -----------------------------------------------------------------------------------------
+
 
 Table: CES-11 -- Algoritmos e Estruturas de Dados I
 
@@ -115,8 +106,6 @@ Table: CES-11 -- Algoritmos e Estruturas de Dados I
 Ementa                                         Capítulos
 ---------------------------------------------  ------------------------------------------
 Tópicos em recursividade.
-
-Técnicas para desenvolvimento de algoritmos.
 
 Noções de complexidade de algoritmos.
 
@@ -130,9 +119,9 @@ Grafos orientados e não orientados.
 
 Algoritmos básicos para grafos.
 
-Filas de prioridades.
+Filas de prioridade.
 
-Métodos básicos de Ordenação.
+Métodos básicos de ordenação.
 
 Noções de programação orientada a objetos.
 -----------------------------------------------------------------------------------------
