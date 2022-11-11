@@ -2,15 +2,13 @@
 
 # Introdução à programação {#programas}
 
-Arquitetura abstrata, linguagem de máquina, assembly, linguagens de alto nível, meu primeiro programa.
+Linguagens de alto nível, meu primeiro programa.
 
 ## Linguagem de alto nível
 
 Toda linguagem de programação possui uma sintaxe que define a estrutura em que
 deve ser escrita.  Nas linguagens de programação de alto nível, além da
-sintaxe, a semântica dos elementos também deve ser respeitada.  Por exemplo, ao
-contrário das linguagens de montagem, devemos seguir regras semânticas quanto
-ao tipo de cada variável do código.
+sintaxe, a semântica dos dados também deve ser respeitada.
 
 De maneira geral, podemos dividir um programa em níveis de complexidade, ou seja,
 aplicarmos o conceito de *abstração*:
@@ -21,10 +19,14 @@ aplicarmos o conceito de *abstração*:
 - Cada definição ou comando é uma sequência de *tokens*; e
 - Cada token é a unidade léxica mínima do programa.
 
-## Primeiro programa de alto nível
+Esse conceito de abstração também será útil futuramente quando aprendermos a
+encontrar soluções de grandes problema por meio de soluções simples para
+subproblemas.
+
+## Primeiro programa
 
 Como vimos anteriormente, linguagens de programação de alto nível permitem ao
-programador construir um software composto por diversos módulos. Neste caso, é
+programador construir um software (programa) composto por diversos módulos (subprogramas). Neste caso, é
 necessário identificar o "ponto de entrada" do programa. Ou seja, dentre as
 diversas potenciais funcionalidades do programa, qual é a primeira instrução
 executada.
@@ -38,7 +40,7 @@ informações [aqui](https://en.cppreference.com/w/cpp/language/main_function).
 ```{cpp}
 // hello.cpp
 #include <iostream>
-auto main() -> int {
+int main() {
   std::cout << "Hello, world!\n";
 }
 ```
@@ -69,24 +71,38 @@ condicionais, laços, blocos e sub-rotinas.
 A principal especificação da linguagem C++ é o *ISO/IEC 14882*.  Neste
 livro, utilizaremos o padrão ISO/IEC 14882:2020^[https://www.iso.org/standard/79358.html].
 Um excelente material de apoio quanto a especificação do C++20 é o site
-\url{https://en.cppreference.com/w/}.
+https://en.cppreference.com/w/.
 
-### Sintaxe e semântica
+## Programação imperativa
 
-Toda linguagem de programação possui uma sintaxe que define a estrutura em que
-deve ser escrita.  Nas linguagens de programação de alto nível, além da
-sintaxe, a semântica dos elementos também deve ser respeitada.  Por exemplo, ao
-contrário das linguagens de montagem, devemos seguir regras semânticas quanto
-ao tipo de cada variável do código.  (Veremos isso com mais detalhes no
-decorrer do curso.)
+### Atribuição
 
-De maneira geral, podemos dividir um programa em níveis de complexidade
-(lembrem-se do conceito de *abstração*):
+```cpp
+auto x = 10;
+```
 
-- Um programa é composto por *subprogramas*;
-- Subprogramas são compostos por conjuntos de *definições* e sequências de
-  *comandos*;
-- Cada definição ou comando é uma sequência de *tokens*; e
-- Cada token é a unidade léxica mínima do programa.
+```cpp
+x = 12;
+```
 
-Veremos em detalhes cada um destes conceitos a seguir.
+### Entrada e saída
+
+```cpp
+#include <iostream>
+
+int main() {
+  using std::cin;
+  using std::cout;
+
+  // ...
+}
+```
+
+```cpp
+cin >> x;
+```
+
+```cpp
+cout << x;
+cout << '\n';
+```

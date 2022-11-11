@@ -1,10 +1,10 @@
 rmd_files:
   - "index.Rmd"
   - intro.Rmd
-  - numbers.Rmd
-  - logic.Rmd
-  - data.Rmd
-  - algorithm.Rmd
+#  - numbers.Rmd
+#  - logic.Rmd
+#  - data.Rmd
+#  - algorithm.Rmd
   - programming.Rmd
   - control-flow.Rmd
   - io.Rmd

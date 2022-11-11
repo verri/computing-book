@@ -2,12 +2,10 @@
 
 # Preliminares {#preliminares}
 
-Neste capítulo, motivaremos a importância da computação em diversos domínios,
-contaremos um pouco da história da computação e como ela se relaciona com os
-desafios de nossa sociedade e, por fim, definiremos os principais termos e
-conceitos a serem abordados nos próximos capítulos.
+Neste capítulo, motivaremos a importância da computação e definiremos os
+principais termos e conceitos a serem abordados nos próximos capítulos.
 
-## Motivação
+## Motivação {#preliminares-motivacao}
 
 Imagine instruir uma pessoa a calcular juros compostos.  Dado que conhecemos o
 montante inicial $x$, a taxa de juros $j$ e o número de meses passados $n$,
@@ -26,14 +24,19 @@ ou interpretando as instruções:
 - Multiplique o resultado anterior pelo valor $x$;
 - Utilize o resultado anterior como resposta para o problema.
 
-A interpretação da fórmula acima começa a se aproximar do que definiremos como
-*computação*.
+A interpretação da fórmula acima começa a se aproximar do que estudaremos dentro
+da área de estudo que chamamos de *Computação*.
 
 Podemos ir além, e imaginar reescrever essa fórmula sem utilizar a operação de
 multiplicação. Ainda, imagine escrever a mesma fórmula usando apenas operadores
 lógicos de conjunção, disjunção e negação!
 
-É exatamente isso que os computadores digitais fazem.
+É exatamente isso que os computadores digitais fazem: resolvem problemas
+computáveis por meio de sequências de operações lógicas e aritméticas.
+Eles são especialmente úteis para nos auxiliar neste tipo de tarefas,
+realizando-as mais eficientemente do que somos capazes.
+
+Um exemplo ubíquo de computador são as calculadoras.
 
 ## Definições
 
@@ -64,11 +67,8 @@ de engenharia.
 *Computadores digitais* são dispositivos eletrônicos capazes de processar
 informação por meio de operações lógicas e aritméticas.  Como consequência de
 sua natureza digital são restritos ao processamento de informação **discreta**
-e **finita**.
-
-Esta limitação traz consigo características marcantes que diferem as soluções
-computacionais das soluções exatas (amplamente estudadas em disciplinas de
-matemática, física e similares no ensino básico e superior).
+e **finita**. Esta limitação traz consigo características marcantes para as
+soluções computacionais.
 
 Quando lidamos com problemas computacionais, devemos levar em consideração
 restrições de hardware, escolha da tecnologia mais apropriada, custo
@@ -96,26 +96,80 @@ modernas, um byte é composto por 8 bits.
 
 Na prática, apesar de cada byte ser endereçável, computadores digitais operam a
 nível de *palavra*.  Ou seja, as operações lógicas e aritméticas são aplicadas em grupos de bytes.
-Uma palavra é a **unidade natural de informação** em um computador.  Como os
+Uma palavra é a **unidade natural de informação** num computador.  Como os
 bytes, o tamanho das palavras depende da arquitetura.  Computadores de
 propósito geral modernos possuem palavras de tamanho 32 ou 64 bits.
 
 ### Algoritmo
 
-WIP
+Algoritmos são sequências de instruções para resolver um problema.  Dada uma
+entrada, todo algoritmo deve ser:
+
+- Não ambíguo: há uma, e somente uma, forma de executar cada instrução corretamente;
+- Ordenado: existe uma, e somente uma, ordem correta de execução das instruções; e
+- Finito: há um número finito de instruções que compõem um algoritmo.
+
+Entre exemplos do nosso dia a dia que são similares à algoritmos, podemos citar:
+
+- Receitas de bolo;
+- Instruções de montagem de um móvel;
+- Regras para divisão de números naturais.
+
+A calculadora de juros compostos, apresentada na Seção \@ref(preliminares-motivacao),
+é um exemplo de algoritmo.
 
 ### Programa de computador
 
 Um *programa de computador* é uma sequência de operações e instruções que
 realizam uma tarefa.  Um programa é sempre executado num computador; e, ainda,
-são programas que fazem os computadores funcionarem tornando-os úteis. Em
+são programas que fazem os computadores funcionarem, tornando-os úteis. Em
 outras palavras, programa de computador é a instância "concreta" de um
 algoritmo.
 
 ### Programação e linguagem de programação
 
-WIP
+Programas de computadores são representados e armazenados em computadores
+digitais numa linguagem ininteligível para nós humanos.  De fato, chamamos
+essa linguagem de *linguagem de máquina*, composta por sequências de bits
+com significado específico para aquela arquitetura de computador.
+
+Assim, para que consigamos expressar programas de computador em linguagem
+compreensível, fazemos uso das *linguagens de programação*^[Neste livro nos
+limitaremos nas linguagens de programação de alto nível e que são Turing
+completas.].  Cada linguagem de programação possui vantagens e desvantagens
+para diferentes aplicações. No entanto, todos os problemas computáveis podem
+ser resolvidos com qualquer linguagem de programação.
+
+Chamamos de *programação* o ato ou a habilidade de escrever programas
+numa determinada linguagem de programação.  O arquivo que contém o programa
+escrito numa linguagem de programação é chamado de *código-fonte*.
 
 ### Compilador
 
-WIP
+*Compiladores* são programas de computador capazes de traduzir programas
+escritos numa linguagem de programação para uma determinada linguagem de
+máquina.
+
+Em geral, eles atuam em vários passos até chegar na representação final do
+programa.  Eles também são responsáveis por verificar a corretude do
+código-fonte, normalmente auxiliando o programador a resolver possíveis erros.
+A representação final gerada pelo compilador, em linguagem de máquina,
+é chamada de código executável ou, simplesmente, *executável*.
+
+### Interpretador
+
+Uma alternativa à compilação é a interpretação.  *Interpretadores* são
+programas de computador capazes de entender o código-fonte e executá-los por
+conta própria ao invés de gerar o executável.
+
+A execução interpretada é mais lenta do que a execução de um programa em
+linguagem de máquina devido ao programa intermediário: o interpretador.
+
+Outras vantagens e desvantagens menos triviais dos compiladores
+e interpretadores estão fora do escopo desse livro.
+
+## Considerações finais
+
+Uma vez motivados e com base nessas definições, podemos ir para o que mais
+importa: como construir soluções para os problemas computacionais por meio de
+programas de computador.

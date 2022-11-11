@@ -1,8 +1,9 @@
 # Controle de fluxo {#fluxo}
 
-Vimos anteriormente que em Assembly, instruções de comparação e de salto podem
-ser utilizadas em conjunto para controlar o fluxo do programa. Em linguagens
-de alto nível, utilizamos comandos com semânticas melhor definidas.
+Vimos anteriormente, instruções de um algoritmo possuem um ordem
+pré-estabelecida para serem executados.  Em linguagens de alto nível,
+utilizamos comandos com semânticas bem definidas para estabelecer a sequência
+de execução das instruções.
 
 ## Comandos condicionais
 

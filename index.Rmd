@@ -78,16 +78,16 @@ Table: CES-10 -- Introdução à Computação
 -----------------------------------------------------------------------------------------
 Ementa                                         Capítulos
 ---------------------------------------------  ------------------------------------------
-Conceitos primários: computador, algoritmo,    Capítulo \@ref(preliminares), \@ref(numeros),
-programa, linguagem de programação,            \@ref(logica) e \@ref(representacao)
+Conceitos primários: computador, algoritmo,    Capítulo \@ref(preliminares)
+programa, linguagem de programação,
 compilador.
 
-Software básico para computadores.             Capítulo \@ref(programas) e \@ref(algoritmos)
+Software básico para computadores.             Capítulo \@ref(programas)
 
 Comandos de uma linguagem procedimental:       Capítulos \@ref(fluxo) e \@ref(io)
 atribuição, entrada e saída, condicionais,
 repetitivos e seletivos. Tratamento de
-excecções.
+exceções.
 
 Tipos escalares e estruturados.                Capítulos \@ref(programas) e \@ref(tipos)
 
