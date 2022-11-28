@@ -11,6 +11,7 @@ compilador
 interpretador
 considerações-finais
 programas
+breve-histórico-das-linguagens-de-programação
 linguagem-de-alto-nível
 primeiro-programa
 sobre-c

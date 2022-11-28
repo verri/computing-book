@@ -24,7 +24,7 @@
 <meta name="author" content="Lourenço A. Pereira Jr." />
 
 
-<meta name="date" content="2022-11-11" />
+<meta name="date" content="2022-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,12 +155,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II Programação</b></span></li>
 <li class="chapter" data-level="2" data-path="programas.html"><a href="programas.html"><i class="fa fa-check"></i><b>2</b> Introdução à programação</a><ul>
-<li class="chapter" data-level="2.1" data-path="programas.html"><a href="programas.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>2.1</b> Linguagem de alto nível</a></li>
-<li class="chapter" data-level="2.2" data-path="programas.html"><a href="programas.html#primeiro-programa"><i class="fa fa-check"></i><b>2.2</b> Primeiro programa</a></li>
-<li class="chapter" data-level="2.3" data-path="programas.html"><a href="programas.html#sobre-c"><i class="fa fa-check"></i><b>2.3</b> Sobre C++</a></li>
-<li class="chapter" data-level="2.4" data-path="programas.html"><a href="programas.html#programação-imperativa"><i class="fa fa-check"></i><b>2.4</b> Programação imperativa</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="programas.html"><a href="programas.html#atribuição"><i class="fa fa-check"></i><b>2.4.1</b> Atribuição</a></li>
-<li class="chapter" data-level="2.4.2" data-path="programas.html"><a href="programas.html#entrada-e-saída"><i class="fa fa-check"></i><b>2.4.2</b> Entrada e saída</a></li>
+<li class="chapter" data-level="2.1" data-path="programas.html"><a href="programas.html#breve-histórico-das-linguagens-de-programação"><i class="fa fa-check"></i><b>2.1</b> Breve histórico das linguagens de programação</a></li>
+<li class="chapter" data-level="2.2" data-path="programas.html"><a href="programas.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>2.2</b> Linguagem de alto nível</a></li>
+<li class="chapter" data-level="2.3" data-path="programas.html"><a href="programas.html#primeiro-programa"><i class="fa fa-check"></i><b>2.3</b> Primeiro programa</a></li>
+<li class="chapter" data-level="2.4" data-path="programas.html"><a href="programas.html#sobre-c"><i class="fa fa-check"></i><b>2.4</b> Sobre C++</a></li>
+<li class="chapter" data-level="2.5" data-path="programas.html"><a href="programas.html#programação-imperativa"><i class="fa fa-check"></i><b>2.5</b> Programação imperativa</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="programas.html"><a href="programas.html#atribuição"><i class="fa fa-check"></i><b>2.5.1</b> Atribuição</a></li>
+<li class="chapter" data-level="2.5.2" data-path="programas.html"><a href="programas.html#entrada-e-saída"><i class="fa fa-check"></i><b>2.5.2</b> Entrada e saída</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="fluxo.html"><a href="fluxo.html"><i class="fa fa-check"></i><b>3</b> Controle de fluxo</a><ul>
@@ -264,11 +265,11 @@ próprio valor de <span class="math inline">\(a\)</span> (ou <span class="math i
 propriedade: <span class="math inline">\(s(a, b) = s(a, c) + s(c + 1, b)\)</span> para todo <span class="math inline">\(c\)</span> tal que <span class="math inline">\(a \leq c &lt; b\)</span>.
 Deste modo, para o caso específico <span class="math inline">\(c = a\)</span>, temos que <span class="math inline">\(s(a, b) = s(a, a) + s(a + 1, b)\)</span>.</p>
 <p>Logo, a implementação deste algoritmo seria:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="subprogramas.html#cb8-1"></a><span class="dt">int</span> s(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
-<span id="cb8-2"><a href="subprogramas.html#cb8-2"></a>  <span class="cf">if</span> (a == b)</span>
-<span id="cb8-3"><a href="subprogramas.html#cb8-3"></a>    <span class="cf">return</span> a;</span>
-<span id="cb8-4"><a href="subprogramas.html#cb8-4"></a>  <span class="cf">return</span> s(a, a) + s(a + <span class="dv">1</span>, b);</span>
-<span id="cb8-5"><a href="subprogramas.html#cb8-5"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="subprogramas.html#cb9-1"></a><span class="dt">int</span> s(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
+<span id="cb9-2"><a href="subprogramas.html#cb9-2"></a>  <span class="cf">if</span> (a == b)</span>
+<span id="cb9-3"><a href="subprogramas.html#cb9-3"></a>    <span class="cf">return</span> a;</span>
+<span id="cb9-4"><a href="subprogramas.html#cb9-4"></a>  <span class="cf">return</span> s(a, a) + s(a + <span class="dv">1</span>, b);</span>
+<span id="cb9-5"><a href="subprogramas.html#cb9-5"></a>}</span></code></pre></div>
 <div id="busca-binária" class="section level3 hasAnchor">
 <h3><span class="header-section-number">5.1.1</span> Busca binária<a href="subprogramas.html#busca-binária" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Dada uma sequência <span class="math inline">\(v\)</span> com <span class="math inline">\(n\)</span> objetos ordenados de maneira crescente, queremos verificar se um determinado objeto

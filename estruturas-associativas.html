@@ -24,7 +24,7 @@
 <meta name="author" content="Lourenço A. Pereira Jr." />
 
 
-<meta name="date" content="2022-11-11" />
+<meta name="date" content="2022-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,12 +155,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II Programação</b></span></li>
 <li class="chapter" data-level="2" data-path="programas.html"><a href="programas.html"><i class="fa fa-check"></i><b>2</b> Introdução à programação</a><ul>
-<li class="chapter" data-level="2.1" data-path="programas.html"><a href="programas.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>2.1</b> Linguagem de alto nível</a></li>
-<li class="chapter" data-level="2.2" data-path="programas.html"><a href="programas.html#primeiro-programa"><i class="fa fa-check"></i><b>2.2</b> Primeiro programa</a></li>
-<li class="chapter" data-level="2.3" data-path="programas.html"><a href="programas.html#sobre-c"><i class="fa fa-check"></i><b>2.3</b> Sobre C++</a></li>
-<li class="chapter" data-level="2.4" data-path="programas.html"><a href="programas.html#programação-imperativa"><i class="fa fa-check"></i><b>2.4</b> Programação imperativa</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="programas.html"><a href="programas.html#atribuição"><i class="fa fa-check"></i><b>2.4.1</b> Atribuição</a></li>
-<li class="chapter" data-level="2.4.2" data-path="programas.html"><a href="programas.html#entrada-e-saída"><i class="fa fa-check"></i><b>2.4.2</b> Entrada e saída</a></li>
+<li class="chapter" data-level="2.1" data-path="programas.html"><a href="programas.html#breve-histórico-das-linguagens-de-programação"><i class="fa fa-check"></i><b>2.1</b> Breve histórico das linguagens de programação</a></li>
+<li class="chapter" data-level="2.2" data-path="programas.html"><a href="programas.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>2.2</b> Linguagem de alto nível</a></li>
+<li class="chapter" data-level="2.3" data-path="programas.html"><a href="programas.html#primeiro-programa"><i class="fa fa-check"></i><b>2.3</b> Primeiro programa</a></li>
+<li class="chapter" data-level="2.4" data-path="programas.html"><a href="programas.html#sobre-c"><i class="fa fa-check"></i><b>2.4</b> Sobre C++</a></li>
+<li class="chapter" data-level="2.5" data-path="programas.html"><a href="programas.html#programação-imperativa"><i class="fa fa-check"></i><b>2.5</b> Programação imperativa</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="programas.html"><a href="programas.html#atribuição"><i class="fa fa-check"></i><b>2.5.1</b> Atribuição</a></li>
+<li class="chapter" data-level="2.5.2" data-path="programas.html"><a href="programas.html#entrada-e-saída"><i class="fa fa-check"></i><b>2.5.2</b> Entrada e saída</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="fluxo.html"><a href="fluxo.html"><i class="fa fa-check"></i><b>3</b> Controle de fluxo</a><ul>
@@ -236,95 +237,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Conjuntos e mapas ordenados (árvores) e não ordenados (hashing)</p>
 <div id="árvores-binárias-de-busca" class="section level2 hasAnchor">
 <h2><span class="header-section-number">13.1</span> Árvores Binárias de Busca<a href="estruturas-associativas.html#árvores-binárias-de-busca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="estruturas-associativas.html#cb20-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> K, <span class="kw">typename</span> V&gt; <span class="kw">class</span> bstree</span>
-<span id="cb20-2"><a href="estruturas-associativas.html#cb20-2"></a>{</span>
-<span id="cb20-3"><a href="estruturas-associativas.html#cb20-3"></a>  <span class="kw">struct</span> node_data;</span>
-<span id="cb20-4"><a href="estruturas-associativas.html#cb20-4"></a>  <span class="kw">using</span> node = <span class="bu">std::</span>shared_ptr&lt;node_data&gt;;</span>
-<span id="cb20-5"><a href="estruturas-associativas.html#cb20-5"></a></span>
-<span id="cb20-6"><a href="estruturas-associativas.html#cb20-6"></a>  <span class="kw">struct</span> node_data {</span>
-<span id="cb20-7"><a href="estruturas-associativas.html#cb20-7"></a>    K key;</span>
-<span id="cb20-8"><a href="estruturas-associativas.html#cb20-8"></a>    V value;</span>
-<span id="cb20-9"><a href="estruturas-associativas.html#cb20-9"></a>    node left_child = <span class="kw">nullptr</span>;</span>
-<span id="cb20-10"><a href="estruturas-associativas.html#cb20-10"></a>    node right_child = <span class="kw">nullptr</span>;</span>
-<span id="cb20-11"><a href="estruturas-associativas.html#cb20-11"></a>  };</span>
-<span id="cb20-12"><a href="estruturas-associativas.html#cb20-12"></a></span>
-<span id="cb20-13"><a href="estruturas-associativas.html#cb20-13"></a><span class="kw">public</span>:</span>
-<span id="cb20-14"><a href="estruturas-associativas.html#cb20-14"></a>  <span class="dt">void</span> insert(<span class="at">const</span> K&amp; key, <span class="at">const</span> V&amp; value) {</span>
-<span id="cb20-15"><a href="estruturas-associativas.html#cb20-15"></a>    root = insert_recursive(root, key, value);</span>
-<span id="cb20-16"><a href="estruturas-associativas.html#cb20-16"></a>  }</span>
-<span id="cb20-17"><a href="estruturas-associativas.html#cb20-17"></a></span>
-<span id="cb20-18"><a href="estruturas-associativas.html#cb20-18"></a>  <span class="dt">void</span> remove(<span class="at">const</span> K&amp; key) {</span>
-<span id="cb20-19"><a href="estruturas-associativas.html#cb20-19"></a>    root = remove_recursive(root, key);</span>
-<span id="cb20-20"><a href="estruturas-associativas.html#cb20-20"></a>  }</span>
-<span id="cb20-21"><a href="estruturas-associativas.html#cb20-21"></a></span>
-<span id="cb20-22"><a href="estruturas-associativas.html#cb20-22"></a>  <span class="kw">auto</span> search(<span class="at">const</span> K&amp; key) <span class="at">const</span> -&gt; <span class="bu">std::</span>optional&lt;V&gt; {</span>
-<span id="cb20-23"><a href="estruturas-associativas.html#cb20-23"></a>    <span class="at">const</span> <span class="kw">auto</span> pos = search_recursive(root, key);</span>
-<span id="cb20-24"><a href="estruturas-associativas.html#cb20-24"></a>    <span class="cf">if</span> (pos != <span class="kw">nullptr</span>)</span>
-<span id="cb20-25"><a href="estruturas-associativas.html#cb20-25"></a>      <span class="cf">return</span> pos-&gt;value;</span>
-<span id="cb20-26"><a href="estruturas-associativas.html#cb20-26"></a>    <span class="cf">return</span> <span class="bu">std::</span>nullopt;</span>
-<span id="cb20-27"><a href="estruturas-associativas.html#cb20-27"></a>  }</span>
-<span id="cb20-28"><a href="estruturas-associativas.html#cb20-28"></a></span>
-<span id="cb20-29"><a href="estruturas-associativas.html#cb20-29"></a><span class="kw">private</span>:</span>
-<span id="cb20-30"><a href="estruturas-associativas.html#cb20-30"></a>  node root = <span class="kw">nullptr</span>;</span>
-<span id="cb20-31"><a href="estruturas-associativas.html#cb20-31"></a></span>
-<span id="cb20-32"><a href="estruturas-associativas.html#cb20-32"></a>  <span class="at">static</span> <span class="kw">auto</span> insert_recursive(</span>
-<span id="cb20-33"><a href="estruturas-associativas.html#cb20-33"></a>      node root, <span class="at">const</span> K&amp; key, <span class="at">const</span> V&amp; value) -&gt; node</span>
-<span id="cb20-34"><a href="estruturas-associativas.html#cb20-34"></a>  {</span>
-<span id="cb20-35"><a href="estruturas-associativas.html#cb20-35"></a>    <span class="cf">if</span> (root == <span class="kw">nullptr</span>)</span>
-<span id="cb20-36"><a href="estruturas-associativas.html#cb20-36"></a>      <span class="cf">return</span> node(<span class="kw">new</span> node_data{key, value});</span>
-<span id="cb20-37"><a href="estruturas-associativas.html#cb20-37"></a></span>
-<span id="cb20-38"><a href="estruturas-associativas.html#cb20-38"></a>    <span class="cf">if</span> (key &lt; root-&gt;key)</span>
-<span id="cb20-39"><a href="estruturas-associativas.html#cb20-39"></a>      root-&gt;left_child = insert_recursive(root-&gt;left_child, key, value);</span>
-<span id="cb20-40"><a href="estruturas-associativas.html#cb20-40"></a>    <span class="cf">else</span> <span class="cf">if</span> (key &gt; root-&gt;key)</span>
-<span id="cb20-41"><a href="estruturas-associativas.html#cb20-41"></a>      root-&gt;right_child = insert_recursive(root-&gt;right_child, key, value);</span>
-<span id="cb20-42"><a href="estruturas-associativas.html#cb20-42"></a></span>
-<span id="cb20-43"><a href="estruturas-associativas.html#cb20-43"></a>    <span class="cf">return</span> root;</span>
-<span id="cb20-44"><a href="estruturas-associativas.html#cb20-44"></a>  }</span>
-<span id="cb20-45"><a href="estruturas-associativas.html#cb20-45"></a></span>
-<span id="cb20-46"><a href="estruturas-associativas.html#cb20-46"></a>  <span class="at">static</span> <span class="kw">auto</span> remove_recursive(node root, <span class="at">const</span> K&amp; key) -&gt; node {</span>
-<span id="cb20-47"><a href="estruturas-associativas.html#cb20-47"></a>    <span class="cf">if</span> (root == <span class="kw">nullptr</span>)</span>
-<span id="cb20-48"><a href="estruturas-associativas.html#cb20-48"></a>      <span class="cf">return</span> <span class="kw">nullptr</span>;</span>
-<span id="cb20-49"><a href="estruturas-associativas.html#cb20-49"></a></span>
-<span id="cb20-50"><a href="estruturas-associativas.html#cb20-50"></a>    <span class="cf">if</span> (key &lt; root-&gt;key) {</span>
-<span id="cb20-51"><a href="estruturas-associativas.html#cb20-51"></a>      root-&gt;left_child = remove_recursive(root-&gt;left_child, key);</span>
-<span id="cb20-52"><a href="estruturas-associativas.html#cb20-52"></a>      <span class="cf">return</span> root;</span>
-<span id="cb20-53"><a href="estruturas-associativas.html#cb20-53"></a>    }</span>
-<span id="cb20-54"><a href="estruturas-associativas.html#cb20-54"></a></span>
-<span id="cb20-55"><a href="estruturas-associativas.html#cb20-55"></a>    <span class="cf">if</span> (key &gt; root-&gt;key) {</span>
-<span id="cb20-56"><a href="estruturas-associativas.html#cb20-56"></a>      root-&gt;right_child = remove_recursive(root-&gt;right_child, key);</span>
-<span id="cb20-57"><a href="estruturas-associativas.html#cb20-57"></a>      <span class="cf">return</span> root;</span>
-<span id="cb20-58"><a href="estruturas-associativas.html#cb20-58"></a>    }</span>
-<span id="cb20-59"><a href="estruturas-associativas.html#cb20-59"></a></span>
-<span id="cb20-60"><a href="estruturas-associativas.html#cb20-60"></a>    <span class="cf">if</span> (root-&gt;left_child == <span class="kw">nullptr</span> &amp;&amp; root-&gt;right_child == <span class="kw">nullptr</span>)</span>
-<span id="cb20-61"><a href="estruturas-associativas.html#cb20-61"></a>      <span class="cf">return</span> <span class="kw">nullptr</span>;</span>
-<span id="cb20-62"><a href="estruturas-associativas.html#cb20-62"></a></span>
-<span id="cb20-63"><a href="estruturas-associativas.html#cb20-63"></a>    <span class="cf">if</span> (root-&gt;left_child != <span class="kw">nullptr</span> &amp;&amp; root-&gt;right_child != <span class="kw">nullptr</span>) {</span>
-<span id="cb20-64"><a href="estruturas-associativas.html#cb20-64"></a>      <span class="at">const</span> <span class="kw">auto</span> child = left_most(root-&gt;right_child);</span>
-<span id="cb20-65"><a href="estruturas-associativas.html#cb20-65"></a>      <span class="bu">std::</span>swap(root-&gt;key, child-&gt;key);</span>
-<span id="cb20-66"><a href="estruturas-associativas.html#cb20-66"></a>      root-&gt;right_child = remove_recursive(root-&gt;right_child, child-&gt;key);</span>
-<span id="cb20-67"><a href="estruturas-associativas.html#cb20-67"></a>      <span class="cf">return</span> root;</span>
-<span id="cb20-68"><a href="estruturas-associativas.html#cb20-68"></a>    }</span>
-<span id="cb20-69"><a href="estruturas-associativas.html#cb20-69"></a></span>
-<span id="cb20-70"><a href="estruturas-associativas.html#cb20-70"></a>    <span class="cf">return</span> root-&gt;left_child != <span class="kw">nullptr</span> ? root-&gt;left_child : root-&gt;right_child;</span>
-<span id="cb20-71"><a href="estruturas-associativas.html#cb20-71"></a>  }</span>
-<span id="cb20-72"><a href="estruturas-associativas.html#cb20-72"></a></span>
-<span id="cb20-73"><a href="estruturas-associativas.html#cb20-73"></a>  <span class="at">static</span> <span class="kw">auto</span> left_most(node root) -&gt; node {</span>
-<span id="cb20-74"><a href="estruturas-associativas.html#cb20-74"></a>    <span class="cf">return</span> root-&gt;left_child == <span class="kw">nullptr</span> ? root : left_most(root-&gt;left_child);</span>
-<span id="cb20-75"><a href="estruturas-associativas.html#cb20-75"></a>  }</span>
-<span id="cb20-76"><a href="estruturas-associativas.html#cb20-76"></a></span>
-<span id="cb20-77"><a href="estruturas-associativas.html#cb20-77"></a>  <span class="at">static</span> <span class="kw">auto</span> search_recursive(node root, K key) -&gt; node {</span>
-<span id="cb20-78"><a href="estruturas-associativas.html#cb20-78"></a>    <span class="cf">if</span> (root == <span class="kw">nullptr</span>)</span>
-<span id="cb20-79"><a href="estruturas-associativas.html#cb20-79"></a>      <span class="cf">return</span> <span class="kw">nullptr</span>;</span>
-<span id="cb20-80"><a href="estruturas-associativas.html#cb20-80"></a></span>
-<span id="cb20-81"><a href="estruturas-associativas.html#cb20-81"></a>    <span class="cf">if</span> (key &lt; root-&gt;key)</span>
-<span id="cb20-82"><a href="estruturas-associativas.html#cb20-82"></a>      <span class="cf">return</span> search_recursive(root-&gt;left_child, key);</span>
-<span id="cb20-83"><a href="estruturas-associativas.html#cb20-83"></a></span>
-<span id="cb20-84"><a href="estruturas-associativas.html#cb20-84"></a>    <span class="cf">if</span> (key &gt; root-&gt;key)</span>
-<span id="cb20-85"><a href="estruturas-associativas.html#cb20-85"></a>      <span class="cf">return</span> search_recursive(root-&gt;right_child, key);</span>
-<span id="cb20-86"><a href="estruturas-associativas.html#cb20-86"></a></span>
-<span id="cb20-87"><a href="estruturas-associativas.html#cb20-87"></a>    <span class="cf">return</span> root;</span>
-<span id="cb20-88"><a href="estruturas-associativas.html#cb20-88"></a>  }</span>
-<span id="cb20-89"><a href="estruturas-associativas.html#cb20-89"></a>};</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb21-1"><a href="estruturas-associativas.html#cb21-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> K, <span class="kw">typename</span> V&gt; <span class="kw">class</span> bstree</span>
+<span id="cb21-2"><a href="estruturas-associativas.html#cb21-2"></a>{</span>
+<span id="cb21-3"><a href="estruturas-associativas.html#cb21-3"></a>  <span class="kw">struct</span> node_data;</span>
+<span id="cb21-4"><a href="estruturas-associativas.html#cb21-4"></a>  <span class="kw">using</span> node = <span class="bu">std::</span>shared_ptr&lt;node_data&gt;;</span>
+<span id="cb21-5"><a href="estruturas-associativas.html#cb21-5"></a></span>
+<span id="cb21-6"><a href="estruturas-associativas.html#cb21-6"></a>  <span class="kw">struct</span> node_data {</span>
+<span id="cb21-7"><a href="estruturas-associativas.html#cb21-7"></a>    K key;</span>
+<span id="cb21-8"><a href="estruturas-associativas.html#cb21-8"></a>    V value;</span>
+<span id="cb21-9"><a href="estruturas-associativas.html#cb21-9"></a>    node left_child = <span class="kw">nullptr</span>;</span>
+<span id="cb21-10"><a href="estruturas-associativas.html#cb21-10"></a>    node right_child = <span class="kw">nullptr</span>;</span>
+<span id="cb21-11"><a href="estruturas-associativas.html#cb21-11"></a>  };</span>
+<span id="cb21-12"><a href="estruturas-associativas.html#cb21-12"></a></span>
+<span id="cb21-13"><a href="estruturas-associativas.html#cb21-13"></a><span class="kw">public</span>:</span>
+<span id="cb21-14"><a href="estruturas-associativas.html#cb21-14"></a>  <span class="dt">void</span> insert(<span class="at">const</span> K&amp; key, <span class="at">const</span> V&amp; value) {</span>
+<span id="cb21-15"><a href="estruturas-associativas.html#cb21-15"></a>    root = insert_recursive(root, key, value);</span>
+<span id="cb21-16"><a href="estruturas-associativas.html#cb21-16"></a>  }</span>
+<span id="cb21-17"><a href="estruturas-associativas.html#cb21-17"></a></span>
+<span id="cb21-18"><a href="estruturas-associativas.html#cb21-18"></a>  <span class="dt">void</span> remove(<span class="at">const</span> K&amp; key) {</span>
+<span id="cb21-19"><a href="estruturas-associativas.html#cb21-19"></a>    root = remove_recursive(root, key);</span>
+<span id="cb21-20"><a href="estruturas-associativas.html#cb21-20"></a>  }</span>
+<span id="cb21-21"><a href="estruturas-associativas.html#cb21-21"></a></span>
+<span id="cb21-22"><a href="estruturas-associativas.html#cb21-22"></a>  <span class="kw">auto</span> search(<span class="at">const</span> K&amp; key) <span class="at">const</span> -&gt; <span class="bu">std::</span>optional&lt;V&gt; {</span>
+<span id="cb21-23"><a href="estruturas-associativas.html#cb21-23"></a>    <span class="at">const</span> <span class="kw">auto</span> pos = search_recursive(root, key);</span>
+<span id="cb21-24"><a href="estruturas-associativas.html#cb21-24"></a>    <span class="cf">if</span> (pos != <span class="kw">nullptr</span>)</span>
+<span id="cb21-25"><a href="estruturas-associativas.html#cb21-25"></a>      <span class="cf">return</span> pos-&gt;value;</span>
+<span id="cb21-26"><a href="estruturas-associativas.html#cb21-26"></a>    <span class="cf">return</span> <span class="bu">std::</span>nullopt;</span>
+<span id="cb21-27"><a href="estruturas-associativas.html#cb21-27"></a>  }</span>
+<span id="cb21-28"><a href="estruturas-associativas.html#cb21-28"></a></span>
+<span id="cb21-29"><a href="estruturas-associativas.html#cb21-29"></a><span class="kw">private</span>:</span>
+<span id="cb21-30"><a href="estruturas-associativas.html#cb21-30"></a>  node root = <span class="kw">nullptr</span>;</span>
+<span id="cb21-31"><a href="estruturas-associativas.html#cb21-31"></a></span>
+<span id="cb21-32"><a href="estruturas-associativas.html#cb21-32"></a>  <span class="at">static</span> <span class="kw">auto</span> insert_recursive(</span>
+<span id="cb21-33"><a href="estruturas-associativas.html#cb21-33"></a>      node root, <span class="at">const</span> K&amp; key, <span class="at">const</span> V&amp; value) -&gt; node</span>
+<span id="cb21-34"><a href="estruturas-associativas.html#cb21-34"></a>  {</span>
+<span id="cb21-35"><a href="estruturas-associativas.html#cb21-35"></a>    <span class="cf">if</span> (root == <span class="kw">nullptr</span>)</span>
+<span id="cb21-36"><a href="estruturas-associativas.html#cb21-36"></a>      <span class="cf">return</span> node(<span class="kw">new</span> node_data{key, value});</span>
+<span id="cb21-37"><a href="estruturas-associativas.html#cb21-37"></a></span>
+<span id="cb21-38"><a href="estruturas-associativas.html#cb21-38"></a>    <span class="cf">if</span> (key &lt; root-&gt;key)</span>
+<span id="cb21-39"><a href="estruturas-associativas.html#cb21-39"></a>      root-&gt;left_child = insert_recursive(root-&gt;left_child, key, value);</span>
+<span id="cb21-40"><a href="estruturas-associativas.html#cb21-40"></a>    <span class="cf">else</span> <span class="cf">if</span> (key &gt; root-&gt;key)</span>
+<span id="cb21-41"><a href="estruturas-associativas.html#cb21-41"></a>      root-&gt;right_child = insert_recursive(root-&gt;right_child, key, value);</span>
+<span id="cb21-42"><a href="estruturas-associativas.html#cb21-42"></a></span>
+<span id="cb21-43"><a href="estruturas-associativas.html#cb21-43"></a>    <span class="cf">return</span> root;</span>
+<span id="cb21-44"><a href="estruturas-associativas.html#cb21-44"></a>  }</span>
+<span id="cb21-45"><a href="estruturas-associativas.html#cb21-45"></a></span>
+<span id="cb21-46"><a href="estruturas-associativas.html#cb21-46"></a>  <span class="at">static</span> <span class="kw">auto</span> remove_recursive(node root, <span class="at">const</span> K&amp; key) -&gt; node {</span>
+<span id="cb21-47"><a href="estruturas-associativas.html#cb21-47"></a>    <span class="cf">if</span> (root == <span class="kw">nullptr</span>)</span>
+<span id="cb21-48"><a href="estruturas-associativas.html#cb21-48"></a>      <span class="cf">return</span> <span class="kw">nullptr</span>;</span>
+<span id="cb21-49"><a href="estruturas-associativas.html#cb21-49"></a></span>
+<span id="cb21-50"><a href="estruturas-associativas.html#cb21-50"></a>    <span class="cf">if</span> (key &lt; root-&gt;key) {</span>
+<span id="cb21-51"><a href="estruturas-associativas.html#cb21-51"></a>      root-&gt;left_child = remove_recursive(root-&gt;left_child, key);</span>
+<span id="cb21-52"><a href="estruturas-associativas.html#cb21-52"></a>      <span class="cf">return</span> root;</span>
+<span id="cb21-53"><a href="estruturas-associativas.html#cb21-53"></a>    }</span>
+<span id="cb21-54"><a href="estruturas-associativas.html#cb21-54"></a></span>
+<span id="cb21-55"><a href="estruturas-associativas.html#cb21-55"></a>    <span class="cf">if</span> (key &gt; root-&gt;key) {</span>
+<span id="cb21-56"><a href="estruturas-associativas.html#cb21-56"></a>      root-&gt;right_child = remove_recursive(root-&gt;right_child, key);</span>
+<span id="cb21-57"><a href="estruturas-associativas.html#cb21-57"></a>      <span class="cf">return</span> root;</span>
+<span id="cb21-58"><a href="estruturas-associativas.html#cb21-58"></a>    }</span>
+<span id="cb21-59"><a href="estruturas-associativas.html#cb21-59"></a></span>
+<span id="cb21-60"><a href="estruturas-associativas.html#cb21-60"></a>    <span class="cf">if</span> (root-&gt;left_child == <span class="kw">nullptr</span> &amp;&amp; root-&gt;right_child == <span class="kw">nullptr</span>)</span>
+<span id="cb21-61"><a href="estruturas-associativas.html#cb21-61"></a>      <span class="cf">return</span> <span class="kw">nullptr</span>;</span>
+<span id="cb21-62"><a href="estruturas-associativas.html#cb21-62"></a></span>
+<span id="cb21-63"><a href="estruturas-associativas.html#cb21-63"></a>    <span class="cf">if</span> (root-&gt;left_child != <span class="kw">nullptr</span> &amp;&amp; root-&gt;right_child != <span class="kw">nullptr</span>) {</span>
+<span id="cb21-64"><a href="estruturas-associativas.html#cb21-64"></a>      <span class="at">const</span> <span class="kw">auto</span> child = left_most(root-&gt;right_child);</span>
+<span id="cb21-65"><a href="estruturas-associativas.html#cb21-65"></a>      <span class="bu">std::</span>swap(root-&gt;key, child-&gt;key);</span>
+<span id="cb21-66"><a href="estruturas-associativas.html#cb21-66"></a>      root-&gt;right_child = remove_recursive(root-&gt;right_child, child-&gt;key);</span>
+<span id="cb21-67"><a href="estruturas-associativas.html#cb21-67"></a>      <span class="cf">return</span> root;</span>
+<span id="cb21-68"><a href="estruturas-associativas.html#cb21-68"></a>    }</span>
+<span id="cb21-69"><a href="estruturas-associativas.html#cb21-69"></a></span>
+<span id="cb21-70"><a href="estruturas-associativas.html#cb21-70"></a>    <span class="cf">return</span> root-&gt;left_child != <span class="kw">nullptr</span> ? root-&gt;left_child : root-&gt;right_child;</span>
+<span id="cb21-71"><a href="estruturas-associativas.html#cb21-71"></a>  }</span>
+<span id="cb21-72"><a href="estruturas-associativas.html#cb21-72"></a></span>
+<span id="cb21-73"><a href="estruturas-associativas.html#cb21-73"></a>  <span class="at">static</span> <span class="kw">auto</span> left_most(node root) -&gt; node {</span>
+<span id="cb21-74"><a href="estruturas-associativas.html#cb21-74"></a>    <span class="cf">return</span> root-&gt;left_child == <span class="kw">nullptr</span> ? root : left_most(root-&gt;left_child);</span>
+<span id="cb21-75"><a href="estruturas-associativas.html#cb21-75"></a>  }</span>
+<span id="cb21-76"><a href="estruturas-associativas.html#cb21-76"></a></span>
+<span id="cb21-77"><a href="estruturas-associativas.html#cb21-77"></a>  <span class="at">static</span> <span class="kw">auto</span> search_recursive(node root, K key) -&gt; node {</span>
+<span id="cb21-78"><a href="estruturas-associativas.html#cb21-78"></a>    <span class="cf">if</span> (root == <span class="kw">nullptr</span>)</span>
+<span id="cb21-79"><a href="estruturas-associativas.html#cb21-79"></a>      <span class="cf">return</span> <span class="kw">nullptr</span>;</span>
+<span id="cb21-80"><a href="estruturas-associativas.html#cb21-80"></a></span>
+<span id="cb21-81"><a href="estruturas-associativas.html#cb21-81"></a>    <span class="cf">if</span> (key &lt; root-&gt;key)</span>
+<span id="cb21-82"><a href="estruturas-associativas.html#cb21-82"></a>      <span class="cf">return</span> search_recursive(root-&gt;left_child, key);</span>
+<span id="cb21-83"><a href="estruturas-associativas.html#cb21-83"></a></span>
+<span id="cb21-84"><a href="estruturas-associativas.html#cb21-84"></a>    <span class="cf">if</span> (key &gt; root-&gt;key)</span>
+<span id="cb21-85"><a href="estruturas-associativas.html#cb21-85"></a>      <span class="cf">return</span> search_recursive(root-&gt;right_child, key);</span>
+<span id="cb21-86"><a href="estruturas-associativas.html#cb21-86"></a></span>
+<span id="cb21-87"><a href="estruturas-associativas.html#cb21-87"></a>    <span class="cf">return</span> root;</span>
+<span id="cb21-88"><a href="estruturas-associativas.html#cb21-88"></a>  }</span>
+<span id="cb21-89"><a href="estruturas-associativas.html#cb21-89"></a>};</span></code></pre></div>
 
 </div>
 </div>

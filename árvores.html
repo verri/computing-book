@@ -24,7 +24,7 @@
 <meta name="author" content="Lourenço A. Pereira Jr." />
 
 
-<meta name="date" content="2022-11-11" />
+<meta name="date" content="2022-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,12 +155,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II Programação</b></span></li>
 <li class="chapter" data-level="2" data-path="programas.html"><a href="programas.html"><i class="fa fa-check"></i><b>2</b> Introdução à programação</a><ul>
-<li class="chapter" data-level="2.1" data-path="programas.html"><a href="programas.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>2.1</b> Linguagem de alto nível</a></li>
-<li class="chapter" data-level="2.2" data-path="programas.html"><a href="programas.html#primeiro-programa"><i class="fa fa-check"></i><b>2.2</b> Primeiro programa</a></li>
-<li class="chapter" data-level="2.3" data-path="programas.html"><a href="programas.html#sobre-c"><i class="fa fa-check"></i><b>2.3</b> Sobre C++</a></li>
-<li class="chapter" data-level="2.4" data-path="programas.html"><a href="programas.html#programação-imperativa"><i class="fa fa-check"></i><b>2.4</b> Programação imperativa</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="programas.html"><a href="programas.html#atribuição"><i class="fa fa-check"></i><b>2.4.1</b> Atribuição</a></li>
-<li class="chapter" data-level="2.4.2" data-path="programas.html"><a href="programas.html#entrada-e-saída"><i class="fa fa-check"></i><b>2.4.2</b> Entrada e saída</a></li>
+<li class="chapter" data-level="2.1" data-path="programas.html"><a href="programas.html#breve-histórico-das-linguagens-de-programação"><i class="fa fa-check"></i><b>2.1</b> Breve histórico das linguagens de programação</a></li>
+<li class="chapter" data-level="2.2" data-path="programas.html"><a href="programas.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>2.2</b> Linguagem de alto nível</a></li>
+<li class="chapter" data-level="2.3" data-path="programas.html"><a href="programas.html#primeiro-programa"><i class="fa fa-check"></i><b>2.3</b> Primeiro programa</a></li>
+<li class="chapter" data-level="2.4" data-path="programas.html"><a href="programas.html#sobre-c"><i class="fa fa-check"></i><b>2.4</b> Sobre C++</a></li>
+<li class="chapter" data-level="2.5" data-path="programas.html"><a href="programas.html#programação-imperativa"><i class="fa fa-check"></i><b>2.5</b> Programação imperativa</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="programas.html"><a href="programas.html#atribuição"><i class="fa fa-check"></i><b>2.5.1</b> Atribuição</a></li>
+<li class="chapter" data-level="2.5.2" data-path="programas.html"><a href="programas.html#entrada-e-saída"><i class="fa fa-check"></i><b>2.5.2</b> Entrada e saída</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="fluxo.html"><a href="fluxo.html"><i class="fa fa-check"></i><b>3</b> Controle de fluxo</a><ul>
@@ -235,71 +236,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">12</span> Árvores<a href="árvores.html#árvores" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="árvores-binárias" class="section level2 hasAnchor">
 <h2><span class="header-section-number">12.1</span> Árvores binárias<a href="árvores.html#árvores-binárias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="árvores.html#cb16-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">struct</span> btree;</span>
-<span id="cb16-2"><a href="árvores.html#cb16-2"></a></span>
-<span id="cb16-3"><a href="árvores.html#cb16-3"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt;</span>
-<span id="cb16-4"><a href="árvores.html#cb16-4"></a><span class="kw">using</span> btree_ptr = <span class="bu">std::</span>shared_ptr&lt;btree&lt;T&gt;&gt;;</span>
-<span id="cb16-5"><a href="árvores.html#cb16-5"></a></span>
-<span id="cb16-6"><a href="árvores.html#cb16-6"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">struct</span> btree {</span>
-<span id="cb16-7"><a href="árvores.html#cb16-7"></a>  T value;</span>
-<span id="cb16-8"><a href="árvores.html#cb16-8"></a>  btree_ptr left_child = <span class="kw">nullptr</span>;</span>
-<span id="cb16-9"><a href="árvores.html#cb16-9"></a>  btree_ptr right_child = <span class="kw">nullptr</span>;</span>
-<span id="cb16-10"><a href="árvores.html#cb16-10"></a>};</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="árvores.html#cb17-1"></a><span class="kw">enum</span> <span class="kw">class</span> ordering {</span>
-<span id="cb17-2"><a href="árvores.html#cb17-2"></a>  in_order,</span>
-<span id="cb17-3"><a href="árvores.html#cb17-3"></a>  pre_order,</span>
-<span id="cb17-4"><a href="árvores.html#cb17-4"></a>  post_order,</span>
-<span id="cb17-5"><a href="árvores.html#cb17-5"></a>};</span>
-<span id="cb17-6"><a href="árvores.html#cb17-6"></a></span>
-<span id="cb17-7"><a href="árvores.html#cb17-7"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt;</span>
-<span id="cb17-8"><a href="árvores.html#cb17-8"></a><span class="kw">using</span> visitor = <span class="bu">std::</span>function&lt;<span class="dt">bool</span>(<span class="at">const</span> T&amp;)&gt;;</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb18-1"><a href="árvores.html#cb18-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt;</span>
-<span id="cb18-2"><a href="árvores.html#cb18-2"></a><span class="dt">void</span> dfs(btree_ptr&lt;T&gt; root, ordering order, <span class="at">const</span> visitor&amp; visit) {</span>
-<span id="cb18-3"><a href="árvores.html#cb18-3"></a>  <span class="cf">if</span> (root == <span class="kw">nullptr</span>)</span>
-<span id="cb18-4"><a href="árvores.html#cb18-4"></a>    <span class="cf">return</span>;</span>
-<span id="cb18-5"><a href="árvores.html#cb18-5"></a></span>
-<span id="cb18-6"><a href="árvores.html#cb18-6"></a>  <span class="cf">switch</span> (order)</span>
-<span id="cb18-7"><a href="árvores.html#cb18-7"></a>  {</span>
-<span id="cb18-8"><a href="árvores.html#cb18-8"></a>  <span class="cf">case</span> in_order:</span>
-<span id="cb18-9"><a href="árvores.html#cb18-9"></a>    dfs(root-&gt;left_child, order, visit);</span>
-<span id="cb18-10"><a href="árvores.html#cb18-10"></a>    <span class="cf">if</span> (!visit(root-&gt;value))</span>
-<span id="cb18-11"><a href="árvores.html#cb18-11"></a>      <span class="cf">return</span>;</span>
-<span id="cb18-12"><a href="árvores.html#cb18-12"></a>    dfs(root-&gt;right_child, order, visit);</span>
-<span id="cb18-13"><a href="árvores.html#cb18-13"></a>    <span class="cf">break</span>;</span>
-<span id="cb18-14"><a href="árvores.html#cb18-14"></a>  <span class="cf">case</span> pre_order:</span>
-<span id="cb18-15"><a href="árvores.html#cb18-15"></a>    dfs(root-&gt;left_child, order, visit);</span>
-<span id="cb18-16"><a href="árvores.html#cb18-16"></a>    dfs(root-&gt;right_child, order, visit);</span>
-<span id="cb18-17"><a href="árvores.html#cb18-17"></a>    <span class="cf">if</span> (!visit(root-&gt;value))</span>
-<span id="cb18-18"><a href="árvores.html#cb18-18"></a>      <span class="cf">return</span>;</span>
-<span id="cb18-19"><a href="árvores.html#cb18-19"></a>    <span class="cf">break</span>;</span>
-<span id="cb18-20"><a href="árvores.html#cb18-20"></a>  <span class="cf">case</span> post_order:</span>
-<span id="cb18-21"><a href="árvores.html#cb18-21"></a>    <span class="cf">if</span> (!visit(root-&gt;value))</span>
-<span id="cb18-22"><a href="árvores.html#cb18-22"></a>      <span class="cf">return</span>;</span>
-<span id="cb18-23"><a href="árvores.html#cb18-23"></a>    dfs(root-&gt;left_child, order, visit);</span>
-<span id="cb18-24"><a href="árvores.html#cb18-24"></a>    dfs(root-&gt;right_child, order, visit);</span>
-<span id="cb18-25"><a href="árvores.html#cb18-25"></a>    <span class="cf">break</span>;</span>
-<span id="cb18-26"><a href="árvores.html#cb18-26"></a>  }</span>
-<span id="cb18-27"><a href="árvores.html#cb18-27"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="árvores.html#cb17-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">struct</span> btree;</span>
+<span id="cb17-2"><a href="árvores.html#cb17-2"></a></span>
+<span id="cb17-3"><a href="árvores.html#cb17-3"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt;</span>
+<span id="cb17-4"><a href="árvores.html#cb17-4"></a><span class="kw">using</span> btree_ptr = <span class="bu">std::</span>shared_ptr&lt;btree&lt;T&gt;&gt;;</span>
+<span id="cb17-5"><a href="árvores.html#cb17-5"></a></span>
+<span id="cb17-6"><a href="árvores.html#cb17-6"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt; <span class="kw">struct</span> btree {</span>
+<span id="cb17-7"><a href="árvores.html#cb17-7"></a>  T value;</span>
+<span id="cb17-8"><a href="árvores.html#cb17-8"></a>  btree_ptr left_child = <span class="kw">nullptr</span>;</span>
+<span id="cb17-9"><a href="árvores.html#cb17-9"></a>  btree_ptr right_child = <span class="kw">nullptr</span>;</span>
+<span id="cb17-10"><a href="árvores.html#cb17-10"></a>};</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb18-1"><a href="árvores.html#cb18-1"></a><span class="kw">enum</span> <span class="kw">class</span> ordering {</span>
+<span id="cb18-2"><a href="árvores.html#cb18-2"></a>  in_order,</span>
+<span id="cb18-3"><a href="árvores.html#cb18-3"></a>  pre_order,</span>
+<span id="cb18-4"><a href="árvores.html#cb18-4"></a>  post_order,</span>
+<span id="cb18-5"><a href="árvores.html#cb18-5"></a>};</span>
+<span id="cb18-6"><a href="árvores.html#cb18-6"></a></span>
+<span id="cb18-7"><a href="árvores.html#cb18-7"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt;</span>
+<span id="cb18-8"><a href="árvores.html#cb18-8"></a><span class="kw">using</span> visitor = <span class="bu">std::</span>function&lt;<span class="dt">bool</span>(<span class="at">const</span> T&amp;)&gt;;</span></code></pre></div>
 <div class="sourceCode" id="cb19"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb19-1"><a href="árvores.html#cb19-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt;</span>
-<span id="cb19-2"><a href="árvores.html#cb19-2"></a><span class="dt">void</span> bfs(btree_ptr&lt;T&gt; root, <span class="at">const</span> visitor&amp; visit) {</span>
-<span id="cb19-3"><a href="árvores.html#cb19-3"></a>  <span class="bu">std::</span>queue&lt;btree_ptr&gt; queue;</span>
-<span id="cb19-4"><a href="árvores.html#cb19-4"></a>  queue.push(root);</span>
+<span id="cb19-2"><a href="árvores.html#cb19-2"></a><span class="dt">void</span> dfs(btree_ptr&lt;T&gt; root, ordering order, <span class="at">const</span> visitor&amp; visit) {</span>
+<span id="cb19-3"><a href="árvores.html#cb19-3"></a>  <span class="cf">if</span> (root == <span class="kw">nullptr</span>)</span>
+<span id="cb19-4"><a href="árvores.html#cb19-4"></a>    <span class="cf">return</span>;</span>
 <span id="cb19-5"><a href="árvores.html#cb19-5"></a></span>
-<span id="cb19-6"><a href="árvores.html#cb19-6"></a>  <span class="cf">while</span> (!queue.empty())</span>
+<span id="cb19-6"><a href="árvores.html#cb19-6"></a>  <span class="cf">switch</span> (order)</span>
 <span id="cb19-7"><a href="árvores.html#cb19-7"></a>  {</span>
-<span id="cb19-8"><a href="árvores.html#cb19-8"></a>    <span class="cf">if</span> (queue.front() == <span class="kw">nullptr</span>) {</span>
-<span id="cb19-9"><a href="árvores.html#cb19-9"></a>      queue.pop();</span>
-<span id="cb19-10"><a href="árvores.html#cb19-10"></a>      <span class="cf">continue</span>;</span>
-<span id="cb19-11"><a href="árvores.html#cb19-11"></a>    }</span>
-<span id="cb19-12"><a href="árvores.html#cb19-12"></a></span>
-<span id="cb19-13"><a href="árvores.html#cb19-13"></a>    <span class="cf">if</span> (!visit(queue.front()-&gt;value))</span>
-<span id="cb19-14"><a href="árvores.html#cb19-14"></a>      <span class="cf">return</span>;</span>
-<span id="cb19-15"><a href="árvores.html#cb19-15"></a></span>
-<span id="cb19-16"><a href="árvores.html#cb19-16"></a>    queue.push(queue.front()-&gt;left_child);</span>
-<span id="cb19-17"><a href="árvores.html#cb19-17"></a>    queue.push(queue.front()-&gt;right_child);</span>
-<span id="cb19-18"><a href="árvores.html#cb19-18"></a>    queue.pop();</span>
-<span id="cb19-19"><a href="árvores.html#cb19-19"></a>  }</span>
-<span id="cb19-20"><a href="árvores.html#cb19-20"></a>}</span></code></pre></div>
+<span id="cb19-8"><a href="árvores.html#cb19-8"></a>  <span class="cf">case</span> in_order:</span>
+<span id="cb19-9"><a href="árvores.html#cb19-9"></a>    dfs(root-&gt;left_child, order, visit);</span>
+<span id="cb19-10"><a href="árvores.html#cb19-10"></a>    <span class="cf">if</span> (!visit(root-&gt;value))</span>
+<span id="cb19-11"><a href="árvores.html#cb19-11"></a>      <span class="cf">return</span>;</span>
+<span id="cb19-12"><a href="árvores.html#cb19-12"></a>    dfs(root-&gt;right_child, order, visit);</span>
+<span id="cb19-13"><a href="árvores.html#cb19-13"></a>    <span class="cf">break</span>;</span>
+<span id="cb19-14"><a href="árvores.html#cb19-14"></a>  <span class="cf">case</span> pre_order:</span>
+<span id="cb19-15"><a href="árvores.html#cb19-15"></a>    dfs(root-&gt;left_child, order, visit);</span>
+<span id="cb19-16"><a href="árvores.html#cb19-16"></a>    dfs(root-&gt;right_child, order, visit);</span>
+<span id="cb19-17"><a href="árvores.html#cb19-17"></a>    <span class="cf">if</span> (!visit(root-&gt;value))</span>
+<span id="cb19-18"><a href="árvores.html#cb19-18"></a>      <span class="cf">return</span>;</span>
+<span id="cb19-19"><a href="árvores.html#cb19-19"></a>    <span class="cf">break</span>;</span>
+<span id="cb19-20"><a href="árvores.html#cb19-20"></a>  <span class="cf">case</span> post_order:</span>
+<span id="cb19-21"><a href="árvores.html#cb19-21"></a>    <span class="cf">if</span> (!visit(root-&gt;value))</span>
+<span id="cb19-22"><a href="árvores.html#cb19-22"></a>      <span class="cf">return</span>;</span>
+<span id="cb19-23"><a href="árvores.html#cb19-23"></a>    dfs(root-&gt;left_child, order, visit);</span>
+<span id="cb19-24"><a href="árvores.html#cb19-24"></a>    dfs(root-&gt;right_child, order, visit);</span>
+<span id="cb19-25"><a href="árvores.html#cb19-25"></a>    <span class="cf">break</span>;</span>
+<span id="cb19-26"><a href="árvores.html#cb19-26"></a>  }</span>
+<span id="cb19-27"><a href="árvores.html#cb19-27"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="árvores.html#cb20-1"></a><span class="kw">template</span> &lt;<span class="kw">typename</span> T&gt;</span>
+<span id="cb20-2"><a href="árvores.html#cb20-2"></a><span class="dt">void</span> bfs(btree_ptr&lt;T&gt; root, <span class="at">const</span> visitor&amp; visit) {</span>
+<span id="cb20-3"><a href="árvores.html#cb20-3"></a>  <span class="bu">std::</span>queue&lt;btree_ptr&gt; queue;</span>
+<span id="cb20-4"><a href="árvores.html#cb20-4"></a>  queue.push(root);</span>
+<span id="cb20-5"><a href="árvores.html#cb20-5"></a></span>
+<span id="cb20-6"><a href="árvores.html#cb20-6"></a>  <span class="cf">while</span> (!queue.empty())</span>
+<span id="cb20-7"><a href="árvores.html#cb20-7"></a>  {</span>
+<span id="cb20-8"><a href="árvores.html#cb20-8"></a>    <span class="cf">if</span> (queue.front() == <span class="kw">nullptr</span>) {</span>
+<span id="cb20-9"><a href="árvores.html#cb20-9"></a>      queue.pop();</span>
+<span id="cb20-10"><a href="árvores.html#cb20-10"></a>      <span class="cf">continue</span>;</span>
+<span id="cb20-11"><a href="árvores.html#cb20-11"></a>    }</span>
+<span id="cb20-12"><a href="árvores.html#cb20-12"></a></span>
+<span id="cb20-13"><a href="árvores.html#cb20-13"></a>    <span class="cf">if</span> (!visit(queue.front()-&gt;value))</span>
+<span id="cb20-14"><a href="árvores.html#cb20-14"></a>      <span class="cf">return</span>;</span>
+<span id="cb20-15"><a href="árvores.html#cb20-15"></a></span>
+<span id="cb20-16"><a href="árvores.html#cb20-16"></a>    queue.push(queue.front()-&gt;left_child);</span>
+<span id="cb20-17"><a href="árvores.html#cb20-17"></a>    queue.push(queue.front()-&gt;right_child);</span>
+<span id="cb20-18"><a href="árvores.html#cb20-18"></a>    queue.pop();</span>
+<span id="cb20-19"><a href="árvores.html#cb20-19"></a>  }</span>
+<span id="cb20-20"><a href="árvores.html#cb20-20"></a>}</span></code></pre></div>
 
 </div>
 </div>

@@ -24,7 +24,7 @@
 <meta name="author" content="Lourenço A. Pereira Jr." />
 
 
-<meta name="date" content="2022-11-11" />
+<meta name="date" content="2022-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,12 +155,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II Programação</b></span></li>
 <li class="chapter" data-level="2" data-path="programas.html"><a href="programas.html"><i class="fa fa-check"></i><b>2</b> Introdução à programação</a><ul>
-<li class="chapter" data-level="2.1" data-path="programas.html"><a href="programas.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>2.1</b> Linguagem de alto nível</a></li>
-<li class="chapter" data-level="2.2" data-path="programas.html"><a href="programas.html#primeiro-programa"><i class="fa fa-check"></i><b>2.2</b> Primeiro programa</a></li>
-<li class="chapter" data-level="2.3" data-path="programas.html"><a href="programas.html#sobre-c"><i class="fa fa-check"></i><b>2.3</b> Sobre C++</a></li>
-<li class="chapter" data-level="2.4" data-path="programas.html"><a href="programas.html#programação-imperativa"><i class="fa fa-check"></i><b>2.4</b> Programação imperativa</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="programas.html"><a href="programas.html#atribuição"><i class="fa fa-check"></i><b>2.4.1</b> Atribuição</a></li>
-<li class="chapter" data-level="2.4.2" data-path="programas.html"><a href="programas.html#entrada-e-saída"><i class="fa fa-check"></i><b>2.4.2</b> Entrada e saída</a></li>
+<li class="chapter" data-level="2.1" data-path="programas.html"><a href="programas.html#breve-histórico-das-linguagens-de-programação"><i class="fa fa-check"></i><b>2.1</b> Breve histórico das linguagens de programação</a></li>
+<li class="chapter" data-level="2.2" data-path="programas.html"><a href="programas.html#linguagem-de-alto-nível"><i class="fa fa-check"></i><b>2.2</b> Linguagem de alto nível</a></li>
+<li class="chapter" data-level="2.3" data-path="programas.html"><a href="programas.html#primeiro-programa"><i class="fa fa-check"></i><b>2.3</b> Primeiro programa</a></li>
+<li class="chapter" data-level="2.4" data-path="programas.html"><a href="programas.html#sobre-c"><i class="fa fa-check"></i><b>2.4</b> Sobre C++</a></li>
+<li class="chapter" data-level="2.5" data-path="programas.html"><a href="programas.html#programação-imperativa"><i class="fa fa-check"></i><b>2.5</b> Programação imperativa</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="programas.html"><a href="programas.html#atribuição"><i class="fa fa-check"></i><b>2.5.1</b> Atribuição</a></li>
+<li class="chapter" data-level="2.5.2" data-path="programas.html"><a href="programas.html#entrada-e-saída"><i class="fa fa-check"></i><b>2.5.2</b> Entrada e saída</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="fluxo.html"><a href="fluxo.html"><i class="fa fa-check"></i><b>3</b> Controle de fluxo</a><ul>
@@ -234,8 +235,296 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="programas" class="section level1 hasAnchor">
 <h1><span class="header-section-number">2</span> Introdução à programação<a href="programas.html#programas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Linguagens de alto nível, meu primeiro programa.</p>
+<div id="breve-histórico-das-linguagens-de-programação" class="section level2 hasAnchor">
+<h2><span class="header-section-number">2.1</span> Breve histórico das linguagens de programação<a href="programas.html#breve-histórico-das-linguagens-de-programação" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Conforme vimos no capítulo anterior, programas de computadores são, comumente,
+representados por uma linguagem específica, chamada linguagem de máquina, para
+uma determinada arquitetura de computador. Assim, cada palavra codifica uma
+instrução a ser executada pela máquina.</p>
+<p>Considere o seguinte computador para ilustrar esse conceito:</p>
+<ul>
+<li>Cada palavra é formada por 2 bytes, ou seja, 16 bits;</li>
+<li>Há disponível para escrita do programa 32 palavras de memória (64 bytes endereçáveis);</li>
+<li>Realiza operações aritméticas em números inteiros.</li>
+</ul>
+<p>Para as instruções, cada palavra é interpretada da seguinte maneira:</p>
+<ul>
+<li>Os 4 primeiros bits representam o <em>código de operação</em>;</li>
+<li>Os 6 próximos bits representam um endereço (<code>addr1</code>);</li>
+<li>Os 6 últimos bits representam um outro endereço de memória (<code>addr2</code>).</li>
+</ul>
+<p>As seguintes operações estão disponíveis:</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="22%" />
+<col width="46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Instrução</th>
+<th>Código de Op.</th>
+<th align="left">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Leitura</td>
+<td><code>0000</code></td>
+<td align="left">Lê número inteiro e armazena em <code>addr1</code>.</td>
+</tr>
+<tr class="even">
+<td align="left">Escrita</td>
+<td><code>0001</code></td>
+<td align="left">Escreve número inteiro armazenado em
+<code>addr1</code>.</td>
+</tr>
+<tr class="odd">
+<td align="left">Salto incondicional</td>
+<td><code>0010</code></td>
+<td align="left">Salta para instrução em <code>addr1</code>.</td>
+</tr>
+<tr class="even">
+<td align="left">Salto se zero</td>
+<td><code>0011</code></td>
+<td align="left">Salta para instrução em <code>addr1</code>
+se <code>addr2</code> contém zero.</td>
+</tr>
+<tr class="odd">
+<td align="left">Salto se positivo</td>
+<td><code>0100</code></td>
+<td align="left">Salta para instrução em <code>addr1</code>
+se <code>addr2</code> contém número positivo.</td>
+</tr>
+<tr class="even">
+<td align="left">Soma</td>
+<td><code>0101</code></td>
+<td align="left">Realiza operação <code>addr1</code> + <code>addr2</code> e
+armazena em <code>addr1</code>.</td>
+</tr>
+<tr class="odd">
+<td align="left">Subtração</td>
+<td><code>0110</code></td>
+<td align="left">Realiza operação <code>addr1</code> - <code>addr2</code> e
+armazena em <code>addr1</code>.</td>
+</tr>
+<tr class="even">
+<td align="left">Multiplicação</td>
+<td><code>0111</code></td>
+<td align="left">Realiza operação <code>addr1</code> * <code>addr2</code> e
+armazena em <code>addr1</code>.</td>
+</tr>
+<tr class="odd">
+<td align="left">Divisão</td>
+<td><code>1000</code></td>
+<td align="left">Realiza operação <code>addr1</code> / <code>addr2</code> e
+armazena em <code>addr1</code>.</td>
+</tr>
+<tr class="even">
+<td align="left">Resto</td>
+<td><code>1001</code></td>
+<td align="left">Realiza operação <code>addr1</code> % <code>addr2</code> e
+armazena em <code>addr1</code>.</td>
+</tr>
+<tr class="odd">
+<td align="left">Cópia</td>
+<td><code>1110</code></td>
+<td align="left">Copia conteúdo em <code>addr2</code> e
+armazena em <code>addr1</code>.</td>
+</tr>
+<tr class="even">
+<td align="left">Parar</td>
+<td><code>1111</code></td>
+<td align="left">Para o programa e desliga o computador.</td>
+</tr>
+</tbody>
+</table>
+<p>Esse computador inicia o programa lendo a posição de memória 0 executando as
+instruções uma a uma até encontrar uma instrução de parada. A princípio, as
+instruções são lidas sequencialmente, exceto ao encontrar uma instrução de
+salto, quando a ordem da leitura pode se alterar.</p>
+<p>Assim, um programa que lê números inteiros até encontrar um zero e imprime
+a somatória destes ficaria assim.</p>
+<table style="width:83%;">
+<colgroup>
+<col width="38%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Posição de memória</th>
+<th align="left">Informação na memória</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0:</td>
+<td align="left"><code>0000 000110 000000</code></td>
+</tr>
+<tr class="even">
+<td>1:</td>
+<td align="left"><code>0011 000110 000100</code></td>
+</tr>
+<tr class="odd">
+<td>2:</td>
+<td align="left"><code>0101 000111 000110</code></td>
+</tr>
+<tr class="even">
+<td>3:</td>
+<td align="left"><code>0010 000000 000000</code></td>
+</tr>
+<tr class="odd">
+<td>4:</td>
+<td align="left"><code>0001 000111 000000</code></td>
+</tr>
+<tr class="even">
+<td>5:</td>
+<td align="left"><code>1111 000000 000000</code></td>
+</tr>
+<tr class="odd">
+<td>6:</td>
+<td align="left"><code>0000000000000000</code></td>
+</tr>
+<tr class="even">
+<td>7:</td>
+<td align="left"><code>0000000000000000</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ignore por ora como os números (no caso 0) são representados nos 16 bits da
+palavra. Veremos mais detalhes sobre representação de dados mais a frente.</p>
+<p><em>Exercício: simule a execução desse programa com a entrada a seguinte entrada:
+1, 4, 5, 10, 0.</em></p>
+<p>Obviamente, a linguagem de máquina não é apropriada para escrevermos programas
+legíveis para solução de problemas, especialmente aqueles mais complexos.</p>
+<p>Dentre as principais limitações, que tornam a linguagem de máquina de difícil
+compreensão, podemos citar:</p>
+<ul>
+<li>Há dependência do endereçamento de memória: as instruções se referem
+a posições fixas de memórias; assim, ao adicionarmos ou removermos
+instruções, outras instruções devem ser alteradas para manter o funcionamento
+correto do programa.</li>
+<li>A memorização dos comandos é difícil.</li>
+</ul>
+<p>Para resolver ambos estes problemas, podemos utilizar o conceito de abstração,
+ou seja, adicionar uma “camada” de semântica para esconder detalhes e facilitar
+a leitura do programa.</p>
+<p>As <em>linguagens de montagem</em> (<em>assembly languages</em>) introduzem dois principais
+conceitos para facilitar a escrita de programas:</p>
+<ul>
+<li>Uso de <em>mnemônicos</em> ao invés de códigos de operação; e</li>
+<li><em>Endereçamento simbólico</em>.</li>
+</ul>
+<p>Mnemônicos são códigos alfabéticos que abstraem os códigos de operação para
+facilitar a leitura dos comandos.</p>
+<p>Por exemplo, para a nossa linguagem ilustrativa temos:</p>
+<table style="width:57%;">
+<colgroup>
+<col width="37%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Instrução</th>
+<th align="left">Mnemônico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Leitura</td>
+<td align="left"><code>READ</code></td>
+</tr>
+<tr class="even">
+<td align="left">Escrita</td>
+<td align="left"><code>WRITE</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Salto incondicional</td>
+<td align="left"><code>JUMP</code></td>
+</tr>
+<tr class="even">
+<td align="left">Salto se zero</td>
+<td align="left"><code>JMPZ</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Salto se positivo</td>
+<td align="left"><code>JMPP</code></td>
+</tr>
+<tr class="even">
+<td align="left">Soma</td>
+<td align="left"><code>ADD</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Subtração</td>
+<td align="left"><code>SUB</code></td>
+</tr>
+<tr class="even">
+<td align="left">Multiplicação</td>
+<td align="left"><code>MULT</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Divisão</td>
+<td align="left"><code>DIV</code></td>
+</tr>
+<tr class="even">
+<td align="left">Resto</td>
+<td align="left"><code>REM</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Cópia</td>
+<td align="left"><code>COPY</code></td>
+</tr>
+<tr class="even">
+<td align="left">Parar</td>
+<td align="left"><code>STOP</code></td>
+</tr>
+</tbody>
+</table>
+<p>Já o endereçamento simbólico é a técnica de endereçar posições de memória por
+meio de nomes e não de valores numéricos.</p>
+<p>Assim, o programa anterior pode ser escrito nesse computador utilizando
+linguagem de montagem como:</p>
+<pre><code>begin:  READ  x
+        JMPZ  x end
+        ADD   sum x
+        JUMP  begin
+end:    WRITE sum
+        STOP
+x:      0
+sum:    0</code></pre>
+<p>Chamamos de <em>montador</em> (<em>assembler</em>) o programa de computador que converte
+o código em linguagem de montagem para linguagem de máquina. Basicamente, esse
+software traduz os mnemônicos e calcula as posições de memória baseado nos
+rótulos.</p>
+<hr />
+<p><em>Exercícios</em>:</p>
+<ol style="list-style-type: decimal">
+<li>Utilizando as instruções disponíveis nesse computador ilustrativo,
+implemente um programa em linguagem de montagem que:
+<ol style="list-style-type: decimal">
+<li>Um programa que escreve o valor absoluto de um número lido.</li>
+<li>Um programa que escreve 1 se o número lido é par, ou 0 caso contrário.</li>
+<li>Um programa que escreva a soma dos valores absolutos dos números ímpares
+lidos (interrompa ao ler zero).</li>
+</ol></li>
+<li>Como as restrições de memória interferem no desenvolvimento dos programas?</li>
+<li>O que acontece quando o programa se torna mais complexo? Como reaproveitar
+os códigos?</li>
+</ol>
+<hr />
+</div>
 <div id="linguagem-de-alto-nível" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.1</span> Linguagem de alto nível<a href="programas.html#linguagem-de-alto-nível" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">2.2</span> Linguagem de alto nível<a href="programas.html#linguagem-de-alto-nível" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Note que as linguagens de montagem apresentam diversas limitações, especialmente
+quanto à organização do código:</p>
+<ul>
+<li>Dados e instruções não são discriminados entre si;</li>
+<li>Não há maneira de expressar claramente laços de execução;</li>
+<li>Não é possível organizar o código de maneira modular.</li>
+</ul>
+<p>Já as linguagens de programação de alto nível abstraem diversos detalhes da
+máquina, focando em expressividade, ou seja, com foco na facilidade de
+compreensão por humanos.</p>
 <p>Toda linguagem de programação possui uma sintaxe que define a estrutura em que
 deve ser escrita. Nas linguagens de programação de alto nível, além da
 sintaxe, a semântica dos dados também deve ser respeitada.</p>
@@ -253,7 +542,7 @@ encontrar soluções de grandes problema por meio de soluções simples para
 subproblemas.</p>
 </div>
 <div id="primeiro-programa" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.2</span> Primeiro programa<a href="programas.html#primeiro-programa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">2.3</span> Primeiro programa<a href="programas.html#primeiro-programa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Como vimos anteriormente, linguagens de programação de alto nível permitem ao
 programador construir um software (programa) composto por diversos módulos (subprogramas). Neste caso, é
 necessário identificar o “ponto de entrada” do programa. Ou seja, dentre as
@@ -264,11 +553,11 @@ sistema operacional invoca quando o programa é executado — outras rotinas pod
 ser executadas antes da <code>main</code>, por exemplo, para inicializar variáveis
 globais; no entanto, estes detalhes estão fora do escopo deste livro. Veja mais
 informações <a href="https://en.cppreference.com/w/cpp/language/main_function">aqui</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="programas.html#cb1-1"></a><span class="co">// hello.cpp</span></span>
-<span id="cb1-2"><a href="programas.html#cb1-2"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb1-3"><a href="programas.html#cb1-3"></a><span class="dt">int</span> main() {</span>
-<span id="cb1-4"><a href="programas.html#cb1-4"></a>  <span class="bu">std::</span>cout &lt;&lt; <span class="st">&quot;Hello, world!</span><span class="sc">\n</span><span class="st">&quot;</span>;</span>
-<span id="cb1-5"><a href="programas.html#cb1-5"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="programas.html#cb2-1"></a><span class="co">// hello.cpp</span></span>
+<span id="cb2-2"><a href="programas.html#cb2-2"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb2-3"><a href="programas.html#cb2-3"></a><span class="dt">int</span> main() {</span>
+<span id="cb2-4"><a href="programas.html#cb2-4"></a>  <span class="bu">std::</span>cout &lt;&lt; <span class="st">&quot;Hello, world!</span><span class="sc">\n</span><span class="st">&quot;</span>;</span>
+<span id="cb2-5"><a href="programas.html#cb2-5"></a>}</span></code></pre></div>
 <p>Há várias nuances deste programa que entraremos em detalhes futuramente. No
 momento, é suficiente saber que esse arquivo, quando compilado e executado,
 resultará em uma saída com o texto <code>"Hello, world!"</code> seguido de quebra de linha.</p>
@@ -277,13 +566,13 @@ $ ./hello
 Hello, world!</code></pre>
 </div>
 <div id="sobre-c" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.3</span> Sobre C++<a href="programas.html#sobre-c" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">2.4</span> Sobre C++<a href="programas.html#sobre-c" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A linguagem C++ é uma linguagem de programação de <em>alto nível</em> de propósito
 geral. Qualquer problema computável pode ser resolvido usando a linguagem C++;
 ou seja, o modelo abstrato<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> da linguagem C++ é Turing-completo.</p>
 <p>Ela é uma linguagem imperativa, na qual comandos (<em>statements</em>) são utilizados
 para alterar o estado do programa e, consequentemente, sua operação. Além
-disso, ao contrário das linguagens de montagem (<em>assembly languages</em>),
+disso, ao contrário das linguagens de montagem,
 a linguagem permite programação estruturada, organizando os comando em
 condicionais, laços, blocos e sub-rotinas.</p>
 <p>A principal especificação da linguagem C++ é o <em>ISO/IEC 14882</em>. Neste
@@ -292,25 +581,28 @@ Um excelente material de apoio quanto a especificação do C++20 é o site
 <a href="https://en.cppreference.com/w/" class="uri">https://en.cppreference.com/w/</a>.</p>
 </div>
 <div id="programação-imperativa" class="section level2 hasAnchor">
-<h2><span class="header-section-number">2.4</span> Programação imperativa<a href="programas.html#programação-imperativa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">2.5</span> Programação imperativa<a href="programas.html#programação-imperativa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="atribuição" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.4.1</span> Atribuição<a href="programas.html#atribuição" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="programas.html#cb3-1"></a><span class="kw">auto</span> x = <span class="dv">10</span>;</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="programas.html#cb4-1"></a>x = <span class="dv">12</span>;</span></code></pre></div>
+<h3><span class="header-section-number">2.5.1</span> Atribuição<a href="programas.html#atribuição" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="programas.html#cb4-1"></a><span class="kw">auto</span> x = <span class="dv">10</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="programas.html#cb5-1"></a>x = <span class="dv">12</span>;</span></code></pre></div>
 </div>
 <div id="entrada-e-saída" class="section level3 hasAnchor">
-<h3><span class="header-section-number">2.4.2</span> Entrada e saída<a href="programas.html#entrada-e-saída" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="programas.html#cb5-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb5-2"><a href="programas.html#cb5-2"></a></span>
-<span id="cb5-3"><a href="programas.html#cb5-3"></a><span class="dt">int</span> main() {</span>
-<span id="cb5-4"><a href="programas.html#cb5-4"></a>  <span class="kw">using</span> <span class="bu">std::</span>cin;</span>
-<span id="cb5-5"><a href="programas.html#cb5-5"></a>  <span class="kw">using</span> <span class="bu">std::</span>cout;</span>
-<span id="cb5-6"><a href="programas.html#cb5-6"></a></span>
-<span id="cb5-7"><a href="programas.html#cb5-7"></a>  <span class="co">// ...</span></span>
-<span id="cb5-8"><a href="programas.html#cb5-8"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="programas.html#cb6-1"></a>cin &gt;&gt; x;</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="programas.html#cb7-1"></a>cout &lt;&lt; x;</span>
-<span id="cb7-2"><a href="programas.html#cb7-2"></a>cout &lt;&lt; <span class="ch">&#39;</span><span class="sc">\n</span><span class="ch">&#39;</span>;</span></code></pre></div>
+<h3><span class="header-section-number">2.5.2</span> Entrada e saída<a href="programas.html#entrada-e-saída" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="programas.html#cb6-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb6-2"><a href="programas.html#cb6-2"></a></span>
+<span id="cb6-3"><a href="programas.html#cb6-3"></a><span class="dt">int</span> main() {</span>
+<span id="cb6-4"><a href="programas.html#cb6-4"></a>  <span class="kw">using</span> <span class="bu">std::</span>cin;</span>
+<span id="cb6-5"><a href="programas.html#cb6-5"></a>  <span class="kw">using</span> <span class="bu">std::</span>cout;</span>
+<span id="cb6-6"><a href="programas.html#cb6-6"></a></span>
+<span id="cb6-7"><a href="programas.html#cb6-7"></a>  <span class="co">// ...</span></span>
+<span id="cb6-8"><a href="programas.html#cb6-8"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="programas.html#cb7-1"></a>  <span class="co">// ...</span></span>
+<span id="cb7-2"><a href="programas.html#cb7-2"></a>  cin &gt;&gt; x;</span>
+<span id="cb7-3"><a href="programas.html#cb7-3"></a>  <span class="co">// ...</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="programas.html#cb8-1"></a>  <span class="co">// ...</span></span>
+<span id="cb8-2"><a href="programas.html#cb8-2"></a>  cout &lt;&lt; x &lt;&lt; <span class="ch">&#39;</span><span class="sc">\n</span><span class="ch">&#39;</span>;</span>
+<span id="cb8-3"><a href="programas.html#cb8-3"></a>  <span class="co">// ...</span></span></code></pre></div>
 
 </div>
 </div>
