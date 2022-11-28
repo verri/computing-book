@@ -4,7 +4,212 @@
 
 Linguagens de alto nível, meu primeiro programa.
 
+## Breve histórico das linguagens de programação
+
+Conforme vimos no capítulo anterior, programas de computadores são, comumente,
+representados por uma linguagem específica, chamada linguagem de máquina, para
+uma determinada arquitetura de computador.  Assim, cada palavra codifica uma
+instrução a ser executada pela máquina.
+
+Considere o seguinte computador para ilustrar esse conceito:
+
+- Cada palavra é formada por 2 bytes, ou seja, 16 bits;
+- Há disponível para escrita do programa 32 palavras de memória (64 bytes endereçáveis);
+- Realiza operações aritméticas em números inteiros.
+
+Para as instruções, cada palavra é interpretada da seguinte maneira:
+
+- Os 4 primeiros bits representam o *código de operação*;
+- Os 6 próximos bits representam um endereço (`addr1`);
+- Os 6 últimos bits representam um outro endereço de memória (`addr2`).
+
+As seguintes operações estão disponíveis:
+
+---------------------------------------------------------------------------------------
+Instrução                  Código de Op.       Descrição
+--------------------       -------------       ----------------------------------------
+Leitura                    `0000`              Lê número inteiro e armazena em `addr1`.
+
+Escrita                    `0001`              Escreve número inteiro armazenado em
+                                               `addr1`.
+
+Salto incondicional        `0010`              Salta para instrução em `addr1`.
+
+Salto se zero              `0011`              Salta para instrução em `addr1`
+                                               se `addr2` contém zero.
+
+Salto se positivo          `0100`              Salta para instrução em `addr1`
+                                               se `addr2` contém número positivo.
+
+Soma                       `0101`              Realiza operação `addr1` + `addr2` e
+                                               armazena em `addr1`.
+
+Subtração                  `0110`              Realiza operação `addr1` - `addr2` e
+                                               armazena em `addr1`.
+
+Multiplicação              `0111`              Realiza operação `addr1` * `addr2` e
+                                               armazena em `addr1`.
+
+Divisão                    `1000`              Realiza operação `addr1` / `addr2` e
+                                               armazena em `addr1`.
+
+Resto                      `1001`              Realiza operação `addr1` % `addr2` e
+                                               armazena em `addr1`.
+
+Cópia                      `1110`              Copia conteúdo em `addr2` e
+                                               armazena em `addr1`.
+
+Parar                      `1111`              Para o programa e desliga o computador.
+---------------------------------------------------------------------------------------
+
+Esse computador inicia o programa lendo a posição de memória 0 executando as
+instruções uma a uma até encontrar uma instrução de parada.  A princípio, as
+instruções são lidas sequencialmente, exceto ao encontrar uma instrução de
+salto, quando a ordem da leitura pode se alterar.
+
+Assim, um programa que lê números inteiros até encontrar um zero e imprime
+a somatória destes ficaria assim.
+
+-----------------------------------------------------------
+Posição de memória          Informação na memória
+------------------          -------------------------------
+0:                          `0000 000110 000000`
+
+1:                          `0011 000110 000100`
+
+2:                          `0101 000111 000110`
+
+3:                          `0010 000000 000000`
+
+4:                          `0001 000111 000000`
+
+5:                          `1111 000000 000000`
+
+6:                          `0000000000000000`
+
+7:                          `0000000000000000`
+-----------------------------------------------------------
+
+Ignore por ora como os números (no caso 0) são representados nos 16 bits da
+palavra.  Veremos mais detalhes sobre representação de dados mais a frente.
+
+*Exercício: simule a execução desse programa com a entrada a seguinte entrada:
+1, 4, 5, 10, 0.*
+
+Obviamente, a linguagem de máquina não é apropriada para escrevermos programas
+legíveis para solução de problemas, especialmente aqueles mais complexos.
+
+Dentre as principais limitações, que tornam a linguagem de máquina de difícil
+compreensão, podemos citar:
+
+- Há dependência do endereçamento de memória: as instruções se referem
+  a posições fixas de memórias; assim, ao adicionarmos ou removermos
+  instruções, outras instruções devem ser alteradas para manter o funcionamento
+  correto do programa.
+- A memorização dos comandos é difícil.
+
+Para resolver ambos estes problemas, podemos utilizar o conceito de abstração,
+ou seja, adicionar uma "camada" de semântica para esconder detalhes e facilitar
+a leitura do programa.
+
+As *linguagens de montagem* (*assembly languages*) introduzem dois principais
+conceitos para facilitar a escrita de programas:
+
+- Uso de *mnemônicos* ao invés de códigos de operação; e
+- *Endereçamento simbólico*.
+
+Mnemônicos são códigos alfabéticos que abstraem os códigos de operação para
+facilitar a leitura dos comandos.
+
+Por exemplo, para a nossa linguagem ilustrativa temos:
+
+-----------------------------------------------
+Instrução                  Mnemônico
+--------------------       -------------
+Leitura                    `READ`
+
+Escrita                    `WRITE`
+
+
+Salto incondicional        `JUMP`
+
+Salto se zero              `JMPZ`
+
+
+Salto se positivo          `JMPP`
+
+
+Soma                       `ADD`
+
+
+Subtração                  `SUB`
+
+
+Multiplicação              `MULT`
+
+
+Divisão                    `DIV`
+
+
+Resto                      `REM`
+
+
+Cópia                      `COPY`
+
+
+Parar                      `STOP`
+-----------------------------------------------
+
+Já o endereçamento simbólico é a técnica de endereçar posições de memória por
+meio de nomes e não de valores numéricos.
+
+Assim, o programa anterior pode ser escrito nesse computador utilizando
+linguagem de montagem como:
+
+```
+begin:  READ  x
+        JMPZ  x end
+        ADD   sum x
+        JUMP  begin
+end:    WRITE sum
+        STOP
+x:      0
+sum:    0
+```
+
+Chamamos de *montador* (*assembler*) o programa de computador que converte
+o código em linguagem de montagem para linguagem de máquina. Basicamente, esse
+  software traduz os mnemônicos e calcula as posições de memória baseado nos
+  rótulos.
+
+---
+
+*Exercícios*:
+
+1. Utilizando as instruções disponíveis nesse computador ilustrativo,
+   implemente um programa em linguagem de montagem que:
+    1. Um programa que escreve o valor absoluto de um número lido.
+    1. Um programa que escreve 1 se o número lido é par, ou 0 caso contrário.
+    1. Um programa que escreva a soma dos valores absolutos dos números ímpares
+       lidos (interrompa ao ler zero).
+1. Como as restrições de memória interferem no desenvolvimento dos programas?
+1. O que acontece quando o programa se torna mais complexo? Como reaproveitar
+   os códigos?
+
+---
+
 ## Linguagem de alto nível
+
+Note que as linguagens de montagem apresentam diversas limitações, especialmente
+quanto à organização do código:
+
+- Dados e instruções não são discriminados entre si;
+- Não há maneira de expressar claramente laços de execução;
+- Não é possível organizar o código de maneira modular.
+
+Já as linguagens de programação de alto nível abstraem diversos detalhes da
+máquina, focando em expressividade, ou seja, com foco na facilidade de
+compreensão por humanos.
 
 Toda linguagem de programação possui uma sintaxe que define a estrutura em que
 deve ser escrita.  Nas linguagens de programação de alto nível, além da
@@ -64,7 +269,7 @@ de memória.] da linguagem C++ é Turing-completo.
 
 Ela é uma linguagem imperativa, na qual comandos (*statements*) são utilizados
 para alterar o estado do programa e, consequentemente, sua operação.  Além
-disso, ao contrário das linguagens de montagem (*assembly languages*),
+disso, ao contrário das linguagens de montagem,
 a linguagem permite programação estruturada, organizando os comando em
 condicionais, laços, blocos e sub-rotinas.
 
@@ -99,10 +304,13 @@ int main() {
 ```
 
 ```cpp
-cin >> x;
+  // ...
+  cin >> x;
+  // ...
 ```
 
 ```cpp
-cout << x;
-cout << '\n';
+  // ...
+  cout << x << '\n';
+  // ...
 ```
