@@ -209,7 +209,13 @@ quanto à organização do código:
 
 Já as linguagens de programação de alto nível abstraem diversos detalhes da
 máquina, focando em expressividade, ou seja, com foco na facilidade de
-compreensão por humanos.
+compreensão por humanos.  Assim, conceitos mais naturais para representar
+passos de um programa -- como repetições, condicionais explícitos,
+funções matemáticas -- são introduzidos.
+
+Além disso, as linguagens de alto nível possuem mecanismos que permitem a
+modularização do código, possibilitando assim a construção de programas
+mais complexos como combinação de programas mais simples.
 
 Toda linguagem de programação possui uma sintaxe que define a estrutura em que
 deve ser escrita.  Nas linguagens de programação de alto nível, além da
@@ -280,7 +286,20 @@ https://en.cppreference.com/w/.
 
 ## Programação imperativa
 
+As linguagens de programação seguem determinados *paradigmas de programação*
+que determinam sua estrutura e funcionalidades.  Sem dúvida, o paradigma
+imperativo é o mais comum.
+
+Em poucas palavras, a programação imperativa consiste em resolver problemas
+por meio de uma série de "ordens", que chamamos de *comandos*.  O programa
+então consiste numa sequência de comandos executados um a um.
+
+A seguir veremos as duas principais categorias de comandos de linguagens
+imperativas: atribuição e entrada/saída.
+
 ### Atribuição
+
+Atribuição consiste em...
 
 ```cpp
 auto x = 10;
