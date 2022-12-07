@@ -118,6 +118,11 @@ Entre exemplos do nosso dia a dia que são similares à algoritmos, podemos cita
 A calculadora de juros compostos, apresentada na Seção \@ref(preliminares-motivacao),
 é um exemplo de algoritmo.
 
+Existem diversas ferramentas (padronizadas ou não, vide [ISO
+5807:1985](https://www.iso.org/standard/11955.html)) para representar
+algoritmos.  As mais comuns são variações de *diagramas de fluxo*
+e *pseudo-código*.
+
 ### Programa de computador
 
 Um *programa de computador* é uma sequência de operações e instruções que
@@ -173,3 +178,15 @@ e interpretadores estão fora do escopo desse livro.
 Uma vez motivados e com base nessas definições, podemos ir para o que mais
 importa: como construir soluções para os problemas computacionais por meio de
 programas de computador.
+
+---
+
+*Exercícios*:
+
+1. Escreva um algoritmo, utilizando diagrama de fluxo, para:
+    1. Calcular raízes de equações quadráticas;
+    1. Calcular fatorial de um número;
+    1. Calcular juros compostos;
+    1. Aproximar uma integral utilizando a regra dos trapézios.
+
+---

@@ -95,8 +95,8 @@ palavra.  Veremos mais detalhes sobre representação de dados mais a frente.
 
 ---
 
-*Exercício: simule a execução desse programa com a entrada a seguinte entrada:
-1, 4, 5, 10, 0.*
+*Exercício*: simule a execução desse programa com a entrada a seguinte entrada:
+1, 4, 5, 10, 0.
 
 ---
 
@@ -262,7 +262,7 @@ int main() {
 
 Há várias nuances deste programa que entraremos em detalhes futuramente. No
 momento, é suficiente saber que esse arquivo, quando compilado e executado,
-resultará em uma saída com o texto `"Hello, world!"` seguido de quebra de linha.
+resultará numa saída com o texto `"Hello, world!"` seguido de quebra de linha.
 
 ```
 $ g++ -std=c++20 hello.cpp -o hello
@@ -297,6 +297,22 @@ imperativo é o mais comum.
 Em poucas palavras, a programação imperativa consiste em resolver problemas
 por meio de uma série de "ordens", que chamamos de *comandos*.  O programa
 então consiste numa sequência de comandos executados um a um.
+
+No programa apresentado na seção anterior, `std::cout << "Hello, world!\n"`
+é um exemplo de comando.  Note que comandos em C++ são separados por ponto
+e vírgula `;`.
+
+Assim, o código abaixo apresentará a mesma saída.
+
+```cpp
+// hello.cpp
+#include <iostream>
+int main() {
+  std::cout << "Hell";
+  std::cout << "o, world!";
+  std::cout << "\n";
+}
+```
 
 A seguir veremos as duas principais categorias de comandos de linguagens
 imperativas: atribuição e entrada/saída.
