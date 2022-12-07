@@ -237,16 +237,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>OBS: questões de estabilidade na ordenação são omitidas neste livro.</p>
 <div id="bubble-sort" class="section level2 hasAnchor">
 <h2><span class="header-section-number">15.1</span> Bubble sort<a href="ordenação.html#bubble-sort" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb22-1"><a href="ordenação.html#cb22-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>forward_iterator It&gt;</span>
-<span id="cb22-2"><a href="ordenação.html#cb22-2"></a><span class="dt">void</span> bubblesort(It begin, It end)</span>
-<span id="cb22-3"><a href="ordenação.html#cb22-3"></a>{</span>
-<span id="cb22-4"><a href="ordenação.html#cb22-4"></a>  <span class="cf">for</span> (; begin != end; --end)</span>
-<span id="cb22-5"><a href="ordenação.html#cb22-5"></a>    <span class="cf">for</span> (<span class="kw">auto</span> left = begin, right = <span class="bu">std::</span>next(left);</span>
-<span id="cb22-6"><a href="ordenação.html#cb22-6"></a>         right != end;</span>
-<span id="cb22-7"><a href="ordenação.html#cb22-7"></a>         left = right++)</span>
-<span id="cb22-8"><a href="ordenação.html#cb22-8"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
-<span id="cb22-9"><a href="ordenação.html#cb22-9"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb22-10"><a href="ordenação.html#cb22-10"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb23-1"><a href="ordenação.html#cb23-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>forward_iterator It&gt;</span>
+<span id="cb23-2"><a href="ordenação.html#cb23-2"></a><span class="dt">void</span> bubblesort(It begin, It end)</span>
+<span id="cb23-3"><a href="ordenação.html#cb23-3"></a>{</span>
+<span id="cb23-4"><a href="ordenação.html#cb23-4"></a>  <span class="cf">for</span> (; begin != end; --end)</span>
+<span id="cb23-5"><a href="ordenação.html#cb23-5"></a>    <span class="cf">for</span> (<span class="kw">auto</span> left = begin, right = <span class="bu">std::</span>next(left);</span>
+<span id="cb23-6"><a href="ordenação.html#cb23-6"></a>         right != end;</span>
+<span id="cb23-7"><a href="ordenação.html#cb23-7"></a>         left = right++)</span>
+<span id="cb23-8"><a href="ordenação.html#cb23-8"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
+<span id="cb23-9"><a href="ordenação.html#cb23-9"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb23-10"><a href="ordenação.html#cb23-10"></a>}</span></code></pre></div>
 <hr />
 <p><em>Exercícios</em>:</p>
 <ol style="list-style-type: decimal">
@@ -258,28 +258,28 @@ vetores muito grandes.</li>
 </div>
 <div id="shaker-sort" class="section level2 hasAnchor">
 <h2><span class="header-section-number">15.2</span> Shaker sort<a href="ordenação.html#shaker-sort" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb23-1"><a href="ordenação.html#cb23-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>bidirectional_iterator It&gt;</span>
-<span id="cb23-2"><a href="ordenação.html#cb23-2"></a><span class="dt">void</span> shakersort(It begin, It end)</span>
-<span id="cb23-3"><a href="ordenação.html#cb23-3"></a>{</span>
-<span id="cb23-4"><a href="ordenação.html#cb23-4"></a>  <span class="cf">while</span> (<span class="kw">true</span>)</span>
-<span id="cb23-5"><a href="ordenação.html#cb23-5"></a>  {</span>
-<span id="cb23-6"><a href="ordenação.html#cb23-6"></a>    <span class="cf">for</span> (<span class="kw">auto</span> left = begin, right = <span class="bu">std::</span>next(left);</span>
-<span id="cb23-7"><a href="ordenação.html#cb23-7"></a>         right != end;</span>
-<span id="cb23-8"><a href="ordenação.html#cb23-8"></a>         left = right++)</span>
-<span id="cb23-9"><a href="ordenação.html#cb23-9"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
-<span id="cb23-10"><a href="ordenação.html#cb23-10"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb23-11"><a href="ordenação.html#cb23-11"></a>    <span class="cf">if</span> (begin == --end)</span>
-<span id="cb23-12"><a href="ordenação.html#cb23-12"></a>      <span class="cf">return</span>;</span>
-<span id="cb23-13"><a href="ordenação.html#cb23-13"></a></span>
-<span id="cb23-14"><a href="ordenação.html#cb23-14"></a>    <span class="cf">for</span> (<span class="kw">auto</span> right = <span class="bu">std::</span>prev(end), left = <span class="bu">std::</span>prev(right);</span>
-<span id="cb23-15"><a href="ordenação.html#cb23-15"></a>         right != begin;</span>
-<span id="cb23-16"><a href="ordenação.html#cb23-16"></a>         right = left--)</span>
-<span id="cb23-17"><a href="ordenação.html#cb23-17"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
-<span id="cb23-18"><a href="ordenação.html#cb23-18"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb23-19"><a href="ordenação.html#cb23-19"></a>    <span class="cf">if</span> (++begin == end)</span>
-<span id="cb23-20"><a href="ordenação.html#cb23-20"></a>      <span class="cf">return</span>;</span>
-<span id="cb23-21"><a href="ordenação.html#cb23-21"></a>  }</span>
-<span id="cb23-22"><a href="ordenação.html#cb23-22"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb24-1"><a href="ordenação.html#cb24-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>bidirectional_iterator It&gt;</span>
+<span id="cb24-2"><a href="ordenação.html#cb24-2"></a><span class="dt">void</span> shakersort(It begin, It end)</span>
+<span id="cb24-3"><a href="ordenação.html#cb24-3"></a>{</span>
+<span id="cb24-4"><a href="ordenação.html#cb24-4"></a>  <span class="cf">while</span> (<span class="kw">true</span>)</span>
+<span id="cb24-5"><a href="ordenação.html#cb24-5"></a>  {</span>
+<span id="cb24-6"><a href="ordenação.html#cb24-6"></a>    <span class="cf">for</span> (<span class="kw">auto</span> left = begin, right = <span class="bu">std::</span>next(left);</span>
+<span id="cb24-7"><a href="ordenação.html#cb24-7"></a>         right != end;</span>
+<span id="cb24-8"><a href="ordenação.html#cb24-8"></a>         left = right++)</span>
+<span id="cb24-9"><a href="ordenação.html#cb24-9"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
+<span id="cb24-10"><a href="ordenação.html#cb24-10"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb24-11"><a href="ordenação.html#cb24-11"></a>    <span class="cf">if</span> (begin == --end)</span>
+<span id="cb24-12"><a href="ordenação.html#cb24-12"></a>      <span class="cf">return</span>;</span>
+<span id="cb24-13"><a href="ordenação.html#cb24-13"></a></span>
+<span id="cb24-14"><a href="ordenação.html#cb24-14"></a>    <span class="cf">for</span> (<span class="kw">auto</span> right = <span class="bu">std::</span>prev(end), left = <span class="bu">std::</span>prev(right);</span>
+<span id="cb24-15"><a href="ordenação.html#cb24-15"></a>         right != begin;</span>
+<span id="cb24-16"><a href="ordenação.html#cb24-16"></a>         right = left--)</span>
+<span id="cb24-17"><a href="ordenação.html#cb24-17"></a>      <span class="cf">if</span> (*left &gt; *right)</span>
+<span id="cb24-18"><a href="ordenação.html#cb24-18"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb24-19"><a href="ordenação.html#cb24-19"></a>    <span class="cf">if</span> (++begin == end)</span>
+<span id="cb24-20"><a href="ordenação.html#cb24-20"></a>      <span class="cf">return</span>;</span>
+<span id="cb24-21"><a href="ordenação.html#cb24-21"></a>  }</span>
+<span id="cb24-22"><a href="ordenação.html#cb24-22"></a>}</span></code></pre></div>
 <hr />
 <p><em>Exercícios</em>:</p>
 <ol style="list-style-type: decimal">
@@ -292,44 +292,44 @@ vetores muito grandes. Qual algoritmo se beneficia mais desta interrupção:
 </div>
 <div id="selection-sort" class="section level2 hasAnchor">
 <h2><span class="header-section-number">15.3</span> Selection sort<a href="ordenação.html#selection-sort" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb24-1"><a href="ordenação.html#cb24-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>forward_iterator It&gt;</span>
-<span id="cb24-2"><a href="ordenação.html#cb24-2"></a><span class="dt">void</span> selectionsort(It begin, It end)</span>
-<span id="cb24-3"><a href="ordenação.html#cb24-3"></a>{</span>
-<span id="cb24-4"><a href="ordenação.html#cb24-4"></a>  <span class="cf">for</span> (<span class="kw">auto</span> it = begin; it != end; ++it)</span>
-<span id="cb24-5"><a href="ordenação.html#cb24-5"></a>    <span class="bu">std::</span>iter_swap(it, <span class="bu">std::</span>min_element(it, end));</span>
-<span id="cb24-6"><a href="ordenação.html#cb24-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="ordenação.html#cb25-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>forward_iterator It&gt;</span>
+<span id="cb25-2"><a href="ordenação.html#cb25-2"></a><span class="dt">void</span> selectionsort(It begin, It end)</span>
+<span id="cb25-3"><a href="ordenação.html#cb25-3"></a>{</span>
+<span id="cb25-4"><a href="ordenação.html#cb25-4"></a>  <span class="cf">for</span> (<span class="kw">auto</span> it = begin; it != end; ++it)</span>
+<span id="cb25-5"><a href="ordenação.html#cb25-5"></a>    <span class="bu">std::</span>iter_swap(it, <span class="bu">std::</span>min_element(it, end));</span>
+<span id="cb25-6"><a href="ordenação.html#cb25-6"></a>}</span></code></pre></div>
 </div>
 <div id="insertion-sort" class="section level2 hasAnchor">
 <h2><span class="header-section-number">15.4</span> Insertion sort<a href="ordenação.html#insertion-sort" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="ordenação.html#cb25-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>bidirectional_iterator It&gt;</span>
-<span id="cb25-2"><a href="ordenação.html#cb25-2"></a><span class="dt">void</span> insertionsort(It begin, It end)</span>
-<span id="cb25-3"><a href="ordenação.html#cb25-3"></a>{</span>
-<span id="cb25-4"><a href="ordenação.html#cb25-4"></a>  <span class="cf">for</span> (<span class="kw">auto</span> it = <span class="bu">std::</span>next(begin); it != end; ++it)</span>
-<span id="cb25-5"><a href="ordenação.html#cb25-5"></a>    <span class="cf">for</span> (<span class="kw">auto</span> right = it, left = <span class="bu">std::</span>prev(right);</span>
-<span id="cb25-6"><a href="ordenação.html#cb25-6"></a>         right != begin &amp;&amp; *left &gt; *right;</span>
-<span id="cb25-7"><a href="ordenação.html#cb25-7"></a>         right = left--)</span>
-<span id="cb25-8"><a href="ordenação.html#cb25-8"></a>      <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb25-9"><a href="ordenação.html#cb25-9"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb26-1"><a href="ordenação.html#cb26-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>bidirectional_iterator It&gt;</span>
+<span id="cb26-2"><a href="ordenação.html#cb26-2"></a><span class="dt">void</span> insertionsort(It begin, It end)</span>
+<span id="cb26-3"><a href="ordenação.html#cb26-3"></a>{</span>
+<span id="cb26-4"><a href="ordenação.html#cb26-4"></a>  <span class="cf">for</span> (<span class="kw">auto</span> it = <span class="bu">std::</span>next(begin); it != end; ++it)</span>
+<span id="cb26-5"><a href="ordenação.html#cb26-5"></a>    <span class="cf">for</span> (<span class="kw">auto</span> right = it, left = <span class="bu">std::</span>prev(right);</span>
+<span id="cb26-6"><a href="ordenação.html#cb26-6"></a>         right != begin &amp;&amp; *left &gt; *right;</span>
+<span id="cb26-7"><a href="ordenação.html#cb26-7"></a>         right = left--)</span>
+<span id="cb26-8"><a href="ordenação.html#cb26-8"></a>      <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb26-9"><a href="ordenação.html#cb26-9"></a>}</span></code></pre></div>
 </div>
 <div id="shell-sort" class="section level2 hasAnchor">
 <h2><span class="header-section-number">15.5</span> Shell sort<a href="ordenação.html#shell-sort" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb26-1"><a href="ordenação.html#cb26-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>integral T&gt; <span class="kw">auto</span> knuth_seq_last(T length) {</span>
-<span id="cb26-2"><a href="ordenação.html#cb26-2"></a>  T h = <span class="dv">1</span>;</span>
-<span id="cb26-3"><a href="ordenação.html#cb26-3"></a>  <span class="cf">while</span> (h &lt; length)</span>
-<span id="cb26-4"><a href="ordenação.html#cb26-4"></a>    h = <span class="dv">3</span> * h + <span class="dv">1</span>;</span>
-<span id="cb26-5"><a href="ordenação.html#cb26-5"></a>  <span class="cf">return</span> h / <span class="dv">3</span>;</span>
-<span id="cb26-6"><a href="ordenação.html#cb26-6"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb27-1"><a href="ordenação.html#cb27-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>random_access_iterator It&gt;</span>
-<span id="cb27-2"><a href="ordenação.html#cb27-2"></a><span class="dt">void</span> shellsort(It begin, It end)</span>
-<span id="cb27-3"><a href="ordenação.html#cb27-3"></a>{</span>
-<span id="cb27-4"><a href="ordenação.html#cb27-4"></a>  <span class="at">const</span> <span class="kw">auto</span> length = <span class="bu">std::</span>distance(begin, end);</span>
-<span id="cb27-5"><a href="ordenação.html#cb27-5"></a>  <span class="cf">for</span> (<span class="kw">auto</span> h = knuth_seq_last(length); h &gt; <span class="dv">0</span>; h = h / <span class="dv">3</span>)</span>
-<span id="cb27-6"><a href="ordenação.html#cb27-6"></a>    <span class="cf">for</span> (<span class="kw">auto</span> it = <span class="bu">std::</span>next(begin, h); it != end; ++it)</span>
-<span id="cb27-7"><a href="ordenação.html#cb27-7"></a>      <span class="cf">for</span> (<span class="kw">auto</span> right = it, left = <span class="bu">std::</span>prev(right, h);</span>
-<span id="cb27-8"><a href="ordenação.html#cb27-8"></a>           <span class="bu">std::</span>distance(begin, right) &gt;= h &amp;&amp; *left &gt; *right;</span>
-<span id="cb27-9"><a href="ordenação.html#cb27-9"></a>           right = <span class="bu">std::</span>exchange(left, <span class="bu">std::</span>prev(left, h)))</span>
-<span id="cb27-10"><a href="ordenação.html#cb27-10"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
-<span id="cb27-11"><a href="ordenação.html#cb27-11"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb27-1"><a href="ordenação.html#cb27-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>integral T&gt; <span class="kw">auto</span> knuth_seq_last(T length) {</span>
+<span id="cb27-2"><a href="ordenação.html#cb27-2"></a>  T h = <span class="dv">1</span>;</span>
+<span id="cb27-3"><a href="ordenação.html#cb27-3"></a>  <span class="cf">while</span> (h &lt; length)</span>
+<span id="cb27-4"><a href="ordenação.html#cb27-4"></a>    h = <span class="dv">3</span> * h + <span class="dv">1</span>;</span>
+<span id="cb27-5"><a href="ordenação.html#cb27-5"></a>  <span class="cf">return</span> h / <span class="dv">3</span>;</span>
+<span id="cb27-6"><a href="ordenação.html#cb27-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb28-1"><a href="ordenação.html#cb28-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>random_access_iterator It&gt;</span>
+<span id="cb28-2"><a href="ordenação.html#cb28-2"></a><span class="dt">void</span> shellsort(It begin, It end)</span>
+<span id="cb28-3"><a href="ordenação.html#cb28-3"></a>{</span>
+<span id="cb28-4"><a href="ordenação.html#cb28-4"></a>  <span class="at">const</span> <span class="kw">auto</span> length = <span class="bu">std::</span>distance(begin, end);</span>
+<span id="cb28-5"><a href="ordenação.html#cb28-5"></a>  <span class="cf">for</span> (<span class="kw">auto</span> h = knuth_seq_last(length); h &gt; <span class="dv">0</span>; h = h / <span class="dv">3</span>)</span>
+<span id="cb28-6"><a href="ordenação.html#cb28-6"></a>    <span class="cf">for</span> (<span class="kw">auto</span> it = <span class="bu">std::</span>next(begin, h); it != end; ++it)</span>
+<span id="cb28-7"><a href="ordenação.html#cb28-7"></a>      <span class="cf">for</span> (<span class="kw">auto</span> right = it, left = <span class="bu">std::</span>prev(right, h);</span>
+<span id="cb28-8"><a href="ordenação.html#cb28-8"></a>           <span class="bu">std::</span>distance(begin, right) &gt;= h &amp;&amp; *left &gt; *right;</span>
+<span id="cb28-9"><a href="ordenação.html#cb28-9"></a>           right = <span class="bu">std::</span>exchange(left, <span class="bu">std::</span>prev(left, h)))</span>
+<span id="cb28-10"><a href="ordenação.html#cb28-10"></a>        <span class="bu">std::</span>iter_swap(left, right);</span>
+<span id="cb28-11"><a href="ordenação.html#cb28-11"></a>}</span></code></pre></div>
 <p><em>Exercícios</em>:</p>
 <ol style="list-style-type: decimal">
 <li>Ignorando questões de desempenho, a função <code>shellsort</code> poderia ser
@@ -340,65 +340,65 @@ Justifique a necessidade de acesso aleatório para manter as vantagens do
 </div>
 <div id="quick-sort" class="section level2 hasAnchor">
 <h2><span class="header-section-number">15.6</span> Quick sort<a href="ordenação.html#quick-sort" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb28"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb28-1"><a href="ordenação.html#cb28-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>bidirectional_iterator It&gt;</span>
-<span id="cb28-2"><a href="ordenação.html#cb28-2"></a><span class="dt">void</span> quicksort(It begin, It end)</span>
-<span id="cb28-3"><a href="ordenação.html#cb28-3"></a>{</span>
-<span id="cb28-4"><a href="ordenação.html#cb28-4"></a>  <span class="cf">if</span> (begin == end)</span>
-<span id="cb28-5"><a href="ordenação.html#cb28-5"></a>    <span class="cf">return</span>;</span>
-<span id="cb28-6"><a href="ordenação.html#cb28-6"></a></span>
-<span id="cb28-7"><a href="ordenação.html#cb28-7"></a>  <span class="kw">auto</span> left = begin;</span>
-<span id="cb28-8"><a href="ordenação.html#cb28-8"></a>  <span class="kw">auto</span> right = <span class="bu">std::</span>prev(end);</span>
-<span id="cb28-9"><a href="ordenação.html#cb28-9"></a></span>
-<span id="cb28-10"><a href="ordenação.html#cb28-10"></a>  <span class="at">const</span> <span class="kw">auto</span> pivot_value = *left;</span>
-<span id="cb28-11"><a href="ordenação.html#cb28-11"></a></span>
-<span id="cb28-12"><a href="ordenação.html#cb28-12"></a>  <span class="cf">while</span> (<span class="kw">true</span>)</span>
-<span id="cb28-13"><a href="ordenação.html#cb28-13"></a>  {</span>
-<span id="cb28-14"><a href="ordenação.html#cb28-14"></a>    <span class="cf">while</span> (left != right &amp;&amp; *right &gt;= pivot_value)</span>
-<span id="cb28-15"><a href="ordenação.html#cb28-15"></a>      --right;</span>
-<span id="cb28-16"><a href="ordenação.html#cb28-16"></a>    <span class="cf">if</span> (left == right)</span>
-<span id="cb28-17"><a href="ordenação.html#cb28-17"></a>      <span class="cf">break</span>;</span>
-<span id="cb28-18"><a href="ordenação.html#cb28-18"></a>    <span class="bu">std::</span>iter_swap(left++, right);</span>
-<span id="cb28-19"><a href="ordenação.html#cb28-19"></a></span>
-<span id="cb28-20"><a href="ordenação.html#cb28-20"></a>    <span class="cf">while</span> (left != right &amp;&amp; *left &lt;= pivot_value)</span>
-<span id="cb28-21"><a href="ordenação.html#cb28-21"></a>      ++left;</span>
-<span id="cb28-22"><a href="ordenação.html#cb28-22"></a>    <span class="cf">if</span> (left == right)</span>
-<span id="cb28-23"><a href="ordenação.html#cb28-23"></a>      <span class="cf">break</span>;</span>
-<span id="cb28-24"><a href="ordenação.html#cb28-24"></a>    <span class="bu">std::</span>iter_swap(left, right--);</span>
-<span id="cb28-25"><a href="ordenação.html#cb28-25"></a>  }</span>
-<span id="cb28-26"><a href="ordenação.html#cb28-26"></a></span>
-<span id="cb28-27"><a href="ordenação.html#cb28-27"></a>  quicksort(begin, left);</span>
-<span id="cb28-28"><a href="ordenação.html#cb28-28"></a>  quicksort(<span class="bu">std::</span>next(left), end);</span>
-<span id="cb28-29"><a href="ordenação.html#cb28-29"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb29-1"><a href="ordenação.html#cb29-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>bidirectional_iterator It&gt;</span>
+<span id="cb29-2"><a href="ordenação.html#cb29-2"></a><span class="dt">void</span> quicksort(It begin, It end)</span>
+<span id="cb29-3"><a href="ordenação.html#cb29-3"></a>{</span>
+<span id="cb29-4"><a href="ordenação.html#cb29-4"></a>  <span class="cf">if</span> (begin == end)</span>
+<span id="cb29-5"><a href="ordenação.html#cb29-5"></a>    <span class="cf">return</span>;</span>
+<span id="cb29-6"><a href="ordenação.html#cb29-6"></a></span>
+<span id="cb29-7"><a href="ordenação.html#cb29-7"></a>  <span class="kw">auto</span> left = begin;</span>
+<span id="cb29-8"><a href="ordenação.html#cb29-8"></a>  <span class="kw">auto</span> right = <span class="bu">std::</span>prev(end);</span>
+<span id="cb29-9"><a href="ordenação.html#cb29-9"></a></span>
+<span id="cb29-10"><a href="ordenação.html#cb29-10"></a>  <span class="at">const</span> <span class="kw">auto</span> pivot_value = *left;</span>
+<span id="cb29-11"><a href="ordenação.html#cb29-11"></a></span>
+<span id="cb29-12"><a href="ordenação.html#cb29-12"></a>  <span class="cf">while</span> (<span class="kw">true</span>)</span>
+<span id="cb29-13"><a href="ordenação.html#cb29-13"></a>  {</span>
+<span id="cb29-14"><a href="ordenação.html#cb29-14"></a>    <span class="cf">while</span> (left != right &amp;&amp; *right &gt;= pivot_value)</span>
+<span id="cb29-15"><a href="ordenação.html#cb29-15"></a>      --right;</span>
+<span id="cb29-16"><a href="ordenação.html#cb29-16"></a>    <span class="cf">if</span> (left == right)</span>
+<span id="cb29-17"><a href="ordenação.html#cb29-17"></a>      <span class="cf">break</span>;</span>
+<span id="cb29-18"><a href="ordenação.html#cb29-18"></a>    <span class="bu">std::</span>iter_swap(left++, right);</span>
+<span id="cb29-19"><a href="ordenação.html#cb29-19"></a></span>
+<span id="cb29-20"><a href="ordenação.html#cb29-20"></a>    <span class="cf">while</span> (left != right &amp;&amp; *left &lt;= pivot_value)</span>
+<span id="cb29-21"><a href="ordenação.html#cb29-21"></a>      ++left;</span>
+<span id="cb29-22"><a href="ordenação.html#cb29-22"></a>    <span class="cf">if</span> (left == right)</span>
+<span id="cb29-23"><a href="ordenação.html#cb29-23"></a>      <span class="cf">break</span>;</span>
+<span id="cb29-24"><a href="ordenação.html#cb29-24"></a>    <span class="bu">std::</span>iter_swap(left, right--);</span>
+<span id="cb29-25"><a href="ordenação.html#cb29-25"></a>  }</span>
+<span id="cb29-26"><a href="ordenação.html#cb29-26"></a></span>
+<span id="cb29-27"><a href="ordenação.html#cb29-27"></a>  quicksort(begin, left);</span>
+<span id="cb29-28"><a href="ordenação.html#cb29-28"></a>  quicksort(<span class="bu">std::</span>next(left), end);</span>
+<span id="cb29-29"><a href="ordenação.html#cb29-29"></a>}</span></code></pre></div>
 </div>
 <div id="merge-sort" class="section level2 hasAnchor">
 <h2><span class="header-section-number">15.7</span> Merge sort<a href="ordenação.html#merge-sort" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb29"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb29-1"><a href="ordenação.html#cb29-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>forward_iterator It&gt;</span>
-<span id="cb29-2"><a href="ordenação.html#cb29-2"></a><span class="dt">void</span> merge(It begin, It mid, It end)</span>
-<span id="cb29-3"><a href="ordenação.html#cb29-3"></a>{</span>
-<span id="cb29-4"><a href="ordenação.html#cb29-4"></a>  <span class="bu">std::</span>vector&lt;<span class="bu">std::</span>iter_value_t&lt;It&gt;&gt; tmp;</span>
-<span id="cb29-5"><a href="ordenação.html#cb29-5"></a></span>
-<span id="cb29-6"><a href="ordenação.html#cb29-6"></a>  <span class="kw">auto</span> it1 = begin, it2 = mid;</span>
-<span id="cb29-7"><a href="ordenação.html#cb29-7"></a>  <span class="cf">while</span> (it1 != mid &amp;&amp; it2 != end)</span>
-<span id="cb29-8"><a href="ordenação.html#cb29-8"></a>    tmp.push_back(<span class="bu">std::</span>move(*it1 &lt; *it2 ? *it1++ : *it2++));</span>
-<span id="cb29-9"><a href="ordenação.html#cb29-9"></a></span>
-<span id="cb29-10"><a href="ordenação.html#cb29-10"></a>  <span class="bu">std::</span>move(it1, mid, back_inserter(tmp));</span>
-<span id="cb29-11"><a href="ordenação.html#cb29-11"></a>  <span class="bu">std::</span>move(it2, end, back_inserter(tmp));</span>
-<span id="cb29-12"><a href="ordenação.html#cb29-12"></a>  <span class="bu">std::</span>move(tmp.begin(), tmp.end(), begin);</span>
-<span id="cb29-13"><a href="ordenação.html#cb29-13"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb30-1"><a href="ordenação.html#cb30-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>random_access_iterator It&gt;</span>
-<span id="cb30-2"><a href="ordenação.html#cb30-2"></a><span class="dt">void</span> mergesort(It begin, It end)</span>
+<div class="sourceCode" id="cb30"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb30-1"><a href="ordenação.html#cb30-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>forward_iterator It&gt;</span>
+<span id="cb30-2"><a href="ordenação.html#cb30-2"></a><span class="dt">void</span> merge(It begin, It mid, It end)</span>
 <span id="cb30-3"><a href="ordenação.html#cb30-3"></a>{</span>
-<span id="cb30-4"><a href="ordenação.html#cb30-4"></a>  <span class="at">const</span> <span class="kw">auto</span> length = <span class="bu">std::</span>distance(begin, end);</span>
-<span id="cb30-5"><a href="ordenação.html#cb30-5"></a>  <span class="cf">if</span> (length &lt; <span class="dv">2</span>)</span>
-<span id="cb30-6"><a href="ordenação.html#cb30-6"></a>    <span class="cf">return</span>;</span>
-<span id="cb30-7"><a href="ordenação.html#cb30-7"></a></span>
-<span id="cb30-8"><a href="ordenação.html#cb30-8"></a>  <span class="at">const</span> <span class="kw">auto</span> mid = <span class="bu">std::</span>next(begin, length / <span class="dv">2</span>);</span>
+<span id="cb30-4"><a href="ordenação.html#cb30-4"></a>  <span class="bu">std::</span>vector&lt;<span class="bu">std::</span>iter_value_t&lt;It&gt;&gt; tmp;</span>
+<span id="cb30-5"><a href="ordenação.html#cb30-5"></a></span>
+<span id="cb30-6"><a href="ordenação.html#cb30-6"></a>  <span class="kw">auto</span> it1 = begin, it2 = mid;</span>
+<span id="cb30-7"><a href="ordenação.html#cb30-7"></a>  <span class="cf">while</span> (it1 != mid &amp;&amp; it2 != end)</span>
+<span id="cb30-8"><a href="ordenação.html#cb30-8"></a>    tmp.push_back(<span class="bu">std::</span>move(*it1 &lt; *it2 ? *it1++ : *it2++));</span>
 <span id="cb30-9"><a href="ordenação.html#cb30-9"></a></span>
-<span id="cb30-10"><a href="ordenação.html#cb30-10"></a>  merge_sort(begin, mid);</span>
-<span id="cb30-11"><a href="ordenação.html#cb30-11"></a>  merge_sort(mid, end);</span>
-<span id="cb30-12"><a href="ordenação.html#cb30-12"></a></span>
-<span id="cb30-13"><a href="ordenação.html#cb30-13"></a>  merge(begin, mid, end);</span>
-<span id="cb30-14"><a href="ordenação.html#cb30-14"></a>}</span></code></pre></div>
+<span id="cb30-10"><a href="ordenação.html#cb30-10"></a>  <span class="bu">std::</span>move(it1, mid, back_inserter(tmp));</span>
+<span id="cb30-11"><a href="ordenação.html#cb30-11"></a>  <span class="bu">std::</span>move(it2, end, back_inserter(tmp));</span>
+<span id="cb30-12"><a href="ordenação.html#cb30-12"></a>  <span class="bu">std::</span>move(tmp.begin(), tmp.end(), begin);</span>
+<span id="cb30-13"><a href="ordenação.html#cb30-13"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb31-1"><a href="ordenação.html#cb31-1"></a><span class="kw">template</span> &lt;<span class="bu">std::</span>random_access_iterator It&gt;</span>
+<span id="cb31-2"><a href="ordenação.html#cb31-2"></a><span class="dt">void</span> mergesort(It begin, It end)</span>
+<span id="cb31-3"><a href="ordenação.html#cb31-3"></a>{</span>
+<span id="cb31-4"><a href="ordenação.html#cb31-4"></a>  <span class="at">const</span> <span class="kw">auto</span> length = <span class="bu">std::</span>distance(begin, end);</span>
+<span id="cb31-5"><a href="ordenação.html#cb31-5"></a>  <span class="cf">if</span> (length &lt; <span class="dv">2</span>)</span>
+<span id="cb31-6"><a href="ordenação.html#cb31-6"></a>    <span class="cf">return</span>;</span>
+<span id="cb31-7"><a href="ordenação.html#cb31-7"></a></span>
+<span id="cb31-8"><a href="ordenação.html#cb31-8"></a>  <span class="at">const</span> <span class="kw">auto</span> mid = <span class="bu">std::</span>next(begin, length / <span class="dv">2</span>);</span>
+<span id="cb31-9"><a href="ordenação.html#cb31-9"></a></span>
+<span id="cb31-10"><a href="ordenação.html#cb31-10"></a>  merge_sort(begin, mid);</span>
+<span id="cb31-11"><a href="ordenação.html#cb31-11"></a>  merge_sort(mid, end);</span>
+<span id="cb31-12"><a href="ordenação.html#cb31-12"></a></span>
+<span id="cb31-13"><a href="ordenação.html#cb31-13"></a>  merge(begin, mid, end);</span>
+<span id="cb31-14"><a href="ordenação.html#cb31-14"></a>}</span></code></pre></div>
 <p><em>Exercícios</em>:</p>
 <ol style="list-style-type: decimal">
 <li>Discuta as desvantagens de permitir que a função <code>mergesort</code> aceite

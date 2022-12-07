@@ -394,8 +394,8 @@ a somatória destes ficaria assim.</p>
 <p>Ignore por ora como os números (no caso 0) são representados nos 16 bits da
 palavra. Veremos mais detalhes sobre representação de dados mais a frente.</p>
 <hr />
-<p><em>Exercício: simule a execução desse programa com a entrada a seguinte entrada:
-1, 4, 5, 10, 0.</em></p>
+<p><em>Exercício</em>: simule a execução desse programa com a entrada a seguinte entrada:
+1, 4, 5, 10, 0.</p>
 <hr />
 <p>Obviamente, a linguagem de máquina não é apropriada para escrevermos programas
 legíveis para solução de problemas, especialmente aqueles mais complexos.</p>
@@ -567,7 +567,7 @@ informações <a href="https://en.cppreference.com/w/cpp/language/main_function"
 <span id="cb2-5"><a href="programas.html#cb2-5"></a>}</span></code></pre></div>
 <p>Há várias nuances deste programa que entraremos em detalhes futuramente. No
 momento, é suficiente saber que esse arquivo, quando compilado e executado,
-resultará em uma saída com o texto <code>"Hello, world!"</code> seguido de quebra de linha.</p>
+resultará numa saída com o texto <code>"Hello, world!"</code> seguido de quebra de linha.</p>
 <pre><code>$ g++ -std=c++20 hello.cpp -o hello
 $ ./hello
 Hello, world!</code></pre>
@@ -595,30 +595,41 @@ imperativo é o mais comum.</p>
 <p>Em poucas palavras, a programação imperativa consiste em resolver problemas
 por meio de uma série de “ordens”, que chamamos de <em>comandos</em>. O programa
 então consiste numa sequência de comandos executados um a um.</p>
+<p>No programa apresentado na seção anterior, <code>std::cout &lt;&lt; "Hello, world!\n"</code>
+é um exemplo de comando. Note que comandos em C++ são separados por ponto
+e vírgula <code>;</code>.</p>
+<p>Assim, o código abaixo apresentará a mesma saída.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="programas.html#cb4-1"></a><span class="co">// hello.cpp</span></span>
+<span id="cb4-2"><a href="programas.html#cb4-2"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb4-3"><a href="programas.html#cb4-3"></a><span class="dt">int</span> main() {</span>
+<span id="cb4-4"><a href="programas.html#cb4-4"></a>  <span class="bu">std::</span>cout &lt;&lt; <span class="st">&quot;Hell&quot;</span>;</span>
+<span id="cb4-5"><a href="programas.html#cb4-5"></a>  <span class="bu">std::</span>cout &lt;&lt; <span class="st">&quot;o, world!&quot;</span>;</span>
+<span id="cb4-6"><a href="programas.html#cb4-6"></a>  <span class="bu">std::</span>cout &lt;&lt; <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>;</span>
+<span id="cb4-7"><a href="programas.html#cb4-7"></a>}</span></code></pre></div>
 <p>A seguir veremos as duas principais categorias de comandos de linguagens
 imperativas: atribuição e entrada/saída.</p>
 <div id="atribuição" class="section level3 hasAnchor">
 <h3><span class="header-section-number">2.5.1</span> Atribuição<a href="programas.html#atribuição" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Atribuição consiste em…</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="programas.html#cb4-1"></a><span class="kw">auto</span> x = <span class="dv">10</span>;</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="programas.html#cb5-1"></a>x = <span class="dv">12</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="programas.html#cb5-1"></a><span class="kw">auto</span> x = <span class="dv">10</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="programas.html#cb6-1"></a>x = <span class="dv">12</span>;</span></code></pre></div>
 </div>
 <div id="entrada-e-saída" class="section level3 hasAnchor">
 <h3><span class="header-section-number">2.5.2</span> Entrada e saída<a href="programas.html#entrada-e-saída" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="programas.html#cb6-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb6-2"><a href="programas.html#cb6-2"></a></span>
-<span id="cb6-3"><a href="programas.html#cb6-3"></a><span class="dt">int</span> main() {</span>
-<span id="cb6-4"><a href="programas.html#cb6-4"></a>  <span class="kw">using</span> <span class="bu">std::</span>cin;</span>
-<span id="cb6-5"><a href="programas.html#cb6-5"></a>  <span class="kw">using</span> <span class="bu">std::</span>cout;</span>
-<span id="cb6-6"><a href="programas.html#cb6-6"></a></span>
-<span id="cb6-7"><a href="programas.html#cb6-7"></a>  <span class="co">// ...</span></span>
-<span id="cb6-8"><a href="programas.html#cb6-8"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="programas.html#cb7-1"></a>  <span class="co">// ...</span></span>
-<span id="cb7-2"><a href="programas.html#cb7-2"></a>  cin &gt;&gt; x;</span>
-<span id="cb7-3"><a href="programas.html#cb7-3"></a>  <span class="co">// ...</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="programas.html#cb7-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb7-2"><a href="programas.html#cb7-2"></a></span>
+<span id="cb7-3"><a href="programas.html#cb7-3"></a><span class="dt">int</span> main() {</span>
+<span id="cb7-4"><a href="programas.html#cb7-4"></a>  <span class="kw">using</span> <span class="bu">std::</span>cin;</span>
+<span id="cb7-5"><a href="programas.html#cb7-5"></a>  <span class="kw">using</span> <span class="bu">std::</span>cout;</span>
+<span id="cb7-6"><a href="programas.html#cb7-6"></a></span>
+<span id="cb7-7"><a href="programas.html#cb7-7"></a>  <span class="co">// ...</span></span>
+<span id="cb7-8"><a href="programas.html#cb7-8"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="programas.html#cb8-1"></a>  <span class="co">// ...</span></span>
-<span id="cb8-2"><a href="programas.html#cb8-2"></a>  cout &lt;&lt; x &lt;&lt; <span class="ch">&#39;</span><span class="sc">\n</span><span class="ch">&#39;</span>;</span>
+<span id="cb8-2"><a href="programas.html#cb8-2"></a>  cin &gt;&gt; x;</span>
 <span id="cb8-3"><a href="programas.html#cb8-3"></a>  <span class="co">// ...</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="programas.html#cb9-1"></a>  <span class="co">// ...</span></span>
+<span id="cb9-2"><a href="programas.html#cb9-2"></a>  cout &lt;&lt; x &lt;&lt; <span class="ch">&#39;</span><span class="sc">\n</span><span class="ch">&#39;</span>;</span>
+<span id="cb9-3"><a href="programas.html#cb9-3"></a>  <span class="co">// ...</span></span></code></pre></div>
 
 </div>
 </div>
